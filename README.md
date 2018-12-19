@@ -1,2 +1,2 @@
-# Türkçe refactoring klavuzu
+# Türkçe Refactoring Klavuzu
 
