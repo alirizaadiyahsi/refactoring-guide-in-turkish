@@ -31,3 +31,8 @@ Teknik borcu anlatmak için, bankadan çekilen kredi örnek verilir. Acil ödeme
 Aynı şekilde, daha hızlı geliştirmek adına; mesela test yazmadan, geliştirilen her özellik, gün geçtikçe bakım maliyetini artırarak, geliştirme hızını da düşürür, ta ki teknik borcu ödeyene kadar.
 
 Peki teknik borca, kötü kod yazmaya iten sebepler nelerdir?
+
+
+---
+
+**NOT**: Yararlanılan kaynaklar sürekli eklenecek. Şimdilik ana kaynak: https://refactoring.guru/
