@@ -35,4 +35,7 @@ Peki teknik borca, kötü kod yazmaya iten sebepler nelerdir?
 
 ---
 
-**NOT**: Yararlanılan kaynaklar sürekli eklenecek. Şimdilik ana kaynak: https://refactoring.guru/
+**NOT**: Yararlanılan kaynaklar sürekli eklenecek. 
+
+- https://refactoring.guru/
+- http://www.yilmazcihan.com/yazilim-gelistirmede-teknik-borc/
