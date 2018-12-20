@@ -32,6 +32,18 @@ Aynı şekilde, daha hızlı geliştirmek adına; mesela test yazmadan, gelişti
 
 Peki teknik borca, kötü kod yazmaya iten sebepler nelerdir?
 
+#### Ticari kaygılar
+
+Bazen iş koşulları, tamamlanmadan önce özellikleri kullanıma sunmaya zorlayabilir. Bu durumda, projenin bitmemiş bölümlerini gizlemek için kodda fazladan (aslında kodun parçası olmayan) satırlar olabilir.
+
+#### Teknik borcun sonuçlarının anlaşılmaması
+
+İşverenler/yöneticiler, geride teknik borç biriktirdikçe, maliyetin katlanarak arttığını anlamayabilirler. Bundan dolayıda, ekibin refactoring için zaman ayırmasını, vakit kaybı olarak görürler ve değer vermezler.
+
+
+#### Ekip üyeleri arasındaki iletişim eksikliği 
+
+
 
 ---
 
