@@ -43,7 +43,21 @@ Bazen iş koşulları, tamamlanmadan önce özellikleri kullanıma sunmaya zorla
 
 #### Ekip üyeleri arasındaki iletişim eksikliği 
 
+İletişim eksikliğinden dolayı bilgi, ekip üyeleri arasında sağlıklı dağılmaz veya tecrübeli birisi bilgiyi tecrübesiz olana yanlış aktarabilir. Bundan dolayıda ekip elindeki güncel olmayan, eksik veya yanlış anlaşılmış bilgi ile geliştirme yapabilir. 
 
+#### Uzun süre farklı dallarda(branch) çalışılması
+
+Teknik borcun birikmesine ve birleştirme işleminde daha da artmasına sebep olur. Toplam teknik borç, ayrı ayrı biriken teknik borç toplamından daha büyük olur.
+
+#### Gecikmeli refactoring 
+
+Refactoring gerekli durumlarda, refactoring ertelenirse, düzenlenmesi gereken bu parçaya bağımlı yeni yazılan her kod, eski düzene göre yazılacağından, teknik borç her yeni yazılan kod için de artar. Oysa anında müdahale edilse, arkasından gelen kodlar için de aynı düzenleme gerekmeyecek.
+
+#### Beceriksizlik & tecrübesizlik
+
+Bazen sadece tecrübesizlikten veya beceriksizlikten kötü kod yazarak, teknik borç biriktiririz.
+
+### Refactoring Ne Zaman Yapılmalı?
 
 ---
 
