@@ -59,6 +59,27 @@ Bazen sadece tecrübesizlikten veya beceriksizlikten kötü kod yazarak, teknik 
 
 ### Refactoring Ne Zaman Yapılmalı?
 
+#### Üç kural
+
+1. İlk defa bir şey yapıyorsan, sadece yap.
+2. İkinci defa aynı şeyi yapıyorsan, tekrara düşmekten çekin ama yinede bir şekilde yap.
+3. Üçüncü defa aynı şeyi yapıyorsan, refactor et.
+
+#### Özellik ekleme
+
+Refactoring, başkalarının kodlarını anlamayı kolaylaştırır. Yeni özellik eklemek için kodun iyi anlaşılması gereklidir. Kod ne kadar temiz olursa o kadar anlaşılır olur. Dolayısıyle yeni özellik eklemeden önce kodlar refactor edilebilir.
+
+#### Hata düzeltme
+
+Yine hata bulmak için öncelikle kodun iyi anlaşılması lazımdır. Daha iyi anlamak için kodu refactor ederiz. Refactor işlemi sırasında, çoğunlukla hata bulunur. 
+
+#### Kod inceleme (code review)
+
+Kod inceleme, hem kodu yazan hem de inceleyen için en faydalı iştir. Kod incleme yaparken, hata bulmak daha kolay ve hızlı olur. İlerde yapılabilecek daha büyük hatalar için de, önceden bilgi sahibi olmayı sağlar.
+
+### Refactoring Nasıl Yapılır?
+
+
 ---
 
 **NOT**: Yararlanılan kaynaklar sürekli eklenecek. 
