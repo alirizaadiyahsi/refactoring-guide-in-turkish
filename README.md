@@ -86,3 +86,4 @@ Kod inceleme, hem kodu yazan hem de inceleyen için en faydalı iştir. Kod incl
 
 - https://refactoring.guru/
 - http://www.yilmazcihan.com/yazilim-gelistirmede-teknik-borc/
+- https://medium.com/bili%C5%9Fim-hareketi/refactoring-prensipleri-ne-zaman-refactoring-yapmal%C4%B1y%C4%B1z-bfb0794fecde
