@@ -118,4 +118,3 @@ Bir metod çok fazla satırdan oluşuyorsa o metodda sorunlar olabilir. Genel ol
 
 - https://refactoring.guru/
 - http://www.yilmazcihan.com/yazilim-gelistirmede-teknik-borc/
-- https://medium.com/bili%C5%9Fim-hareketi/refactoring-prensipleri-ne-zaman-refactoring-yapmal%C4%B1y%C4%B1z-bfb0794fecde
