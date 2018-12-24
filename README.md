@@ -100,6 +100,16 @@ Testleri olmayan kodları refactor etmek, refactoring sürecindeki en tehlikeli 
 
 ## Koddan Kötü Kokular Geliyor
 
+Refactoring yapılacak kod aslında kendisi alarm verir. Koddaki kötü kokular, refactoring için ipuçları içerir. Bu kötü kokuların neler olduğunu bilirsek, refactoring yapılacak kodları daha iyi ayırt edebiliriz.
+
+### Uzun Metodlar
+
+#### Problem
+
+Bir metod çok fazla satırdan oluşuyorsa o metodda sorunlar olabilir. Genel olarak 10-15 satırdan fazla uzun metodlar olunca, metodun uzunluğunu sorgulamaya başlayabiliriz.
+
+#### Sebep
+
 
 
 ---
