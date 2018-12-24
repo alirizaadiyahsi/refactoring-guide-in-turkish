@@ -1,5 +1,15 @@
 # Türkçe Refactoring Kılavuzu
 
+## İçindekiler
+
+- [Refactoring Nedir?](#refactoring-nedir)
+  - [Temiz Kod Nedir?](#temiz-kod-nedir)
+  - [Teknik Borç Nedir?](#teknik-borç-nedir)
+  - [Refactoring Ne Zaman Yapılmalı?](#refactoring-ne-zaman-yapılmalı)
+  - [Refactoring Nasıl Yapılır?](#refactoring-nasıl-yapılır)
+- [Koddan Kötü Kokular Geliyor](#koddan-kötü-kokular-geliyor)
+  - [Uzun Metodlar](#uzun-metodlar)
+
 ## Refactoring Nedir?
 
 Refactoring, kodun işlevselliğini değiştirmeden, kodun kalitesini artırma, temiz bir hale ve kolay bir tasarıma dönüştürme sürecidir. Refactoring kavramını anlamak için öncelikle temiz ve basit kod nedir, temiz kodu engelleyen, kötü kod yazmaya iten sebepler nelerdir bir diğer deyişle teknik borç nedir teknik borca iten sebepler nelerdir, onu anlamaya çalışalım.
