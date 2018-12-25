@@ -8,7 +8,7 @@
   - [Refactoring Ne Zaman Yapılmalı?](#refactoring-ne-zaman-yapılmalı)
   - [Refactoring Nasıl Yapılır?](#refactoring-nasıl-yapılır)
 - [Koddan Kötü Kokular Geliyor](#koddan-kötü-kokular-geliyor)
-  - [Uzun Metodlar](#uzun-metodlar)
+  - [Uzun Metotlar](#uzun-metotlar)
 
 ## Refactoring Nedir?
 
@@ -18,13 +18,13 @@ Refactoring, kodun işlevselliğini değiştirmeden, kodun kalitesini artırma, 
 
 #### Temiz kod diğer geliştiriciler için gayet açık ve anlaşılabilirdir. 
 
-Değişken isimlendirmeleri, sınıfların ve metodların uzunlukları ve karmaşıklıkları vs. gibi kodun okunmasını, anlaşılmasını ve bakımını zorlaştıran şeylerin olmaması.
+Değişken isimlendirmeleri, sınıfların ve metotların uzunlukları ve karmaşıklıkları vs. gibi kodun okunmasını, anlaşılmasını ve bakımını zorlaştıran şeylerin olmaması.
 
 #### Temiz kod, kod tekrarları içermez.
 
 Kod tekrarı, her defasında, aynı değişiklikleri farklı yerlerde yapmaya sebep olur. Her defasında, bir değişiklik yapıldığında, başka nerelerin değişeceğini akılda tutmak gerekir. Kodun anlaşılmasındaki yükü artırır ve süreçleri uzatır.
 
-#### Temiz kodda gereğinden fazla satır/sınıf/metod olmaz.
+#### Temiz kodda gereğinden fazla satır/sınıf/metot olmaz.
 
 Az kod, daha az akılda tutulması gereken şey, daha az bakım yapılması, daha az hata demektir. Olabildiğince kısa ve basit kod her zaman temiz koddur.
 
@@ -112,15 +112,15 @@ Testleri olmayan kodları refactor etmek, refactoring sürecindeki en tehlikeli 
 
 Refactoring yapılacak kod aslında kendisi alarm verir. Koddaki kötü kokular, refactoring için ipuçları içerir. Bu kötü kokuların neler olduğunu bilirsek, refactoring yapılacak kodları daha iyi ayırt edebiliriz.
 
-### Uzun Metodlar
+### Uzun Metotlar
 
 #### Problem
 
-Bir metod çok fazla satırdan oluşuyorsa o metodda sorunlar olabilir. Genel olarak 10-15 satırdan fazla uzun metodlar olunca, metodun uzunluğunu sorgulamaya başlayabiliriz.
+Bir metot çok fazla satırdan oluşuyorsa o metotta sorunlar olabilir. Genel olarak 10-15 satırdan fazla uzun metotlar olunca, metodun uzunluğunu sorgulamaya başlayabiliriz.
 
 #### Sebep
 
-Yazılımcı için kod yazmak, kod okumaktan daha kolaydır. Bundan dolayı metodlara sürekli gerekli olan kodlar eklenir ama kullanılmayan satırlar silinmez. Her gelen bir şey ekler. Böylece metodun uzunluğu gittikçe artar, okunamaz ve bakım yapılamaz hale gelir. 
+Yazılımcı için kod yazmak, kod okumaktan daha kolaydır. Bundan dolayı metotlara sürekli gerekli olan kodlar eklenir ama kullanılmayan satırlar silinmez. Her gelen bir şey ekler. Böylece metodun uzunluğu gittikçe artar, okunamaz ve bakım yapılamaz hale gelir. 
 
 Psikolojik olarak, yeni bir metot oluşturmak, var olana ekleme yapmaktan daha kolay gelebilir. İki satır kod için, yeni bir metoda ihtiyaç yok diye düşünebiliriz. Her defasında bu düşüncüyle eklenen her satırdan sonra, metot adım adım karmaşık bir spagetti koda dönüşür.
 
