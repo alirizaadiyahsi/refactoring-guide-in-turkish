@@ -9,6 +9,7 @@
   - [Refactoring Nasıl Yapılır?](#refactoring-nasıl-yapılır)
 - [Koddan Kötü Kokular Geliyor](#koddan-kötü-kokular-geliyor)
   - [Uzun Metotlar](#uzun-metotlar)
+  - [Büyük Sınıflar](#büyük-sınıflar)
 
 ## Refactoring Nedir?
 
@@ -126,9 +127,26 @@ Psikolojik olarak, yeni bir metot oluşturmak, var olana ekleme yapmaktan daha k
 
 #### Çözüm
 
-Eğer metot içinde, yorum yazma gereksinimi olan satırlar varsa, bu satırların ayrı bir metoda alınması gerekebilir. Tek satırı bile açıklamaya ihtiyaç duyuyorsanız, ayırmanız gerekir. Ayrılan yeni metodun adı da, metodun ne iş yaptığını tanımlayıcı olursa, kimse kodun ne iş yaptığını anlamak için kodu okumak zorunda kalmaz.
+Eğer metot içinde, yorum yazma gereksinimi olan satırlar varsa, bu satırların ayrı bir metoda alınması gerekebilir. Tek satırı bile açıklamaya ihtiyaç duyuyorsanız, ayırmanız gerekir. Ayrılan yeni metodun adı da, metodun ne iş yaptığını tanımlayıcı olursa, kimse kodun ne iş yaptığını anlamak için kodu okumak zorunda kalmaz. Çözüm için aşağıdaki refactoring kuralları uygulanabilir.
 
+- Metot uzunluğunu azaltmak için: [Extract Method](#extract-method) 
+- Değişkenler ve parametreler yeni metoda almayı engelliyorsa: [Temp with Query](#temp-with-query), [Introduce Parameter Object](#introduce-parameter-object), [Preserve Whole Object](#preserve-whole-object).
+- İlk 2 yöntem de yardımcı olmuyorsa: [Replace Method with Method Object](#replace-method-with-method-object)
+- Kod içerisindeki koşullu ifadeler ve döngüler metodun ayrılması için ipucu verirler. Koşullu ifadeler için: [Decompose Conditional](#decompose-conditional).
 
+#### Sonuç
+
+- Tüm OOP dillerde en uzun yaşayan metotlar/sınıflar en kısa olanlarıdır. Metot ne kadar uzun olursa, anlamak ve bakım yapmak da o kadar zorlaşır.
+
+- Uzun kodlar içinde, tekrarlanan kodlar birikmiş olabilir. 
+
+#### Performans
+
+Akıllara gelen sorulardan birisi şu; metot sayısı arttıkça performans kötü etkilenir mi? Aslında neredeyse tüm durumlarda, etki o kadar önemsiz ki, sağladığı fayda yanında bu etkinin bir önemi yok.
+
+Ayrıca temiz ve bakımı kolay bir kodu istediğimiz gibi kolayca refactor edebilir, yeniden tasarlayabilir ve gerçekten performanslı bir hale daha kolay getirebiliriz. 
+
+### Büyük Sınıflar
 
 ---
 
