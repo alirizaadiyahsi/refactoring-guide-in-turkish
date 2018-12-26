@@ -1,5 +1,13 @@
 # Türkçe Refactoring Kılavuzu
 
+## Önsöz
+
+Bu dökümanın, bir makale olarak değilde GitHub'da olmasının sebebi, herkesin katkılarına açık bir şekilde sürekli güncel bir kılavuz hazırlamak.
+
+Bazı kelimeler Türkçeye çevrilmedi. Bunun sebebi, birçok kelime artık, o kalıp içinde daha anlamlı oluyor. Örneğin, Refactoring, Exract Method, Primitive Obsession vs. 
+
+
+
 ## İçindekiler
 
 - [Refactoring Nedir?](#refactoring-nedir)
