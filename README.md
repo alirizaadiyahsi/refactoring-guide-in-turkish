@@ -148,6 +148,30 @@ Ayrıca temiz ve bakımı kolay bir kodu istediğimiz gibi kolayca refactor edeb
 
 ### Büyük Sınıflar
 
+#### Problem
+
+Çok fazla satır, alan ve metot içeren sınıflar.
+
+#### Sebep
+
+Sınıflar en başta genelde küçük başlar. Ancak zamanla, program büyüdükçe şişerler.
+
+Uzun metotlarda olduğu gibi, programcılar genellikle mevcut bir sınıfa, yeni bir özellik/satır eklemenin, yeni bir sınıf oluşturmaya göre daha kolay olduğunu düşünür.
+
+#### Çözüm
+
+- Eğer sınıfın davranışının bir parçası ayrılabiliyorsa: [Extract Class](#extract-class)
+- Eğer sınıfın bir parçası, başka bir şekilde yazılabiliyorsa veya nadir durumlarda kullanılabilirse: [Extract Subclass](#extract-subclass)
+- İstemcinin kullanabileceği, sınıfın yaptığı işlerin bir listesini tutmak için: [Extract Interface](#extract-interface)
+- Grafik arayüzünden büyük bir sınıf sorumluysa, verilerinin ve davranışlarının bir kısmını ayrı bir domain object nesnesine taşımayı deneyebilirsiniz. Bunu yaparken, bazı verilerin kopyalarını iki yerde saklamak ve verileri tutarlı tutmak gerekebilir. Bunun için: [Duplicate Observed Data](#duplicate-observed-data)
+
+#### Sonuç
+
+- Bu sınıfların yeniden yapılandırılması, geliştiricilerin bir sınıf için çok sayıda şeyi hatırlama zorunluluğundan kurtarır.
+- Çoğu durumda, büyük sınıfları parçalara bölmek, kod ve işlevselliklerin tekrarlanmasını önler.
+
+### Primitive Obsession
+
 ---
 
 **NOT**: Yararlanılan kaynaklar sürekli eklenecek. 
