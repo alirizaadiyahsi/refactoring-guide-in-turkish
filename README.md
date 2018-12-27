@@ -211,3 +211,4 @@ Bir diğer hata ise, sınıfın her bir alanının tutması gereken veri, kolay 
 
 - https://refactoring.guru/
 - http://www.yilmazcihan.com/yazilim-gelistirmede-teknik-borc/
+- https://softwareengineering.stackexchange.com/questions/365017/when-is-primitive-obsession-not-a-code-smell
