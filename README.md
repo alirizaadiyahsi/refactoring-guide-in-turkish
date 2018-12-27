@@ -1,14 +1,12 @@
-# Türkçe Refactoring Kılavuzu
+# TÜRKÇE REFACTORING KILAVUZU
 
-## Önsöz
+## ÖNSÖZ
 
 Bu dökümanın, bir makale olarak değilde GitHub'da olmasının sebebi, herkesin katkılarına açık bir şekilde sürekli güncel bir kılavuz hazırlamak.
 
 Bazı kelimeler Türkçeye çevrilmedi. Bunun sebebi, birçok kelime artık, o kalıp içinde daha anlamlı oluyor. Örneğin, Refactoring, Exract Method, Primitive Obsession vs. 
 
-
-
-## İçindekiler
+## İÇİNDEKİLER
 
 - [Refactoring Nedir?](#refactoring-nedir)
   - [Temiz Kod Nedir?](#temiz-kod-nedir)
@@ -19,7 +17,7 @@ Bazı kelimeler Türkçeye çevrilmedi. Bunun sebebi, birçok kelime artık, o k
   - [Uzun Metotlar](#uzun-metotlar)
   - [Büyük Sınıflar](#büyük-sınıflar)
 
-## Refactoring Nedir?
+## REFACTORING NEDİR?
 
 Refactoring, kodun işlevselliğini değiştirmeden, kodun kalitesini artırma, temiz bir hale ve kolay bir tasarıma dönüştürme sürecidir. Refactoring kavramını anlamak için öncelikle temiz ve basit kod nedir, temiz kodu engelleyen, kötü kod yazmaya iten sebepler nelerdir bir diğer deyişle teknik borç nedir teknik borca iten sebepler nelerdir, onu anlamaya çalışalım.
 
@@ -117,7 +115,7 @@ Testleri olmayan kodları refactor etmek, refactoring sürecindeki en tehlikeli 
 - **Refactoring sırasında hata yaptın ve çokta önemli değil:** Devam et ve hatayı düzelt.
 - **Testler çok alt seviye kodları test ediyordur. Örneğin, bir sınıfın private metodunu test ediyordur:** Bu durumda, sıkıntı testlerdedir. Dolayısıyla testleri de refactor edebiliriz veya yüksek seviye kodları test eden yeni testler yazabiliriz. Tabi bunun en ideal çözümü, [BDD-style](https://en.wikipedia.org/wiki/Behavior-driven_development) test yazmakdır.
 
-## Koddan Kötü Kokular Geliyor
+## KODDAN KÖTÜ KOKULAR GELİYOR
 
 Refactoring yapılacak kod aslında kendisi alarm verir. Koddaki kötü kokular, refactoring için ipuçları içerir. Bu kötü kokuların neler olduğunu bilirsek, refactoring yapılacak kodları daha iyi ayırt edebiliriz.
 
