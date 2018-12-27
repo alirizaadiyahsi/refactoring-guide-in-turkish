@@ -207,6 +207,8 @@ Bir diğer hata ise, sınıfın her bir alanının tutması gereken veri, kolay 
 
 ---
 
+## KAYNAKLAR
+
 **NOT**: Yararlanılan kaynaklar sürekli eklenecek. 
 
 - https://refactoring.guru/
