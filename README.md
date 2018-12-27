@@ -144,7 +144,6 @@ Eğer metot içinde, yorum yazma gereksinimi olan satırlar varsa, bu satırlar�
 #### Sonuç
 
 - Tüm OOP dillerde en uzun yaşayan metotlar/sınıflar en kısa olanlarıdır. Metot ne kadar uzun olursa, anlamak ve bakım yapmak da o kadar zorlaşır.
-
 - Uzun kodlar içinde, tekrarlanan kodlar birikmiş olabilir. 
 
 #### Performans
