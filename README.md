@@ -178,6 +178,33 @@ Uzun metotlarda olduğu gibi, programcılar genellikle mevcut bir sınıfa, yeni
 
 ### Primitive Obsession
 
+#### Problem
+
+- Küçük nesneler (range, currency, special strings) yerine primitif tipler kullanma.
+- Kodun içinde sabit değerlerde bilgi tutmak. (Örneğin; admin yetkisi için `USER_ADMIN_ROLE = 1` şeklinde bir tanımlama yapmak)
+- Her bir alanın adı, dizi içinde sabit olarak tutulması. (Örneğin; `dizi["istanbul", "34"]`)
+
+#### Sebep
+
+Diğer hatalarda olduğu gibi, Primitive Obsession hatası, tembellik ve sorumsuzluk sonucunda ortaya çıkar. Sadece 1 tane değişken için sınıf oluşturmak zor gelir ve bu 1 veriyi tutmak için primitif tipte bir değişken tanımlar. Yeni bir alan lazım olduğunda her defasında bu şekilde eklenir ve sınıflar/metotlar gereksiz olarak şişer.
+
+Bazende sabit değerler, kod içinde kullanılacak olan bir entity hakkında bilgi tutmak için kullanılır. Ayrı bir tip tanımlaması yapmak yerine, sınıf içinde sabit değerler içinde bu bilgi tutulur. Bunun sebebi ise, kod içerisinde bu değerler kullanılırken daha anlaşılır olmasını sağlamak. Örneğin; `if(userRole == AppConsts.USER_ADMIN_ROLE)`. Bu kullanım çok yaygındır.
+
+Bir diğer hata ise, sınıfın her bir alanının tutması gereken veri, kolay olsun diye bir diziye atılır. 
+
+#### Çözüm
+
+- Çok çeşitli primitif tipler varsa, bu verileri ilişkilerine göre gruplayıp, kendi sınıflarına taşımak: [Replace Data Value with Object](#replace-data-value-with-object)
+- Gruplanabilecek primitif tipler eğer metot parametresi olarak kullanılıyorsa: [Introduce Parameter Object](#introduce-parameter-object), [Preserve Whole Object](#preserve-whole-object)
+- Kendi başına bir nesne olabilecek, veri tutan bir değişken için: [Replace Type Code with Class](#replace-type-code-with-class), [Replace Type Code with Subclasses](#replace-type-code-with-subclasses), [Replace Type Code with State/Strategy](#replace-type-code-with-state/strategy)
+- Bir nesnenin alanlarını tutan dizi varsa: [Replace Array with Object](#replace-array-with-object)
+
+#### Sonuç
+
+- Primitif tipler yerine nesnelerin kullanılması, kodu daha esnek yapar.
+- Daha anlaşılabilir ve organizasyonu daha iyi bir kod yapısı sağlar. Veri üzerindeki her işlemi temsil eden alanlar aynı yerde ve düzenli olur. Diziler içindeki verilerin sürekli ne anlama geldiğini tahmin etmekten kurtuluruz.
+- Kod tekrarlarını keşfetmek daha kolay olur. 
+
 ---
 
 **NOT**: Yararlanılan kaynaklar sürekli eklenecek. 
