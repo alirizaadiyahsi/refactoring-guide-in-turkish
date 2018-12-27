@@ -16,6 +16,7 @@ Bazı kelimeler Türkçeye çevrilmedi. Bunun sebebi, birçok kelime artık, o k
 - [Koddan Kötü Kokular Geliyor](#koddan-kötü-kokular-geliyor)
   - [Uzun Metotlar](#uzun-metotlar)
   - [Büyük Sınıflar](#büyük-sınıflar)
+  - [Primitive Obsession](#primitive-obsession)
 
 ## REFACTORING NEDİR?
 
