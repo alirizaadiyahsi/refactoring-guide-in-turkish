@@ -205,6 +205,33 @@ Bir diğer hata ise, sınıfın her bir alanının tutması gereken veri, kolay 
 - Daha anlaşılabilir ve organizasyonu daha iyi bir kod yapısı sağlar. Veri üzerindeki her işlemi temsil eden alanlar aynı yerde ve düzenli olur. Diziler içindeki verilerin sürekli ne anlama geldiğini tahmin etmekten kurtarır.
 - Kod tekrarlarını(code duplication) keşfetmek daha kolay olur. 
 
+### Çok Fazla Parametre
+
+#### Problem
+
+Bir metodun 3,4 veya daha fazla parametre alması.
+
+#### Sebep
+
+Birkaç farklı tipte algoritmanın bir metotda birleşmesi sonucunda, parametreler çoğalabilir. Metodun içindeki algoritmanın ne yapıyor olduğuna dair bilgi veren kontrol parametreleri kullanılıyor olabilir. Hangi algoritma hangi adımlarla çalışıyor diye çok ayrım yapınca, parametre sayısı artabilir.
+
+Birbirinden bağımsız sınıflar oluşturmak istemenin yan etkisi olarak da fazla parametre alan metodlar oluşabilir. Örneğin; bir sınıf içinde, bir nesne oluşturan metodlar kullanılırlar. Oluşan bu nesneler de başka bir metoda parametre olarak verilir. Böylece ana sınıf, nesneler arasındaki ilişkiyi bilmez ve bağımlılık azalır. Ama bu şekilde bir çalışma en son parametre alan metodun parametre sayısını artırır.
+
+#### Çözüm
+
+- Bazı parametreler, metotların sonucunda gelen nesneler ise: [Replace Parameter with Method Call](#replace-parameter-with-method-call)
+- Başka bir nesneden alınan bir veri grubunu parametre olarak göndermek yerine, nesneyi kendisini metoda parametre olarak geçmek: [Preserve Whole Object](#preserve-whole-object)
+- Birden çok ilişkisiz parametre varsa bunları tek bir nesne içinde toplayıp, parametre olarak geçme: [Introduce Parameter Object](#introduce-parameter-object)
+
+#### Sonuç
+
+- Daha okunabilir ve kısa kodlar.
+- Varsa daha önceden farkedilmemiş olan, kod tekrarı farkedilebilir.
+
+#### Ne zaman göz ardı edilebilir?
+
+Sınıflar arasında gereksiz bağımlılık oluşturabilecek durumlarda parametrelerde kurtulmak iyi bir yöntem olmayabilir.
+
 ---
 
 ## KAYNAKLAR
