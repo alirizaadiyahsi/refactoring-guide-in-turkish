@@ -18,7 +18,8 @@ Bazı kelimeler Türkçeye çevrilmedi. Bunun sebebi, birçok kelime artık, o k
   - [Büyük Sınıflar](#büyük-sınıflar)
   - [Primitive Obsession](#primitive-obsession)
   - [Çok Fazla Parametre](#çok-fazla-parametre)
-  - [Veri Kümeleri](#veri-kümeleri)
+  - [Data Clumps](#data-clumps)
+  - [Switch Statements](#switch-statements)
 
 ## REFACTORING NEDİR?
 
@@ -234,7 +235,7 @@ Birbirinden bağımsız sınıflar oluşturmak istemenin yan etkisi olarak da fa
 
 Sınıflar arasında gereksiz bağımlılık oluşturabilecek durumlarda parametrelerde kurtulmak iyi bir yöntem olmayabilir.
 
-### Veri Kümeleri
+### Data Clumps
 
 #### Problem
 
@@ -260,6 +261,8 @@ Kodu kısaltır.
 #### Ne zaman göz ardı edilebilir?
 
 Eğer sınıflar arasında gereksiz bir bağımlılık oluşturacaksa göz ardı edilebilir.
+
+### Switch Statements
 
 ---
 
