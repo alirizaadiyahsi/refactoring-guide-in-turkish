@@ -264,6 +264,33 @@ Eğer sınıflar arasında gereksiz bir bağımlılık oluşturacaksa göz ardı
 
 ### Switch Statements
 
+#### Problem
+
+Kompleks `switch-case` veya uzun `if-else` ifadeleri.
+
+#### Sebep
+
+OOP dillerde `switch-case` ifadesinin az kullanımı, iyi tasarımın işaretlerinden biridir. Kompleks `switch-case` ifadeleri, genelde kodda birden çok yerde ihtiyaç olduğunda ve birden çok yerde aynı işi yapan ifadeler olduğunda oluşur. Yeni bir koşul geldiğinde, aynı `switch-case` ifadesi olan tüm yerlerde bu koşulu eklemek gerekir.
+
+Bir kural, `switch-case` gördüğün anda, polymorphism olabilme ihtimalini düşün.
+
+#### Çözüm
+
+- `switch-case` ifadesini ayırmak ve bağımsız yapmak için: [Extract Method](#extract-method) ve ardından [Move Method](#move-method)
+- `switch-case` ifadesinde, tip karşılaştırması varsa: [Replace Type Code with Subclasses](#replace-type-code-with-subclasses) veya [Replace Type Code with State/Strategy](#replace-type-code-with-state/strategy)
+- Kalıtım yapısının nasıl olacağını belirledikten sonra: [Replace Conditional with Polymorphism](#replace-conditional-with-polymorphism)
+- `switch-case` ifadesinde çok fazla koşul varsa ve her koşulda, aynı metot farklı parametrelerle çağrılıyorsa, polymorphism gereksiz olacaktır. Bu durumda, metodu küçük farklı metodlara bölebiliriz: [Replace Parameter with Explicit Methods](#replace-parameter-with-explicit-methods)
+- Koşullardan birisi null karşılaştırma yapıyorsa: [Introduce Null Object](#introduce-null-object)
+
+#### Sonuç
+
+Daha iyi kod organizasyonu.
+
+#### Ne zaman göz ardı edilebilir?
+
+- Basit `switch-case` ifadeleri.
+- Factory tasarım desenleri içindeki `switch-case` ifadeleri.
+
 ---
 
 ## KAYNAKLAR
@@ -273,3 +300,4 @@ Eğer sınıflar arasında gereksiz bir bağımlılık oluşturacaksa göz ardı
 - https://refactoring.guru/
 - http://www.yilmazcihan.com/yazilim-gelistirmede-teknik-borc/
 - https://softwareengineering.stackexchange.com/questions/365017/when-is-primitive-obsession-not-a-code-smell
+- https://martinfowler.com/bliki/DataClump.html
