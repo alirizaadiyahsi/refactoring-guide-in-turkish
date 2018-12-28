@@ -233,6 +233,33 @@ Birbirinden bağımsız sınıflar oluşturmak istemenin yan etkisi olarak da fa
 
 Sınıflar arasında gereksiz bağımlılık oluşturabilecek durumlarda parametrelerde kurtulmak iyi bir yöntem olmayabilir.
 
+### Veri Kümeleri
+
+#### Problem
+
+Ortak nesneye sahip olabilecek parametre listelerinin parametre olarak kullanılması. Müşteri bilgileri, adres bilgileri, veritabanı bağlantı bilgileri gibi. Bunların hepsi ayrı nesne olarak tanımlanabilir. 
+
+#### Sebep
+
+Genelde zayıf kod tasarımı veya "kopyala-yağıştır programcılığı" ile ortaya çıkar.
+
+#### Çözüm
+
+- Parametreler, bir sınıfın alanları olabilecek şekilde gruplanabiliyorsa: [Extract Class](#extract-class)
+- Aynı veri kümeleri, parametre olarak geçiliyorsa (örneğin; startDate, endDate): [Introduce Parameter Object](#introduce-parameter-object)
+- Metot içindeki bazı veriler, başka metoda parametre olarak verilecekse, onun yerine komple nesneyi parametre vermek: [Preserve Whole Object](#preserve-whole-object)
+
+
+#### Sonuç
+
+Kodun anlaşılabilirliğini ve organizyonunun kalitesini artırır. Parametreler dağınık olarak, etrafta duracağına, bir sınıf içinde toplanmış olur. Kod tekrarı engellenir.
+
+Kodu kısaltır.
+
+#### Ne zaman göz ardı edilebilir?
+
+Eğer sınıflar arasında gereksiz bir bağımlılık oluşturacaksa göz ardı edilebilir.
+
 ---
 
 ## KAYNAKLAR
