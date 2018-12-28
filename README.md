@@ -291,6 +291,10 @@ Daha iyi kod organizasyonu.
 - Basit `switch-case` ifadeleri.
 - Factory tasarım desenleri içindeki `switch-case` ifadeleri.
 
+### Temporary Field
+
+
+
 ---
 
 ## KAYNAKLAR
