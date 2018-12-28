@@ -14,10 +14,10 @@ Bazı kelimeler Türkçeye çevrilmedi. Bunun sebebi, birçok kelime artık, o k
   - [Refactoring Ne Zaman Yapılmalı?](#refactoring-ne-zaman-yapılmalı)
   - [Refactoring Nasıl Yapılır?](#refactoring-nasıl-yapılır)
 - [Koddan Kötü Kokular Geliyor](#koddan-kötü-kokular-geliyor)
-  - [Uzun Metotlar](#uzun-metotlar)
-  - [Büyük Sınıflar](#büyük-sınıflar)
+  - [Long Method](#long-method)
+  - [Large Class](#large-class)
   - [Primitive Obsession](#primitive-obsession)
-  - [Çok Fazla Parametre](#çok-fazla-parametre)
+  - [Long Parameter List](#long-parameter-list)
   - [Data Clumps](#data-clumps)
   - [Switch Statements](#switch-statements)
 
@@ -123,7 +123,7 @@ Testleri olmayan kodları refactor etmek, refactoring sürecindeki en tehlikeli 
 
 Refactoring yapılacak kod aslında kendisi alarm verir. Koddaki kötü kokular, refactoring için ipuçları içerir. Bu kötü kokuların neler olduğunu bilirsek, refactoring yapılacak kodları daha iyi ayırt edebiliriz.
 
-### Uzun Metotlar
+### Long Method
 
 #### Problem
 
@@ -155,7 +155,7 @@ Akıllara gelen sorulardan birisi şu; metot sayısı arttıkça performans köt
 
 Ayrıca temiz ve bakımı kolay bir kodu istediğimiz gibi kolayca refactor edebilir, yeniden tasarlayabilir ve gerçekten performanslı bir hale daha kolay getirebiliriz. 
 
-### Büyük Sınıflar
+### Large Class
 
 #### Problem
 
@@ -208,7 +208,7 @@ Bir diğer hata ise, sınıfın her bir alanının tutması gereken veri, kolay 
 - Daha anlaşılabilir ve organizasyonu daha iyi bir kod yapısı sağlar. Veri üzerindeki her işlemi temsil eden alanlar aynı yerde ve düzenli olur. Diziler içindeki verilerin sürekli ne anlama geldiğini tahmin etmekten kurtarır.
 - Kod tekrarlarını(code duplication) keşfetmek daha kolay olur. 
 
-### Çok Fazla Parametre
+### Long Parameter List
 
 #### Problem
 
