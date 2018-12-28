@@ -18,6 +18,7 @@ Bazı kelimeler Türkçeye çevrilmedi. Bunun sebebi, birçok kelime artık, o k
   - [Büyük Sınıflar](#büyük-sınıflar)
   - [Primitive Obsession](#primitive-obsession)
   - [Çok Fazla Parametre](#çok-fazla-parametre)
+  - [Veri Kümeleri](#veri-kümeleri)
 
 ## REFACTORING NEDİR?
 
