@@ -21,6 +21,7 @@ Bazı kelimeler Türkçeye çevrilmedi. Bunun sebebi, birçok kelime artık, o k
   - [Data Clumps](#data-clumps)
   - [Switch Statements](#switch-statements)
   - [Refused Bequest](#refused-bequest)
+  - [Alternative Classes with Different Interfaces](#alternative-classes-with-different-interfaces)
 
 ## REFACTORING NEDİR?
 
@@ -314,6 +315,25 @@ Bu tarz bir kodun anlaşılması zordur. Siz sürekli ilgili alanın bir veri tu
 Daha iyi kod organizasyonu ve sadelik.
 
 ### Refused Bequest
+
+#### Problem
+
+Bir sınıf kalıtım aldığı sınıfın sadece bir kaç metodunu veya özelliğini kullanıyorsa, sınıflar arasındaki hiyerarşi bozulur. İhtiyaç duyulmayan metotlar artık gereksiz hale gelir.
+
+#### Sebep
+
+Kodun yeniden kullanılması isteği, bazen gereksiz hiyerarşi kurmaya sebep olabilir. Ama kalıtım alınan sınıf ile alan sınıf arasında çok farklılık vardır. Örneğin; `AnimalLegs` sınıfından türeyen, `DogLegs` ve `ChairLegs`.
+
+#### Çözüm
+
+- Kalıtım mantıklı değil ve kalıtım alan sınıf ile üst sınıf arasında bir benzerlik yok ise: [Replace Inheritance with Delegation](#replace-inheritance-with-delegation)
+- Eğer kalıtım yapmak uygunsa, kalıtım alan sınıf içindeki gereksiz alanlardan ve metotlardan kurtulun. Üst sınıfta olan ve alt sınıfta kullanılan metot ve alanları ayrı bir alt sınıfa taşıyın ve bu sınıftan kalıtım alın: [Extract Superclass](#extract-superclass)
+
+#### Sonuç
+
+Kodun okunabilirliğini ve organizasyonunu artırır. Artık, neden `Chair` sınıfının `Animal` sıfından türediğini merak etmeye gerek yok.
+
+### Alternative Classes with Different Interfaces
 
 ---
 
