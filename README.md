@@ -20,6 +20,7 @@ Bazı kelimeler Türkçeye çevrilmedi. Bunun sebebi, birçok kelime artık, o k
   - [Long Parameter List](#long-parameter-list)
   - [Data Clumps](#data-clumps)
   - [Switch Statements](#switch-statements)
+  - [Refused Bequest](#refused-bequest)
 
 ## REFACTORING NEDİR?
 
@@ -293,7 +294,26 @@ Daha iyi kod organizasyonu.
 
 ### Temporary Field
 
+#### Problem
 
+Geçici alanlar, sadece belirli koşullar altında değer alırlar. Bu koşullarında dışında, her zaman boş olurlar.
+
+#### Sebep
+
+Genellikle geçici alanlar, çok fazla girdisi olan bir algoritma içinde kullanılmak için oluşturulurlar. Dolayısıyla, metot için çok fazla parametre geçmek yerine, sınıfın içinde, veriyi tutması için bir alan oluşturulur. Bu alanlar sadece bu algoritma içinde kullanılır ve sonrasında artık anlamsızdır.
+
+Bu tarz bir kodun anlaşılması zordur. Siz sürekli ilgili alanın bir veri tuttuğunu varsayarsınız ama o tek bir algoritma dışında, her zaman boştur.
+
+#### Çözüm
+
+- Geçici alanı ve onunla ilişkili olan işlemleri farklı bir sınıfa taşıma: [Extract Class](#extract-class) veya [Replace Method with Method Object](#replace-method-with-method-bject)
+- Geçici alanları kontrol etmek için: [Introduce Null Object](#introduce-null-object)
+
+#### Sonuç
+
+Daha iyi kod organizasyonu ve sadelik.
+
+### Refused Bequest
 
 ---
 
