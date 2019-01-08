@@ -345,3 +345,4 @@ Kodun okunabilirliğini ve organizasyonunu artırır. Artık, neden `Chair` sın
 - http://www.yilmazcihan.com/yazilim-gelistirmede-teknik-borc/
 - https://softwareengineering.stackexchange.com/questions/365017/when-is-primitive-obsession-not-a-code-smell
 - https://martinfowler.com/bliki/DataClump.html
+- http://blog.ploeh.dk/2015/09/18/temporary-field-code-smell/
