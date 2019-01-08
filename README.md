@@ -20,8 +20,10 @@ Bazı kelimeler Türkçeye çevrilmedi. Bunun sebebi, birçok kelime artık, o k
   - [Long Parameter List](#long-parameter-list)
   - [Data Clumps](#data-clumps)
   - [Switch Statements](#switch-statements)
+  - [Temporary Field](#temporary-field)
   - [Refused Bequest](#refused-bequest)
   - [Alternative Classes with Different Interfaces](#alternative-classes-with-different-interfaces)
+  - [Divergent Change](#divergent-change)
 
 ## REFACTORING NEDİR?
 
@@ -334,6 +336,32 @@ Kodun yeniden kullanılması isteği, bazen gereksiz hiyerarşi kurmaya sebep ol
 Kodun okunabilirliğini ve organizasyonunu artırır. Artık, neden `Chair` sınıfının `Animal` sıfından türediğini merak etmeye gerek yok.
 
 ### Alternative Classes with Different Interfaces
+
+#### Problem
+
+İki farklı sınıfın, aynı işlemi farklı metot isimleri ile yapması.
+
+#### Sebep
+
+Sınıflardan birini oluşturan yazılımcının, muhtemelen aynı işlevi yapan başka bir sınıfın varlığından haberi yoktur.
+
+#### Çözüm
+
+- Tüm metotların tamamen aynı olması için: [Rename Method](#rename-method)
+- Metodların imzasının ve uygulanmasının aynı olması için: [Move Method](#move-method), [Add Parameter](#add-parameter) ve [Parameterize Method](#parameterize-method)
+- Sınıflardan sadece bir bölümünün benzer olduğu durumlarda: [Extract Superclass](#extract-superclass)
+- Sınıflardan birisinin tüm işlemleri yaptığı ve diğerinin aslında gereksiz olduğunu düşündüğünüzde, gereksiz sınıfın silinmesi.
+
+#### Sonuç
+
+- Gereksiz kodların silinmesi.
+- Kod daha temiz ve okunabilir olması.
+
+#### Ne zaman göz ardı edilebilir?
+
+Bazen sınıfları birleştirmek mümkün olmayabilir veya çok zor olabilir. Mesela, sınıflar farklı kütüphanelerde olabilir. Her kütüphanenin geliştirilmesi, versiyonlanması farklı yönetilir.
+
+### Divergent Change
 
 ---
 
