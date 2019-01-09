@@ -418,3 +418,4 @@ Herhangi bir değişiklik yapmak, birçok farklı sınıfta birçok küçük de�
 - https://softwareengineering.stackexchange.com/questions/365017/when-is-primitive-obsession-not-a-code-smell
 - https://martinfowler.com/bliki/DataClump.html
 - http://blog.ploeh.dk/2015/09/18/temporary-field-code-smell/
+- https://dzone.com/articles/code-smell-series-parallel-inheritance-hierchies
