@@ -367,7 +367,7 @@ Bazen sınıfları birleştirmek mümkün olmayabilir veya çok zor olabilir. Me
 
 #### Problem
 
-Bir sınıfta değişiklik yaparken, kendinizi bir sürü metodu değiştirirken bulabilirsiniz. Örneğin; yeni bir ürün tipi eklediğinizde, bulma, gösterme, sıralama yapan metotları da değiştimek zorunda kalabilirsiniz.
+Bir sınıfta değişiklik yaparken, kendinizi bir sürü metodu değiştirirken bulabilirsiniz. Örneğin; yeni bir ürün tipi eklediğinizde, bulma, gösterme, sıralama yapan metotları da değiştirmek zorunda kalabilirsiniz.
 
 #### Sebep
 
