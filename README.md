@@ -25,6 +25,7 @@ Bazı kelimeler Türkçeye çevrilmedi. Bunun sebebi, birçok kelime artık, o k
   - [Alternative Classes with Different Interfaces](#alternative-classes-with-different-interfaces)
   - [Divergent Change](#divergent-change)
   - [Shotgun Surgery](#shotgun-surgery)
+  - [Parallel Inheritance Hierarchies](#parallel-inheritance-hierarchies)
 
 ## REFACTORING NEDİR?
 
@@ -385,7 +386,26 @@ Genelde bu problemin sebebi, yazılımın kötü yapısı/tasarımı ve "copy-pa
 
 ### Shotgun Surgery
 
+#### Problem
 
+Herhangi bir değişiklik yapmak, birçok farklı sınıfta birçok küçük değişiklik yapmanızı gerektirir.
+
+#### Sebep
+
+Çok sayıda sınıf arasında tek bir sorumluluk dağılmıştır. Bu aşırı bir şekilde "Divergent Change" uygulamasından sonra olabilir.
+
+#### Çözüm
+
+- Mevcut sınıf davranışlarını tek bir sınıfa taşı: [Move Method](#move-method) ve [Move Field](#move-field).
+- Kodları taşıdıkdan sonra, diğer sınıflar neredeyse boş kalıyorsa, boş kalan sınıflardan kurtul: [Inline Class](#inline-class).
+
+#### Sonuç
+
+- Daha iyi bir kod organizasyonu.
+- Daha az kod tekrarı.
+- Kolay bakım.
+
+### Parallel Inheritance Hierarchies
 
 ---
 
