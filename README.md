@@ -26,7 +26,8 @@ Bazı kelimeler Türkçeye çevrilmedi. Bunun sebebi, birçok kelime artık, o k
   - [Divergent Change](#divergent-change)
   - [Shotgun Surgery](#shotgun-surgery)
   - [Parallel Inheritance Hierarchies](#parallel-inheritance-hierarchies)
-  - [Dispensables](#dispensables)
+  - [Comments](#comments)
+  - [Duplicate Code](#duplicate-code)
 
 ## REFACTORING NEDİR?
 
@@ -429,7 +430,39 @@ Hiyerarşi küçük olduğu sürece çok problem değil ama yeni sınıflar ekle
 
 Bazen paralel sınıf hiyerarşilerine sahip olmak, yazılımın mimarisiyle daha büyük karışıklıktan kaçınmanın bir yoludur. Hiyerarşileri çoğaltma girişimlerinizin daha çirkin kodlar ürettiğini tespit ederseniz, tüm değişikliklerinizi geri alın ve bu koda alışın.
 
-### Dispensables
+### Comments
+
+#### Problem
+
+Metodun açıklayıcı yorumlarla dolu olması.
+
+#### Sebep
+
+Yorumlar genellikle yazılımcının kendi kodunun sezgisel olarak anlaşılmadığını veya açık olmadığını fark etmesiyle, iyi niyetle yazılır. Bu gibi durumlarda, yorumlar, kötü kokan kodun kokusunu gizleyen deodorant gibidir.
+
+En iyi yorum bir metot veya sınıf için iyi bir addır.
+
+Bir kod parçasının yorum yapılmadan anlaşılmayacağını düşünüyorsanız, kod yapısını yorumları gereksiz kılacak şekilde değiştirmeyi deneyin.
+
+#### Çözüm
+
+- Bir yorumun karmaşık bir ifadeyi açıklaması amaçlanıyorsa, ifade, anlaşılabilir alt ifadelere bölünmelidir: [Extract Variable](#extract-variable).
+- Bir yorum kodun bir bölümünü açıklıyorsa, bu bölüm ayrı bir metot yazpılabilir. Yeni yöntemin adı, büyük olasılıkla, yorum metninin kendisinden alınabilir: [Extract Method](#extract-method).
+- Bir metot zaten oluşturulmuşsa, ancak metodun ne yaptığını açıklamak için yorumlar hala gerekliyse, metoda açıklayıcı bir isim verin: [Rename Method](#rename-method).
+- Sistemin çalışması için gerekli olan bir durum hakkında kurallar koymak için yorum yazmak gerekirse: [Introduce Assertion](#introduce-assertion).
+
+#### Sonuç
+
+Kod daha sezgisel ve açık hale gelir.
+
+#### Ne zaman göz ardı edilebilir?
+
+- Bir şeyin neden belirli bir şekilde uygulandığını açıklarken.
+- Karmaşık algoritmaları açıklarken (algoritmayı basitleştirmek için tüm diğer yöntemler denendikten sonra).
+
+### Duplicate Code
+
+
 
 ---
 
