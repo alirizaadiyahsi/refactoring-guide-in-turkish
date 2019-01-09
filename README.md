@@ -26,6 +26,7 @@ Bazı kelimeler Türkçeye çevrilmedi. Bunun sebebi, birçok kelime artık, o k
   - [Divergent Change](#divergent-change)
   - [Shotgun Surgery](#shotgun-surgery)
   - [Parallel Inheritance Hierarchies](#parallel-inheritance-hierarchies)
+  - [Dispensables](#dispensables)
 
 ## REFACTORING NEDİR?
 
@@ -406,6 +407,29 @@ Herhangi bir değişiklik yapmak, birçok farklı sınıfta birçok küçük de�
 - Kolay bakım.
 
 ### Parallel Inheritance Hierarchies
+
+#### Problem
+
+Her ne zaman bir sınıf için alt sınıf oluştursan, kendini başka bir sınıf için alt sınıf oluşturma ihtiyacı duyarken bulabilirsin. İlişkili iki sınıf farklı dallardan hiyerarşi oluşturur.
+
+#### Sebep
+
+Hiyerarşi küçük olduğu sürece çok problem değil ama yeni sınıflar eklenmeye başlandıkça, değişiklik yapmak sürekli zorlaşmaya başlar.
+
+#### Çözüm
+
+- Hiyerarşilerin en tepesindeki sınıfların ikisinide kalıtım alan yeni bir hiyerarşi veya tepedeki paralel sınıfların birleşiminden yeni bir hiyerarşi: [Move Method](move-method) ve [Move Field](#move-field).
+
+#### Sonuç
+
+- Kod organizasyonu iyileşmesi.
+- Kod tekrarını engellemesi.
+
+#### Ne zaman göz ardı edilebilir?
+
+Bazen paralel sınıf hiyerarşilerine sahip olmak, yazılımın mimarisiyle daha büyük karışıklıktan kaçınmanın bir yoludur. Hiyerarşileri çoğaltma girişimlerinizin daha çirkin kodlar ürettiğini tespit ederseniz, tüm değişikliklerinizi geri alın ve bu koda alışın.
+
+### Dispensables
 
 ---
 
