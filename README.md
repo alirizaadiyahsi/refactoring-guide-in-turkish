@@ -24,6 +24,7 @@ Bazı kelimeler Türkçeye çevrilmedi. Bunun sebebi, birçok kelime artık, o k
   - [Refused Bequest](#refused-bequest)
   - [Alternative Classes with Different Interfaces](#alternative-classes-with-different-interfaces)
   - [Divergent Change](#divergent-change)
+  - [Shotgun Surgery](#shotgun-surgery)
 
 ## REFACTORING NEDİR?
 
@@ -362,6 +363,29 @@ Sınıflardan birini oluşturan yazılımcının, muhtemelen aynı işlevi yapan
 Bazen sınıfları birleştirmek mümkün olmayabilir veya çok zor olabilir. Mesela, sınıflar farklı kütüphanelerde olabilir. Her kütüphanenin geliştirilmesi, versiyonlanması farklı yönetilir.
 
 ### Divergent Change
+
+#### Problem
+
+Bir sınıfta değişiklik yaparken, kendinizi bir sürü metodu değiştirirken bulabilirsiniz. Örneğin; yeni bir ürün tipi eklediğinizde, bulma, gösterme, sıralama yapan metotları da değiştimek zorunda kalabilirsiniz.
+
+#### Sebep
+
+Genelde bu problemin sebebi, yazılımın kötü yapısı/tasarımı ve "copy-paste programming" in sonucudur.
+
+#### Çözüm
+
+- Sınıfın davranışını bölmek: [Extract Class](#extract-class).
+- Farklı sınıflar aynı davranışa sahipse, sınıfları kalıtım yoluyla birleştirmek: [Extract Superclass](#extract-superclass) ve [Extract Subclass](#extract-subclass).
+
+#### Sonuç
+
+- Kod organizasyonunun iyileştirilmesi.
+- Kod tekrarının azaltılması.
+- Desteği basitleştirme.
+
+### Shotgun Surgery
+
+
 
 ---
 
