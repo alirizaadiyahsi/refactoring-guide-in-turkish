@@ -29,6 +29,7 @@ Bazı kelimeler Türkçeye çevrilmedi. Bunun sebebi, birçok kelime artık, o k
   - [Comments](#comments)
   - [Duplicate Code](#duplicate-code)
   - [Lazy Class](#lazy-class)
+  - [Data Class](#data-class)
 
 ## REFACTORING NEDİR?
 
@@ -499,6 +500,30 @@ Bazen kod tekrarı bilerek yapılır. İşin yetişmesi gerek zamanın sonuna ge
 Çok nadir durumlarda, iki kod parçasının birleştirilmesi, kodu daha az sezgisel ve haha az açık hale getirebilir.
 
 ### Lazy Class
+
+#### Problem
+
+Bir sınıfın anlaşılması ve bakımı, zaman ve maliyet gerektirir. Dolayısı ile bir sınıf anlaşılmıyorsa ve yeterince istekleri karşılamıyorsa, o sınıf silinmelidir.
+
+#### Sebep
+
+Belki bir sınıf tamamen işlevsel olacak şekilde tasarlanmıştır, ancak refactoring yaptıktan sonra saçma derecede küçük hale gelmiştir. Veya gelecekte yapılacak ama daha yapılmamış bir özellik için tasarlanmış olabilir.
+
+#### Çözüm
+
+- Neredeyse işe yaramaz olan bileşenler için: [Inline Class](#inline-class).
+- Az işlevli alt sınıflar için: [Collapse Hierarchy](#collapse-hierarchy).
+
+#### Sonuç
+
+- Kod uzunluğunu azaltır.
+- Bakımı kolaylaştırır.
+
+#### Ne zaman göz ardı edilebilir?
+
+Koddaki basitlik ve açıklık arasınki dengeyi korumak şartı ile, gelecekteki gelişmelere yönelik niyetleri betimlemek için bir Lazy Class oluşturulabilir.
+
+### Data Class
 
 ---
 
