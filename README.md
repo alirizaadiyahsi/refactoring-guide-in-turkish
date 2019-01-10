@@ -28,6 +28,7 @@ Bazı kelimeler Türkçeye çevrilmedi. Bunun sebebi, birçok kelime artık, o k
   - [Parallel Inheritance Hierarchies](#parallel-inheritance-hierarchies)
   - [Comments](#comments)
   - [Duplicate Code](#duplicate-code)
+  - [Lazy Class](#lazy-class)
 
 ## REFACTORING NEDİR?
 
@@ -462,7 +463,42 @@ Kod daha sezgisel ve açık hale gelir.
 
 ### Duplicate Code
 
+#### Problem
 
+İki kod parçasının neredeyse aynı olması.
+
+#### Sebep
+
+Kod tekrarı, birden çok yazılımcının aynı yazılımın farklı bölümlerinde aynı anda çalıştığı durumlarda olur. Farklı işler üzerinde çalıştıklarından, diğer yazılımcının kendi ihtiyaçları için benzer bir kod yazmış olabileceğinin farkında olmayabilir.
+
+Ayrıca, kodun belirli kısımları farklı göründüğü halde aslında aynı işi yaptığı durumlar da vardır. Bu tür bir kod tekrarını bulmak ve düzeltmek zor olabilir.
+
+Bazen kod tekrarı bilerek yapılır. İşin yetişmesi gerek zamanın sonuna geliniyorsa ve mevcut kod gereken iş için "neredeyse doğru" ise acemi yazılımcı, "kopyala-yapıştır" yapmaktan kendini alamayabilir. Bazen de yazılımcı tembellik ederek kod tekrarına göz yumabilir.
+
+#### Çözüm
+
+- Aynı kod, aynı sınıfta iki veya daha fazla metotta bulunursa: [Extract Method](#extract-method).
+- Aynı kod, aynı seviyedeki iki alt sınıfta bulunursa;
+  - İki sınıf içinde, alanı üste taşıma [Pull Up Field](#pull-up-field) yöntemini takip ederek: [Extract Method](#extract-method).
+  - Tekrar eden kod bir yapıcı metot içinde ise: [Pull Up Constructor Body](#pull-up-constructor-body).
+  - Eğer yinelenen kod benzer ancak tamamen aynı değilse: [Form Template Method](#form-template-method).
+  - İki metot da aynı şeyi yapar, ancak farklı algoritmalar kullanırsa, en iyi algoritmayı seçin: [Substitute Algorithm](#substitute-algorithm).
+- Tekrar eden kod iki farklı sınıfta bulunursa;
+  - Sınıflar bir hiyerarşinin parçası değilse: [Extract Superclass](#extract-superclass).
+  - Bir üst sınıf oluşturmak zor veya imkansızsa: [Extract Class](#extract-class).
+- Çok sayıda koşullu ifade varsa ve aynı kodu çalıştırıyorsa (yalnızca koşullu ifadeler farklı), bu operatörleri tek bir koşulda birleştirin: [Consolidate Conditional Expression](#consolidate-conditional-expression) ve [Extract Method](#extract-method).
+- Aynı kod, koşullu bir ifadenin tüm dallarında uygulanıyorsa: aynı kodu, koşul ağacının dışına yerleştirin: [Consolidate Duplicate Conditional Fragments](#consolidate-duplicate-conditional-fragments).
+
+#### Sonuç
+
+- Tekrar eden kodun birleştirilmesi, kodunuzun yapısını basitleştirir ve daha kısa hale getirir.
+- Sadeleştirme + kısayol = basitleştirmesi kolay ve desteklemesi daha ucuz kod.
+
+#### Ne zaman göz ardı edilebilir?
+
+Çok nadir durumlarda, iki kod parçasının birleştirilmesi, kodu daha az sezgisel ve haha az açık hale getirebilir.
+
+### Lazy Class
 
 ---
 
