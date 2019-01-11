@@ -543,3 +543,4 @@ Martin Fowler'ın "Code Smell" dediği "Data Class", çoğu yazılımcı tarafı
 - http://blog.ploeh.dk/2015/09/18/temporary-field-code-smell/
 - https://dzone.com/articles/code-smell-series-parallel-inheritance-hierchies
 - https://softwareengineering.stackexchange.com/questions/338195/why-are-data-classes-considered-a-code-smell
+- https://stackoverflow.com/questions/16719270/is-data-class-really-a-code-smell
