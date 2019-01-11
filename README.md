@@ -30,6 +30,7 @@ Bazı kelimeler Türkçeye çevrilmedi. Bunun sebebi, birçok kelime artık, o k
   - [Duplicate Code](#duplicate-code)
   - [Lazy Class](#lazy-class)
   - [Data Class](#data-class)
+  - [Dead Code](#dead-code)
 
 ## REFACTORING NEDİR?
 
@@ -525,6 +526,10 @@ Koddaki basitlik ve açıklık arasınki dengeyi korumak şartı ile, gelecektek
 
 ### Data Class
 
+Martin Fowler'ın "Code Smell" dediği "Data Class", çoğu yazılımcı tarafından, "Code Smell" olarak kabul edilmiyor. Data Transfer Objects, Entity Objects vs. gibi birçok kullanımı var ve bunlar kaçınılmaz. Peki kim haklı?
+
+### Dead Code
+
 ---
 
 ## KAYNAKLAR
@@ -537,3 +542,4 @@ Koddaki basitlik ve açıklık arasınki dengeyi korumak şartı ile, gelecektek
 - https://martinfowler.com/bliki/DataClump.html
 - http://blog.ploeh.dk/2015/09/18/temporary-field-code-smell/
 - https://dzone.com/articles/code-smell-series-parallel-inheritance-hierchies
+- https://softwareengineering.stackexchange.com/questions/338195/why-are-data-classes-considered-a-code-smell
