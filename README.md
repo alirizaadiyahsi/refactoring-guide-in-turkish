@@ -31,6 +31,7 @@ Bazı kelimeler Türkçeye çevrilmedi. Bunun sebebi, birçok kelime artık, o k
   - [Lazy Class](#lazy-class)
   - [Data Class](#data-class)
   - [Dead Code](#dead-code)
+  - [Speculative Generality](#speculative-generality)
 
 ## REFACTORING NEDİR?
 
@@ -494,7 +495,7 @@ Bazen kod tekrarı bilerek yapılır. İşin yetişmesi gerek zamanın sonuna ge
 #### Sonuç
 
 - Tekrar eden kodun birleştirilmesi, kodunuzun yapısını basitleştirir ve daha kısa hale getirir.
-- Sadeleştirme + kısayol = basitleştirmesi kolay ve desteklemesi daha ucuz kod.
+- Sadeleştirme + kısayol = basitleştirmesi kolay ve bakımı daha ucuz kod.
 
 #### Ne zaman göz ardı edilebilir?
 
@@ -529,6 +530,31 @@ Koddaki basitlik ve açıklık arasınki dengeyi korumak şartı ile, gelecektek
 Martin Fowler'ın "Code Smell" dediği "Data Class", çoğu yazılımcı tarafından, "Code Smell" olarak kabul edilmiyor. Data Transfer Objects, Entity Objects vs. gibi birçok kullanımı var ve bunlar kaçınılmaz. Peki kim haklı?
 
 ### Dead Code
+
+#### Problem
+
+Bir değişken, parametre, alan, metot veya sınıfın artık kullanılmamasıdır(genellikle artık eskimiş olduğundan).
+
+#### Sebep
+
+Yazılımın gereksinimleri değiştiğinde veya düzeltmeler yapıldığında, eski kodu temizlemek için hiç kimse zaman harcamak istemez. Bu tür bir kod karmaşık kod bloklarında da bulunabilir.
+
+#### Çözüm
+
+Ölü kodu bulmanın en hızlı yolu iyi bir IDE kullanmaktır. Çözmek ise basit; sil.
+
+- Kullanılmayan kodu ve gereksiz dosyaları silin.
+- Gereksiz bir sınıfın bulunması durumunda: [Inline Class](#inline-class) ve [Collapse Hierarchy](#collapse-hierarchy).
+- Gereksiz parametreleri kaldırmak için: [Remove Parameter](#remove-parameter).
+
+#### Sonuç
+
+- Kod uzunluğu azalır.
+- Kolay bakım.
+
+### Speculative Generality
+
+
 
 ---
 
