@@ -32,6 +32,7 @@ Bazı kelimeler Türkçeye çevrilmedi. Bunun sebebi, birçok kelime artık, o k
   - [Data Class](#data-class)
   - [Dead Code](#dead-code)
   - [Speculative Generality](#speculative-generality)
+  - [Feature Envy](#feature-envy)
 
 ## REFACTORING NEDİR?
 
@@ -553,6 +554,34 @@ Yazılımın gereksinimleri değiştiğinde veya düzeltmeler yapıldığında, 
 - Kolay bakım.
 
 ### Speculative Generality
+
+#### Problem
+
+Kullanılmayan bir sınıf, metot, alan veya parametrenin olmaması.
+
+#### Sebep
+
+Bazen kod, asla uygulanamayacak olan gelecekteki özellikleri desteklemek için yazılır. Sonuç olarak, kodun anlaşılması ve bakımı zorlaşır.
+
+#### Çözüm
+
+- Kullanılmayan soyut sınıfları kaldırmak için: [Collapse Hierarchy](#collapse-hierarchy).
+- Gereksiz fonksiyonelliklerin başka bir sınıfa devredilmesi engellemek için: [Inline Class](#inline-class).
+- Kullanılmayan metotlardan kurtulmak için: [Inline Method](#inline-method).
+- Gereksiz parametreli metotlar için: [Remove Parameter](#remove-parameter).
+- Kullanılmayan alanlar kolayca silinebilir.
+
+#### Sonuç
+
+- Temiz kod.
+- Daha kolay bakım.
+
+#### Ne zaman göz ardı edilebilir?
+
+- Eğer bir framework geliştiriyorsanız, framework'ün kendisinin kullanmadığı ama kullanıcılarının kullanabileceği bir işlev için göz ardı edilebilir.
+- Bazı birim testler, sınıf hakkında bilgileri kullanamk için ekstra alanlara ihtiyaç duyabilir. Bundan dolayı, gereksiz kod bloklarını silerken, birim testlerin bu kod bloklarını kullanıp kullanmadığından emin olun.
+
+### Feature Envy
 
 
 
