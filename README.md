@@ -33,6 +33,7 @@ Bazı kelimeler Türkçeye çevrilmedi. Bunun sebebi, birçok kelime artık, o k
   - [Dead Code](#dead-code)
   - [Speculative Generality](#speculative-generality)
   - [Feature Envy](#feature-envy)
+  - [Inappropriate Intimacy](#inappropriate-intimacy)
 
 ## REFACTORING NEDİR?
 
@@ -583,7 +584,32 @@ Bazen kod, asla uygulanamayacak olan gelecekteki özellikleri desteklemek için 
 
 ### Feature Envy
 
+#### Problem
 
+Bir metodun, başka bir sınıfın verisine, kendisindeki veriden daha fazla erişmesi.
+
+#### Sebep
+
+Alanlar veri sınıfına taşınırken oluşur. Bu durumda, veri ile işlem yapan kodları da bu sınıfa taşımak isteyebilirsiniz.
+
+#### Çözüm
+
+Genelde veri ve bu veriyi kullanan kod blokları birlikte değişir. Bundan dolayı hepsini aynı yerde tutmak gerekir. 
+
+- Eğer metotlar taşınacaksa: [Move Method](#move-method).
+- Bir metodun yalnızca bir kısmı başka bir nesnenin verilerine erişiyorsa: [Extract Method](#extract-method).
+- Bir yöntem diğer birkaç sınıftan fonksiyonlar kullanıyorsa, ilk önce hangi sınıfların kullanılan veriyi içerdiğini belirleyin. Ardından metodu bu sınıfa diğer verilerle birlikte taşıyın. Alternatif olarak, metot küçük parçalara ayrılıp, farklı sınıflar içinde farklı metotlar olarak yer alabilirler: [Extract Method](#extract-method).
+
+#### Sonuç
+
+- Daha az kod tekrarı (veri işleme kodu merkezi bir yere yerleştirilirse).
+- Daha iyi kod organizasyonu (veri işleme metotları, ile veri aynı yerde olursa).
+
+#### Ne zaman göz ardı edilebilir?
+
+Bazen davranış bilerek verileri tutan sınıftan ayrı tutulur. Bunun genel avantajı, davranışı dinamik olarak değiştirme yeteneğidir.
+
+### Inappropriate Intimacy
 
 ---
 
