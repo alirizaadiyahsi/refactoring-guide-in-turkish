@@ -36,6 +36,7 @@ Bazı kelimeler Türkçeye çevrilmedi. Bunun sebebi, birçok kelime artık, o k
   - [Inappropriate Intimacy](#inappropriate-intimacy)
   - [Message Chains](#message-chains)
   - [Middle Man](#middle-man)
+  - [Incomplete Library Class](#incomplete-library-class)
 
 ## REFACTORING NEDİR?
 
@@ -658,6 +659,31 @@ Bir istemci bir nesne talep ettiğinde, talep edilen nesne başka bir tane daha 
 Aşırı agresif sınıf gizleme, işlevselliğin gerçekte nerede olduğunu görmenin zor olduğu kodlara neden olabilir. Aksi halde başka bir sıkıntı oluşabilir: [Middle Man](#middle-man).
 
 ### Middle Man
+
+#### Problem
+
+Bir sınıfın tek işi, tüm işleri başka sınıflara yaptırmak.
+
+#### Sebep
+
+"Message Chains" den kurtulmak için aşırı derecede kod başka sınıflara taşındığında bu durum oluşabilir. Diğer bir sebepte, bir sınıfın kodları parça parça başka sınıflara taşındığında ortaya çıkar. İçi boşalan bir sınıf, içi boş bir kabuk gibi kalır.
+
+#### Çözüm
+
+Bir sınıf içindeki bir çok metot başka sınıflara alınıyorsa: [Remove Middle Man](#remove-middle-man).
+
+#### Sonuç
+
+Daha az kod.
+
+#### Ne zaman göz ardı edilebilir?
+
+- Sınıflar arası bağımlılıkları önlemek için [Middle Man](#middle-man) eklenmiş olabilir.
+- Bazı tasarım desenleri bilerek [Middle Man](#middle-man) yaratır.
+
+### Incomplete Library Class
+
+
 
 ---
 
