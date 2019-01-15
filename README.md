@@ -699,3 +699,4 @@ Daha az kod.
 - https://dzone.com/articles/code-smell-series-parallel-inheritance-hierchies
 - https://softwareengineering.stackexchange.com/questions/338195/why-are-data-classes-considered-a-code-smell
 - https://stackoverflow.com/questions/16719270/is-data-class-really-a-code-smell
+- http://wiki3.cosc.canterbury.ac.nz/index.php/Middle_man_smell
