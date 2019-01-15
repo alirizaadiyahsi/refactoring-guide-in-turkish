@@ -34,6 +34,7 @@ Bazı kelimeler Türkçeye çevrilmedi. Bunun sebebi, birçok kelime artık, o k
   - [Speculative Generality](#speculative-generality)
   - [Feature Envy](#feature-envy)
   - [Inappropriate Intimacy](#inappropriate-intimacy)
+  - [Message Chains](#message-chains)
 
 ## REFACTORING NEDİR?
 
@@ -610,6 +611,28 @@ Genelde veri ve bu veriyi kullanan kod blokları birlikte değişir. Bundan dola
 Bazen davranış bilerek verileri tutan sınıftan ayrı tutulur. Bunun genel avantajı, davranışı dinamik olarak değiştirme yeteneğidir.
 
 ### Inappropriate Intimacy
+
+#### Problem
+
+Bir sınıf, başka bir sınıfın "internal" alanlarını ve metotlarını kullanır. Sınıflar ne kadar birbirinden bağımsız olursa, yeniden kullanımı ve bakımı kolaylaşır.
+
+#### Sebep
+
+Kodların parça parça taşınması sırasında veya yanlış tasarımdan kaynaklanabilir.
+
+#### Çözüm
+
+- En hızlı ve basit çözüm, bir sınıfın metotlarını ve alanlarını başka sınıfa taşımak (eğer ilk sınıf bu metotlara tamamen ihtiyaç duymuyorsa): [Move Method](#move-method) ve [Move Field](#move-field).
+- Sınıflar ilişkili ise, o zaman gerçekten ilişkili sınıflar yapmak: [Extract Class](#extract-class) ve [Hide Delegate](#hide-delegate).
+- Sınıflar karşılıklı olarak birbirine bağımlıysa: [Change Bidirectional Association to Unidirectional](#change-bidirectional-association-to-unidirectional).
+- Bu "samimiyet" bir alt sınıf ile üst sınıf arasındaysa: [Replace Delegation with Inheritance](#replace-delegation-with-inheritance).
+
+#### Sonuç
+
+- Kod organizasyonunu geliştirir. 
+- Bakımı ve kodun yeniden kullanımını kolaylaştırır.
+
+### Message Chains
 
 ---
 
