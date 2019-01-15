@@ -35,6 +35,7 @@ Bazı kelimeler Türkçeye çevrilmedi. Bunun sebebi, birçok kelime artık, o k
   - [Feature Envy](#feature-envy)
   - [Inappropriate Intimacy](#inappropriate-intimacy)
   - [Message Chains](#message-chains)
+  - [Middle Man](#middle-man)
 
 ## REFACTORING NEDİR?
 
@@ -633,6 +634,30 @@ Kodların parça parça taşınması sırasında veya yanlış tasarımdan kayna
 - Bakımı ve kodun yeniden kullanımını kolaylaştırır.
 
 ### Message Chains
+
+#### Problem
+
+Kodda `$a->b()->c()->d()` gibi bir dizi çağrı görürsünüz. Bu zincirler, sınıfların birbirlerine aşırı bağlı olmasına sebep olur. Bir sınıfta yapılan değişiklikler, diğerlerini de etkiler.
+
+#### Sebep
+
+Bir istemci bir nesne talep ettiğinde, talep edilen nesne başka bir tane daha ister ve bir mesaj zinciri oluşur. 
+
+#### Çözüm
+
+- Bir mesaj zincirini silmek için: [Hide Delegate](#hide-delegate).
+- Bazen son nesnenin neden kullanıldığını düşünmek daha iyidir. Belkide bunu zincirin en önüne taşımak daha mantıklı hale gelecektir: [Extract Method](#extract-method) ve [Move Method](#move-method).
+
+#### Sonuç
+
+- Bir zincirin sınıfları arasındaki bağımlılığı azaltır. 
+- Şişirilmiş kodun miktarını azaltır.
+
+#### Ne zaman göz ardı edilebilir?
+
+Aşırı agresif sınıf gizleme, işlevselliğin gerçekte nerede olduğunu görmenin zor olduğu kodlara neden olabilir. Aksi halde başka bir sıkıntı oluşabilir: [Middle Man](#middle-man).
+
+### Middle Man
 
 ---
 
