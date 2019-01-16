@@ -37,6 +37,7 @@ Bazı kelimeler Türkçeye çevrilmedi. Bunun sebebi, birçok kelime artık, o k
   - [Message Chains](#message-chains)
   - [Middle Man](#middle-man)
   - [Incomplete Library Class](#incomplete-library-class)
+- [Refactoring Teknikleri](#refactoring-teknikleri)
 
 ## REFACTORING NEDİR?
 
@@ -682,6 +683,29 @@ Daha az kod.
 - Bazı tasarım desenleri bilerek [Middle Man](#middle-man) yaratır.
 
 ### Incomplete Library Class
+
+#### Problem
+
+Er ya da geç, kütüphaneler kullanıcı ihtiyaçlarını karşılamayı durdurur. Tek çözüm ise kütüphaneyi değiştirmek ama kütüphanenin sadece okunabilir (read-only) olması, kütüphanenin değiştirilmesini imkansız hale getirir.
+
+#### Sebep
+
+Kütüphanenin yazarı, ihtiyaç duyduğunuz özellikleri sağlamadığında ya da geliştirmeyi reddettiğinde ortaya çıkar.
+
+#### Çözüm
+
+- Bir kütüphane sınıfına birkaç metot tanıtmak: [Introduce Foreign Method](#introduce-foreign-method).
+- Bir sınıf kütüphanesinde büyük değişiklikler için: [Introduce Local Extension](#introduce-local-extension).
+
+#### Sonuç
+
+Kod çoğaltmasını azaltır (sıfırdan kendi kütüphanenizi oluşturmak yerine, hala mevcut olandan birisini kullanabilirsiniz).
+
+#### Ne zaman göz ardı edilebilir?
+
+Bir kütüphaneyi genişletmek, eğer kütüphanedeki değişiklikler koddaki değişiklikleri içeriyorsa ek iş üretebilir.
+
+## Refactoring Teknikleri
 
 
 
