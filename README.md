@@ -2,9 +2,9 @@
 
 ## ÖNSÖZ
 
-Bu dökümanın, bir makale olarak değilde GitHub'da olmasının sebebi, herkesin katkılarına açık bir şekilde sürekli güncel bir kılavuz hazırlamak.
+Bu dökümanın bir makale olarak değil de GitHub'da olmasının sebebi, herkesin katkılarına açık bir şekilde sürekli güncel bir kılavuz hazırlamak.
 
-Bazı kelimeler Türkçeye çevrilmedi. Bunun sebebi, birçok kelime artık, o kalıp içinde daha anlamlı oluyor. Örneğin, Refactoring, Exract Method, Primitive Obsession vs. 
+Bazı kelimeler Türkçeye çevrilmedi. Bunun sebebi; birçok kelime artık o kalıp içinde daha anlamlı oluyor. Örneğin; Refactoring, Exract Method, Primitive Obsession vs. 
 
 ## İÇİNDEKİLER
 
