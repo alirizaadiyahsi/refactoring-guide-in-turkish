@@ -4,7 +4,7 @@
 
 Bu dökümanın bir makale olarak değil de GitHub'da olmasının sebebi, herkesin katkılarına açık bir şekilde sürekli güncel bir kılavuz hazırlamak.
 
-Bazı kelimeler Türkçeye çevrilmedi. Bunun sebebi, birçok kelime artık o kalıp içinde daha anlamlı oluyor. Örneğin; Refactoring, Exract Method, Primitive Obsession vs. 
+Bazı kelimeler Türkçeye çevrilmedi. Bunun sebebi, birçok kelime artık o kalıp içinde daha anlamlı oluyor. Örneğin; Refactoring, Extract Method, Primitive Obsession vs. 
 
 ## İÇİNDEKİLER
 
@@ -65,7 +65,7 @@ Temiz kod bakımı kolaylaştırır, hız kazandırır ve bakım maliyetini dü�
 
 Hiç kimse, projeye zarar vermek için bilerek kötü kod yazmaz. Herkes elinden gelenin en iyisini yapmak ister. Kötü kod yazmaya iten sebepler vardır. Kötü yazılan kod da, ilerde başımıza dert açabilir.
 
-Teknik borcu anlatmak için, bankadan çekilen kredi örnek verilir. Acil ödemeniz gereken bir borç için, günü kurtarmak adına çekilen kredi, daha sonra daha fazla borç olarak tekrar karşımıza çıkar. Çekilen tutar tekrar faizi ile geri ödenir. 
+Teknik borcu anlatmak için, bankadan çekilen kredi örnek verilir. Acil ödemeniz gereken bir borç için, günü kurtarmak adına çekilen kredi, daha sonra daha fazla borç olarak tekrar karşımıza çıkar. Çekilen tutar tekrar faiziyle geri ödenir. 
 
 Aynı şekilde, daha hızlı geliştirmek adına; mesela test yazmadan, geliştirilen her özellik, gün geçtikçe bakım maliyetini artırarak, geliştirme hızını da düşürür, ta ki teknik borcu ödeyene kadar.
 
@@ -77,14 +77,13 @@ Bazen iş koşulları, tamamlanmadan önce özellikleri kullanıma sunmaya zorla
 
 #### Teknik borcun sonuçlarının anlaşılmaması
 
-İşverenler/yöneticiler, geride teknik borç biriktirdikçe, maliyetin katlanarak arttığını anlamayabilirler. Bundan dolayıda, ekibin refactoring için zaman ayırmasını, vakit kaybı olarak görürler ve değer vermezler.
-
+İşverenler/yöneticiler, geride teknik borç biriktirdikçe, maliyetin katlanarak arttığını anlamayabilirler. Bundan dolayı da, ekibin refactoring için zaman ayırmasını, vakit kaybı olarak görürler ve değer vermezler.
 
 #### Ekip üyeleri arasındaki iletişim eksikliği 
 
-İletişim eksikliğinden dolayı bilgi, ekip üyeleri arasında sağlıklı dağılmaz veya tecrübeli birisi bilgiyi tecrübesiz olana yanlış aktarabilir. Bundan dolayıda ekip elindeki güncel olmayan, eksik veya yanlış anlaşılmış bilgi ile geliştirme yapabilir. 
+İletişim eksikliğinden dolayı bilgi, ekip üyeleri arasında sağlıklı dağılmaz veya tecrübeli birisi bilgiyi tecrübesiz olana yanlış aktarabilir. Bundan dolayı da ekip elindeki güncel olmayan, eksik veya yanlış anlaşılmış bilgiyle geliştirme yapabilir. 
 
-#### Uzun süre farklı dallarda(branch) çalışılması
+#### Uzun süre farklı dallarda (branch) çalışılması
 
 Teknik borcun birikmesine ve birleştirme işleminde daha da artmasına sebep olur. Toplam teknik borç, ayrı ayrı biriken teknik borç toplamından daha büyük olur.
 
@@ -101,7 +100,7 @@ Bazen sadece tecrübesizlikten veya beceriksizlikten kötü kod yazarak, teknik 
 #### Üç kural
 
 1. İlk defa bir şey yapıyorsan, sadece yap.
-2. İkinci defa aynı şeyi yapıyorsan, tekrara düşmekten çekin ama yinede bir şekilde yap.
+2. İkinci defa aynı şeyi yapıyorsan, tekrara düşmekten çekin ama yine de bir şekilde yap.
 3. Üçüncü defa aynı şeyi yapıyorsan, refactor et.
 
 #### Özellik ekleme
@@ -128,13 +127,13 @@ Ancak bazı kod altyapısı o kadar kötüdür ki, ne yaparsanız yapın iyileş
 
 #### Refactoring sırasında yeni bir özellik/fonksiyonelite eklenmemeli
 
-Yeni özellik eklemek için yazılan kodlar ile refactoring için yazılan kodlar farklı commit'lerde olmalıdır. Refactoring kodun işlevini değiştirmez, sadece daha iyi hale getirir.
+Yeni özellik eklemek için yazılan kodlarla refactoring için yazılan kodlar farklı commit'lerde olmalıdır. Refactoring kodun işlevini değiştirmez, sadece daha iyi hale getirir.
 
 #### Tüm testler refactoring işleminden sonra başarılı olmalı
 
 Testleri olmayan kodları refactor etmek, refactoring sürecindeki en tehlikeli kısımdır. Refactoring yaptıktan sonra 2 durumda testler başarısız olabilir.
 
-- **Refactoring sırasında hata yaptın ve çokta önemli değil:** Devam et ve hatayı düzelt.
+- **Refactoring sırasında hata yaptın ve çok da önemli değil:** Devam et ve hatayı düzelt.
 - **Testler çok alt seviye kodları test ediyordur. Örneğin, bir sınıfın private metodunu test ediyordur:** Bu durumda, sıkıntı testlerdedir. Dolayısıyla testleri de refactor edebiliriz veya yüksek seviye kodları test eden yeni testler yazabiliriz. Tabi bunun en ideal çözümü, [BDD-style](https://en.wikipedia.org/wiki/Behavior-driven_development) test yazmakdır.
 
 ## KODDAN KÖTÜ KOKULAR GELİYOR
@@ -224,13 +223,13 @@ Bir diğer hata ise, sınıfın her bir alanının tutması gereken veri, kolay 
 
 - Primitif tipler yerine nesnelerin kullanılması, kodu daha esnek yapar.
 - Daha anlaşılabilir ve organizasyonu daha iyi bir kod yapısı sağlar. Veri üzerindeki her işlemi temsil eden alanlar aynı yerde ve düzenli olur. Diziler içindeki verilerin sürekli ne anlama geldiğini tahmin etmekten kurtarır.
-- Kod tekrarlarını(code duplication) keşfetmek daha kolay olur. 
+- Kod tekrarlarını (code duplication) keşfetmek daha kolay olur. 
 
 ### Long Parameter List
 
 #### Problem
 
-Bir metodun 3,4 veya daha fazla parametre alması.
+Bir metodun 3, 4 veya daha fazla parametre alması.
 
 #### Sebep
 
@@ -251,7 +250,7 @@ Birbirinden bağımsız sınıflar oluşturmak istemenin yan etkisi olarak da fa
 
 #### Ne zaman göz ardı edilebilir?
 
-Sınıflar arasında gereksiz bağımlılık oluşturabilecek durumlarda parametrelerde kurtulmak iyi bir yöntem olmayabilir.
+Sınıflar arasında gereksiz bağımlılık oluşturabilecek durumlarda parametrelerden kurtulmak iyi bir yöntem olmayabilir.
 
 ### Data Clumps
 
@@ -268,7 +267,6 @@ Genelde zayıf kod tasarımı veya "kopyala-yağıştır programcılığı" ile 
 - Parametreler, bir sınıfın alanları olabilecek şekilde gruplanabiliyorsa: [Extract Class](#extract-class)
 - Aynı veri kümeleri, parametre olarak geçiliyorsa (örneğin; startDate, endDate): [Introduce Parameter Object](#introduce-parameter-object)
 - Metot içindeki bazı veriler, başka metoda parametre olarak verilecekse, onun yerine komple nesneyi parametre vermek: [Preserve Whole Object](#preserve-whole-object)
-
 
 #### Sonuç
 
@@ -319,7 +317,7 @@ Geçici alanlar, sadece belirli koşullar altında değer alırlar. Bu koşullar
 
 Genellikle geçici alanlar, çok fazla girdisi olan bir algoritma içinde kullanılmak için oluşturulurlar. Dolayısıyla, metot için çok fazla parametre geçmek yerine, sınıfın içinde, veriyi tutması için bir alan oluşturulur. Bu alanlar sadece bu algoritma içinde kullanılır ve sonrasında artık anlamsızdır.
 
-Bu tarz bir kodun anlaşılması zordur. Siz sürekli ilgili alanın bir veri tuttuğunu varsayarsınız ama o tek bir algoritma dışında, her zaman boştur.
+Bu tarz bir kodun anlaşılması zordur. Siz sürekli ilgili alanın bir veri tuttuğunu varsayarsınız; ama o tek bir algoritma dışında, her zaman boştur.
 
 #### Çözüm
 
@@ -334,15 +332,15 @@ Daha iyi kod organizasyonu ve sadelik.
 
 #### Problem
 
-Bir sınıf kalıtım aldığı sınıfın sadece bir kaç metodunu veya özelliğini kullanıyorsa, sınıflar arasındaki hiyerarşi bozulur. İhtiyaç duyulmayan metotlar artık gereksiz hale gelir.
+Bir sınıf kalıtım aldığı sınıfın sadece birkaç metodunu veya özelliğini kullanıyorsa, sınıflar arasındaki hiyerarşi bozulur. İhtiyaç duyulmayan metotlar artık gereksiz hale gelir.
 
 #### Sebep
 
-Kodun yeniden kullanılması isteği, bazen gereksiz hiyerarşi kurmaya sebep olabilir. Ama kalıtım alınan sınıf ile alan sınıf arasında çok farklılık vardır. Örneğin; `AnimalLegs` sınıfından türeyen, `DogLegs` ve `ChairLegs`.
+Kodun yeniden kullanılması isteği, bazen gereksiz hiyerarşi kurmaya sebep olabilir. Ama kalıtım alınan sınıfla alan sınıf arasında çok farklılık vardır. Örneğin; `AnimalLegs` sınıfından türeyen, `DogLegs` ve `ChairLegs`.
 
 #### Çözüm
 
-- Kalıtım mantıklı değil ve kalıtım alan sınıf ile üst sınıf arasında bir benzerlik yok ise: [Replace Inheritance with Delegation](#replace-inheritance-with-delegation)
+- Kalıtım mantıklı değil ve kalıtım alan sınıfla üst sınıf arasında bir benzerlik yok ise: [Replace Inheritance with Delegation](#replace-inheritance-with-delegation)
 - Eğer kalıtım yapmak uygunsa, kalıtım alan sınıf içindeki gereksiz alanlardan ve metotlardan kurtulun. Üst sınıfta olan ve alt sınıfta kullanılan metot ve alanları ayrı bir alt sınıfa taşıyın ve bu sınıftan kalıtım alın: [Extract Superclass](#extract-superclass)
 
 #### Sonuç
@@ -353,7 +351,7 @@ Kodun okunabilirliğini ve organizasyonunu artırır. Artık, neden `Chair` sın
 
 #### Problem
 
-İki farklı sınıfın, aynı işlemi farklı metot isimleri ile yapması.
+İki farklı sınıfın, aynı işlemi farklı metot isimleriyle yapması.
 
 #### Sebep
 
@@ -429,7 +427,7 @@ Hiyerarşi küçük olduğu sürece çok problem değil ama yeni sınıflar ekle
 
 #### Çözüm
 
-- Hiyerarşilerin en tepesindeki sınıfların ikisinide kalıtım alan yeni bir hiyerarşi veya tepedeki paralel sınıfların birleşiminden yeni bir hiyerarşi: [Move Method](move-method) ve [Move Field](#move-field).
+- Hiyerarşilerin en tepesindeki sınıfların ikisini de kalıtım alan yeni bir hiyerarşi veya tepedeki paralel sınıfların birleşiminden yeni bir hiyerarşi: [Move Method](move-method) ve [Move Field](#move-field).
 
 #### Sonuç
 
@@ -457,7 +455,7 @@ Bir kod parçasının yorum yapılmadan anlaşılmayacağını düşünüyorsan�
 #### Çözüm
 
 - Bir yorumun karmaşık bir ifadeyi açıklaması amaçlanıyorsa, ifade, anlaşılabilir alt ifadelere bölünmelidir: [Extract Variable](#extract-variable).
-- Bir yorum kodun bir bölümünü açıklıyorsa, bu bölüm ayrı bir metot yazpılabilir. Yeni yöntemin adı, büyük olasılıkla, yorum metninin kendisinden alınabilir: [Extract Method](#extract-method).
+- Bir yorum kodun bir bölümünü açıklıyorsa, bu bölüm ayrı bir metot olarak yazılabilir. Yeni yöntemin adı, büyük olasılıkla, yorum metninin kendisinden alınabilir: [Extract Method](#extract-method).
 - Bir metot zaten oluşturulmuşsa, ancak metodun ne yaptığını açıklamak için yorumlar hala gerekliyse, metoda açıklayıcı bir isim verin: [Rename Method](#rename-method).
 - Sistemin çalışması için gerekli olan bir durum hakkında kurallar koymak için yorum yazmak gerekirse: [Introduce Assertion](#introduce-assertion).
 
@@ -488,7 +486,7 @@ Bazen kod tekrarı bilerek yapılır. İşin yetişmesi gerek zamanın sonuna ge
 
 - Aynı kod, aynı sınıfta iki veya daha fazla metotta bulunursa: [Extract Method](#extract-method).
 - Aynı kod, aynı seviyedeki iki alt sınıfta bulunursa;
-  - İki sınıf içinde, alanı üste taşıma [Pull Up Field](#pull-up-field) yöntemini takip ederek: [Extract Method](#extract-method).
+  - İki sınıf için de, alanı üste taşıma [Pull Up Field](#pull-up-field) yöntemini takip ederek: [Extract Method](#extract-method).
   - Tekrar eden kod bir yapıcı metot içinde ise: [Pull Up Constructor Body](#pull-up-constructor-body).
   - Eğer yinelenen kod benzer ancak tamamen aynı değilse: [Form Template Method](#form-template-method).
   - İki metot da aynı şeyi yapar, ancak farklı algoritmalar kullanırsa, en iyi algoritmayı seçin: [Substitute Algorithm](#substitute-algorithm).
@@ -511,7 +509,7 @@ Bazen kod tekrarı bilerek yapılır. İşin yetişmesi gerek zamanın sonuna ge
 
 #### Problem
 
-Bir sınıfın anlaşılması ve bakımı, zaman ve maliyet gerektirir. Dolayısı ile bir sınıf anlaşılmıyorsa ve yeterince istekleri karşılamıyorsa, o sınıf silinmelidir.
+Bir sınıfın anlaşılması ve bakımı, zaman ve maliyet gerektirir. Dolayısıyla bir sınıf anlaşılmıyorsa ve istekleri yeterince karşılamıyorsa, o sınıf silinmelidir.
 
 #### Sebep
 
@@ -529,7 +527,7 @@ Belki bir sınıf tamamen işlevsel olacak şekilde tasarlanmıştır, ancak ref
 
 #### Ne zaman göz ardı edilebilir?
 
-Koddaki basitlik ve açıklık arasınki dengeyi korumak şartı ile, gelecekteki gelişmelere yönelik niyetleri betimlemek için bir Lazy Class oluşturulabilir.
+Koddaki basitlik ve açıklık arasınki dengeyi korumak şartıyla, gelecekteki gelişmelere yönelik niyetleri betimlemek için bir Lazy Class oluşturulabilir.
 
 ### Data Class
 
@@ -539,7 +537,7 @@ Martin Fowler'ın "Code Smell" dediği "Data Class", çoğu yazılımcı tarafı
 
 #### Problem
 
-Bir değişken, parametre, alan, metot veya sınıfın artık kullanılmamasıdır(genellikle artık eskimiş olduğundan).
+Bir değişken, parametre, alan, metot veya sınıfın artık kullanılmamasıdır (genellikle artık eskimiş olduğundan).
 
 #### Sebep
 
@@ -547,7 +545,7 @@ Yazılımın gereksinimleri değiştiğinde veya düzeltmeler yapıldığında, 
 
 #### Çözüm
 
-Ölü kodu bulmanın en hızlı yolu iyi bir IDE kullanmaktır. Çözmek ise basit; sil.
+Ölü kodu bulmanın en hızlı yolu iyi bir IDE kullanmaktır. Çözmek ise basit: sil.
 
 - Kullanılmayan kodu ve gereksiz dosyaları silin.
 - Gereksiz bir sınıfın bulunması durumunda: [Inline Class](#inline-class) ve [Collapse Hierarchy](#collapse-hierarchy).
@@ -594,7 +592,7 @@ Bir metodun, başka bir sınıfın verisine, kendisindeki veriden daha fazla eri
 
 #### Sebep
 
-Alanlar veri sınıfına taşınırken oluşur. Bu durumda, veri ile işlem yapan kodları da bu sınıfa taşımak isteyebilirsiniz.
+Alanlar veri sınıfına taşınırken oluşur. Bu durumda, veriyle işlem yapan kodları da bu sınıfa taşımak isteyebilirsiniz.
 
 #### Çözüm
 
@@ -607,7 +605,7 @@ Genelde veri ve bu veriyi kullanan kod blokları birlikte değişir. Bundan dola
 #### Sonuç
 
 - Daha az kod tekrarı (veri işleme kodu merkezi bir yere yerleştirilirse).
-- Daha iyi kod organizasyonu (veri işleme metotları, ile veri aynı yerde olursa).
+- Daha iyi kod organizasyonu (veri işleme metotlarıyla veri aynı yerde olursa).
 
 #### Ne zaman göz ardı edilebilir?
 
@@ -626,9 +624,9 @@ Kodların parça parça taşınması sırasında veya yanlış tasarımdan kayna
 #### Çözüm
 
 - En hızlı ve basit çözüm, bir sınıfın metotlarını ve alanlarını başka sınıfa taşımak (eğer ilk sınıf bu metotlara tamamen ihtiyaç duymuyorsa): [Move Method](#move-method) ve [Move Field](#move-field).
-- Sınıflar ilişkili ise, o zaman gerçekten ilişkili sınıflar yapmak: [Extract Class](#extract-class) ve [Hide Delegate](#hide-delegate).
+- Sınıflar ilişkiliyse, o zaman gerçekten ilişkili sınıflar yapmak: [Extract Class](#extract-class) ve [Hide Delegate](#hide-delegate).
 - Sınıflar karşılıklı olarak birbirine bağımlıysa: [Change Bidirectional Association to Unidirectional](#change-bidirectional-association-to-unidirectional).
-- Bu "samimiyet" bir alt sınıf ile üst sınıf arasındaysa: [Replace Delegation with Inheritance](#replace-delegation-with-inheritance).
+- Bu "samimiyet" bir alt sınıfla üst sınıf arasındaysa: [Replace Delegation with Inheritance](#replace-delegation-with-inheritance).
 
 #### Sonuç
 
@@ -648,7 +646,7 @@ Bir istemci bir nesne talep ettiğinde, talep edilen nesne başka bir tane daha 
 #### Çözüm
 
 - Bir mesaj zincirini silmek için: [Hide Delegate](#hide-delegate).
-- Bazen son nesnenin neden kullanıldığını düşünmek daha iyidir. Belkide bunu zincirin en önüne taşımak daha mantıklı hale gelecektir: [Extract Method](#extract-method) ve [Move Method](#move-method).
+- Bazen son nesnenin neden kullanıldığını düşünmek daha iyidir. Belki de bunu zincirin en önüne taşımak daha mantıklı hale gelecektir: [Extract Method](#extract-method) ve [Move Method](#move-method).
 
 #### Sonuç
 
@@ -667,7 +665,7 @@ Bir sınıfın tek işi, tüm işleri başka sınıflara yaptırmak.
 
 #### Sebep
 
-"Message Chains" den kurtulmak için aşırı derecede kod başka sınıflara taşındığında bu durum oluşabilir. Diğer bir sebepte, bir sınıfın kodları parça parça başka sınıflara taşındığında ortaya çıkar. İçi boşalan bir sınıf, içi boş bir kabuk gibi kalır.
+"Message Chains" den kurtulmak için aşırı derecede kod başka sınıflara taşındığında bu durum oluşabilir. Diğer bir sebep de, bir sınıfın kodları parça parça başka sınıflara taşındığında ortaya çıkar. İçi boşalan bir sınıf, içi boş bir kabuk gibi kalır.
 
 #### Çözüm
 
