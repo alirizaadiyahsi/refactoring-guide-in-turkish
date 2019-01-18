@@ -712,7 +712,7 @@ Bir kütüphaneyi genişletmek, eğer kütüphanedeki değişiklikler koddaki de
 - **Tersi:** [Inline Method](#inline-method)
 - **Benzer:** [Move Method](#move-method)
 - **Yardımcı olduğu diğer teknikler:** [Introduce Parameter Object](#introduce-parameter-object), [Form Template Method](#form-template-method), [Parameterize Method](#parameterize-method)
-- **Düzelttiği kötü tasarımlar:** [Duplicate Code](#duplicate-code), [Long Method](#long-method), [Feature Envy](#feature-envy), [Switch Statements](#switch-statements), [Message Chains](#message-chains), [Comments](#comments), [Data Class](#data-class)
+- **Düzeltiği kötü tasarımlar:** [Duplicate Code](#duplicate-code), [Long Method](#long-method), [Feature Envy](#feature-envy), [Switch Statements](#switch-statements), [Message Chains](#message-chains), [Comments](#comments), [Data Class](#data-class)
 
 #### Problem
 
