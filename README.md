@@ -40,6 +40,7 @@ Bazı kelimeler Türkçeye çevrilmedi. Bunun sebebi, birçok kelime artık o ka
 - [Refactoring Teknikleri](#refactoring-teknikleri)
   - [Extract Method](#extract-method)
   - [Inline Method](#inline-method)
+- [KAYNAKLAR](#kaynaklar)
 
 ## REFACTORING NEDİR?
 
