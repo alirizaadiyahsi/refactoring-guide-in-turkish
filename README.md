@@ -716,7 +716,7 @@ Bir kütüphaneyi genişletmek, eğer kütüphanedeki değişiklikler koddaki de
 
 #### Problem
 
-Grublanabilecek kod satırlarının olması.
+Gruplanabilecek kod bloklarının olması.
 
 <details>
   <summary>C#</summary>
