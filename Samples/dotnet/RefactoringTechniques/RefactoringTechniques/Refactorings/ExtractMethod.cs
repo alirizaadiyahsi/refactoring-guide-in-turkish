@@ -2,29 +2,30 @@
 
 namespace RefactoringTechniques.Refactorings
 {
-    // BAD
-    public class A
+    // KÖTÜ TASARIM
+    public class ExtractMethodBad
     {
         public void DoSomeThing()
         {
-            // some code blocks...
+            // diğer kod blokları...
 
-            // write user information to console
+            // kullanıcı bilgilerini ekrana bas
             Console.WriteLine("Kullanıcı adı: ali_veli");
             Console.WriteLine("E-posta: ali_veli@mail.com");
         }
     }
 
-    // GOOD
-    public class B
+    // İYİ TASARIM
+    public class ExtractMethodGood
     {
         public void DoSomeThing()
         {
-            // some code blocks...
+            // diğer kod blokları...
 
             WriteUserInformationToConsole();
         }
 
+        // kullanıcı bilgilerini ekrana bas
         private static void WriteUserInformationToConsole()
         {
             Console.WriteLine("Kullanıcı adı: ali_veli");
