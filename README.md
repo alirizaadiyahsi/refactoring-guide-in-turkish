@@ -719,7 +719,7 @@ Bir kütüphaneyi genişletmek, eğer kütüphanedeki değişiklikler koddaki de
 Grublanabilecek kod satırlarının olması.
 
 <details>
-  <summary><b>C#</b></summary>
+  <summary>C#</summary>
   
 ```csharp
 public class A
@@ -742,7 +742,7 @@ public class A
 Bu kodu ayrı bir yeni metoda taşıyın ve eski kodun yerine bu metodu çağırın.
 
 <details>
-  <summary><b>C#</b></summary>
+  <summary>C#</summary>
   
 ```csharp
 public class B
