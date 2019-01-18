@@ -40,7 +40,7 @@ Bazı kelimeler Türkçeye çevrilmedi. Bunun sebebi, birçok kelime artık o ka
 - [Refactoring Teknikleri](#refactoring-teknikleri)
   - [Extract Method](#extract-method)
   - [Inline Method](#inline-method)
-- [KAYNAKLAR](#kaynaklar)
+- [Kaynaklar](#kaynaklar)
 
 ## REFACTORING NEDİR?
 
@@ -706,7 +706,7 @@ Kod çoğaltmasını azaltır (sıfırdan kendi kütüphanenizi oluşturmak yeri
 
 Bir kütüphaneyi genişletmek, eğer kütüphanedeki değişiklikler koddaki değişiklikleri içeriyorsa ek iş üretebilir.
 
-## Refactoring Teknikleri
+## REFACTORING TEKNİKLERİ
 
 ### Extract Method
 
