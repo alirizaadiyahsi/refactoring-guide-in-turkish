@@ -38,6 +38,8 @@ Bazı kelimeler Türkçeye çevrilmedi. Bunun sebebi, birçok kelime artık o ka
   - [Middle Man](#middle-man)
   - [Incomplete Library Class](#incomplete-library-class)
 - [Refactoring Teknikleri](#refactoring-teknikleri)
+  - [Extract Method](#extract-method)
+  - [Inline Method](#inline-method)
 
 ## REFACTORING NEDİR?
 
@@ -704,6 +706,78 @@ Kod çoğaltmasını azaltır (sıfırdan kendi kütüphanenizi oluşturmak yeri
 Bir kütüphaneyi genişletmek, eğer kütüphanedeki değişiklikler koddaki değişiklikleri içeriyorsa ek iş üretebilir.
 
 ## Refactoring Teknikleri
+
+### Extract Method
+
+- **Tersi:** [Inline Method](#inline-method)
+- **Benzer:** [Move Method](#move-method)
+- **Yardımcı olduğu diğer teknikler:** [Introduce Parameter Object](#introduce-parameter-object), [Form Template Method](#form-template-method), [Parameterize Method](#parameterize-method)
+- **Düzeltiği kötü tasarımlar:** [Duplicate Code](#duplicate-code), [Long Method](#long-method), [Feature Envy](#feature-envy), [Switch Statements](#switch-statements), [Message Chains](#message-chains), [Comments](#comments), [Data Class](#data-class)
+
+#### Problem
+
+Grublanabilecek kod satırlarının olması.
+
+<details>
+  <summary>C#</summary>
+  
+```csharp
+public class A
+{
+    public void DoSomeThing()
+    {
+        // diğer kod blokları...
+
+        // kullanıcı bilgilerini ekrana bas
+        Console.WriteLine("Kullanıcı adı: ali_veli");
+        Console.WriteLine("E-posta: ali_veli@mail.com");
+    }
+}
+```
+
+</details>
+
+#### Çözüm
+
+Bu kodu ayrı bir yeni metoda taşıyın ve eski kodun yerine bu metodu çağırın.
+
+<details>
+  <summary>C#</summary>
+  
+```csharp
+public class B
+{
+    public void DoSomeThing()
+    {
+        // diğer kod blokları...
+
+        WriteUserInformationToConsole();
+    }
+
+    // kullanıcı bilgilerini ekrana bas
+    private static void WriteUserInformationToConsole()
+    {
+        Console.WriteLine("Kullanıcı adı: ali_veli");
+        Console.WriteLine("E-posta: ali_veli@mail.com");
+    }
+}
+```
+
+</details>
+
+#### Neden?
+
+- Bir metodda ne kadar çok satır bulunursa, metodun ne yaptığını bulmak o kadar zor olur.
+- Gruplanan kodlar, ihtiyaç halinde başka yerden de çağrılabilir.
+- Sonraki başka bir refactoring tekniği için de bir adım olabilir.
+
+#### Faydaları
+
+- Daha okunabilir kod. Metot ismi içindeki, gruplanmış kod satırlarının ne yaptığına dair fikir verir.
+- Daha az kod tekrarı. Kodun yeniden kullanılabilirliği artar. Tüm satırları tekrar yazmaktansa, metot çağrısı yapılır.
+- Bağımsız kod bölümlerini birbirinden izole eder, bu da daha az hata demektir. Çünkü kod bloğunun bakımı tamamen kendi sınırları içinde yapılır.
+
+### Inline Method
 
 
 
