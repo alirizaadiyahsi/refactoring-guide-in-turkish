@@ -735,8 +735,24 @@ public class A
     }
 }
 ```
-
 </details>
+  
+<details>
+  <summary>Go</summary>
+  
+```go
+package main
+
+func DoSomeThing() {
+    // diğer kod blokları...
+
+    // kullanıcı bilgilerini ekrana bas
+    fmt.Println("Kullanıcı adı: ali_veli");
+    fmt.Println("E-posta: ali_veli@mail.com");
+}
+```
+</details>
+
 
 #### Çözüm
 
@@ -761,6 +777,27 @@ public class B
         Console.WriteLine("Kullanıcı adı: ali_veli");
         Console.WriteLine("E-posta: ali_veli@mail.com");
     }
+}
+```
+
+</details>
+
+<details>
+  <summary>Go</summary>
+  
+```go
+package main
+
+func DoSomeThing() {
+    // diğer kod blokları...
+
+    writeUserInformationToConsole();
+}
+
+// kullanıcı bilgilerini ekrana bas
+func writeUserInformationToConsole() {
+    fmt.Println("Kullanıcı adı: ali_veli");
+    fmt.Println("E-posta: ali_veli@mail.com");
 }
 ```
 
