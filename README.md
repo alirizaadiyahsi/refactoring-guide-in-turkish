@@ -747,8 +747,8 @@ func DoSomeThing() {
     // diğer kod blokları...
 
     // kullanıcı bilgilerini ekrana bas
-    fmt.Println("Kullanıcı adı: ali_veli");
-    fmt.Println("E-posta: ali_veli@mail.com");
+    fmt.Println("Kullanıcı adı: ali_veli")
+    fmt.Println("E-posta: ali_veli@mail.com")
 }
 ```
 </details>
@@ -791,13 +791,13 @@ package main
 func DoSomeThing() {
     // diğer kod blokları...
 
-    writeUserInformationToConsole();
+    writeUserInformationToConsole()
 }
 
 // kullanıcı bilgilerini ekrana bas
 func writeUserInformationToConsole() {
-    fmt.Println("Kullanıcı adı: ali_veli");
-    fmt.Println("E-posta: ali_veli@mail.com");
+    fmt.Println("Kullanıcı adı: ali_veli")
+    fmt.Println("E-posta: ali_veli@mail.com")
 }
 ```
 
