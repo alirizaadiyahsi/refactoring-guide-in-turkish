@@ -40,6 +40,7 @@ Bazı kelimeler Türkçeye çevrilmedi. Bunun sebebi, birçok kelime artık o ka
 - [Refactoring Teknikleri](#refactoring-teknikleri)
   - [Extract Method](#extract-method)
   - [Inline Method](#inline-method)
+  - [Extract Variable](#extract-variable)
 - [Kaynaklar](#kaynaklar)
 
 ## REFACTORING NEDİR?
@@ -723,7 +724,7 @@ Gruplanabilecek kod bloklarının olması.
   <summary>C#</summary>
   
 ```csharp
-public class A
+public class ExtractMethodBad
 {
     public void DoSomeThing()
     {
@@ -762,7 +763,7 @@ Bu kodu ayrı bir yeni metoda taşıyın ve eski kodun yerine bu metodu çağır
   <summary>C#</summary>
   
 ```csharp
-public class B
+public class ExtractMethodGood
 {
     public void DoSomeThing()
     {
@@ -817,7 +818,60 @@ func writeUserInformationToConsole() {
 
 ### Inline Method
 
+- **Tersi:** [Extract Method](#extract-method)
+- **Düzeltiği kötü tasarımlar:** [Speculative Generality](#speculative-generality)
 
+#### Problem
+
+Bir metodun gövdesinin, metodun kendisinden daha açık olması.
+
+<details>
+  <summary>C#</summary>
+  
+```csharp
+public class InlineMethodBad
+{
+    public int GetMultiplier(int number)
+    {
+        return IfNumberPositive(number) ? 1 : -1;
+    }
+
+    // bu metoda gerek yok
+    private static bool IfNumberPositive(int number)
+    {
+        return number >= 0;
+    }
+}
+```
+</details>
+
+#### Çözüm
+
+Metot çağrısını, metodun içeriğiyle değiştirin ve metodun kendisini silin.
+
+<details>
+  <summary>C#</summary>
+  
+```csharp
+public class InlineMethodGood
+{
+    public int GetMultiplier(int number)
+    {
+        return number >= 0 ? 1 : -1;
+    }
+}
+```
+</details>
+
+#### Neden?
+
+Bir metot basitçe başka bir metodu çağırır ve bunda aslında bir problem yoktur. Problem, bu şekilde gereksiz metotların artmasıdır. Böyle çok fazla metot olunca, kafa karıştırıcı kodlar ortaya çıkar. 
+
+#### Faydaları
+
+Gereksiz metotların sayısını en aza indirerek, kodu daha basit hale getiririz.
+
+### Extract Variable
 
 ---
 
