@@ -41,6 +41,7 @@ Bazı kelimeler Türkçeye çevrilmedi. Bunun sebebi, birçok kelime artık o ka
   - [Extract Method](#extract-method)
   - [Inline Method](#inline-method)
   - [Extract Variable](#extract-variable)
+  - [Inline Temp](#inline-temp)
 - [Kaynaklar](#kaynaklar)
 
 ## REFACTORING NEDİR?
@@ -873,6 +874,70 @@ Gereksiz metotların sayısını en aza indirerek, kodu daha basit hale getiriri
 
 ### Extract Variable
 
+- **Tersi:** [Inline Temp](#inline-temp)
+- **Benzer:** [Extract Method](#extract-method)
+- **Düzeltiği kötü tasarımlar:** [Comments](#comments)
+
+#### Problem
+
+Anlaşılması zor koşulların/ifadelerin olması.
+
+<details>
+  <summary>C#</summary>
+  
+```csharp
+public class ExtractVariableBad
+{
+    public double GetTotalPrice()
+    {
+        var order = new Order();// get order 
+
+        return order.Quantity * order.ItemPrice -
+               Math.Max(0, order.Quantity - 500) * order.ItemPrice * 0.05 +
+               Math.Min(order.Quantity * order.ItemPrice * 0.1, 100);
+    }
+}
+```
+</details>
+
+#### Çözüm
+
+İfadenin/koşulların veya bölümlerinin sonucunu kendi kendini açıklayıcı olan ayrı değişkenlere taşıyın.
+
+<details>
+  <summary>C#</summary>
+  
+```csharp
+public class ExtractVariableGood
+{
+    public double GetTotalPrice()
+    {
+        var order = new Order();// get order 
+
+        var basePrice = order.Quantity * order.ItemPrice;
+        var quantityDiscount = Math.Max(0, order.Quantity - 500) * order.ItemPrice * 0.05;
+        var shipping = Math.Min(basePrice * 0.1, 100);
+
+        return basePrice - quantityDiscount + shipping;
+    }
+}
+```
+</details>
+
+#### Neden?
+
+Kod içerisindeki uzun ifadeler kodun anlaşılmasını zorlaştırır. Kodu karmaşıklaştırır ve gereksiz uzatır. Kodu daha anlaşılır, daha kısa yapmak ve [Extract Metot](#extract-metot) için bir adım oluşturmak.
+
+#### Faydaları
+
+Daha okunabilir ve anlaşılabilir kod. İfadenin ne anlama geldiğini ismi ile anlatan değişkenler.
+
+#### Dezavantajları
+
+Çok fazla değişken oluşmasına sebep olabilir. Ama kodun daha okunabilir olması bu yan etkiyi dengeler.
+
+### Inline Temp
+
 ---
 
 ## KAYNAKLAR
@@ -888,3 +953,4 @@ Gereksiz metotların sayısını en aza indirerek, kodu daha basit hale getiriri
 - https://softwareengineering.stackexchange.com/questions/338195/why-are-data-classes-considered-a-code-smell
 - https://stackoverflow.com/questions/16719270/is-data-class-really-a-code-smell
 - http://wiki3.cosc.canterbury.ac.nz/index.php/Middle_man_smell
+- https://refactoring.com/catalog/extractVariable.html
