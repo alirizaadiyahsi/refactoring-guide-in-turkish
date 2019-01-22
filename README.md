@@ -2,7 +2,7 @@
 
 ## ÖNSÖZ
 
-Bu dökümanın bir makale olarak değil de GitHub'da olmasının sebebi, herkesin katkılarına açık bir şekilde sürekli güncel bir kılavuz hazırlamak.
+Bu dokümanın bir makale olarak değil de GitHub'da olmasının sebebi, herkesin katkılarına açık bir şekilde sürekli güncel bir kılavuz hazırlamak.
 
 Bazı kelimeler Türkçeye çevrilmedi. Bunun sebebi, birçok kelime artık o kalıp içinde daha anlamlı oluyor. Örneğin; Refactoring, Extract Method, Primitive Obsession vs. 
 
@@ -40,6 +40,9 @@ Bazı kelimeler Türkçeye çevrilmedi. Bunun sebebi, birçok kelime artık o ka
 - [Refactoring Teknikleri](#refactoring-teknikleri)
   - [Extract Method](#extract-method)
   - [Inline Method](#inline-method)
+  - [Extract Variable](#extract-variable)
+  - [Inline Temp](#inline-temp)
+- [Kaynaklar](#kaynaklar)
 
 ## REFACTORING NEDİR?
 
@@ -705,7 +708,7 @@ Kod çoğaltmasını azaltır (sıfırdan kendi kütüphanenizi oluşturmak yeri
 
 Bir kütüphaneyi genişletmek, eğer kütüphanedeki değişiklikler koddaki değişiklikleri içeriyorsa ek iş üretebilir.
 
-## Refactoring Teknikleri
+## REFACTORING TEKNİKLERİ
 
 ### Extract Method
 
@@ -716,13 +719,13 @@ Bir kütüphaneyi genişletmek, eğer kütüphanedeki değişiklikler koddaki de
 
 #### Problem
 
-Grublanabilecek kod satırlarının olması.
+Gruplanabilecek kod bloklarının olması.
 
 <details>
   <summary>C#</summary>
   
 ```csharp
-public class A
+public class ExtractMethodBad
 {
     public void DoSomeThing()
     {
@@ -734,8 +737,24 @@ public class A
     }
 }
 ```
-
 </details>
+  
+<details>
+  <summary>Go</summary>
+  
+```go
+package main
+
+func DoSomeThing() {
+    // diğer kod blokları...
+
+    // kullanıcı bilgilerini ekrana bas
+    fmt.Println("Kullanıcı adı: ali_veli")
+    fmt.Println("E-posta: ali_veli@mail.com")
+}
+```
+</details>
+
 
 #### Çözüm
 
@@ -745,7 +764,7 @@ Bu kodu ayrı bir yeni metoda taşıyın ve eski kodun yerine bu metodu çağır
   <summary>C#</summary>
   
 ```csharp
-public class B
+public class ExtractMethodGood
 {
     public void DoSomeThing()
     {
@@ -765,6 +784,27 @@ public class B
 
 </details>
 
+<details>
+  <summary>Go</summary>
+  
+```go
+package main
+
+func DoSomeThing() {
+    // diğer kod blokları...
+
+    writeUserInformationToConsole()
+}
+
+// kullanıcı bilgilerini ekrana bas
+func writeUserInformationToConsole() {
+    fmt.Println("Kullanıcı adı: ali_veli")
+    fmt.Println("E-posta: ali_veli@mail.com")
+}
+```
+
+</details>
+
 #### Neden?
 
 - Bir metodda ne kadar çok satır bulunursa, metodun ne yaptığını bulmak o kadar zor olur.
@@ -779,7 +819,124 @@ public class B
 
 ### Inline Method
 
+- **Tersi:** [Extract Method](#extract-method)
+- **Düzeltiği kötü tasarımlar:** [Speculative Generality](#speculative-generality)
 
+#### Problem
+
+Bir metodun gövdesinin, metodun kendisinden daha açık olması.
+
+<details>
+  <summary>C#</summary>
+  
+```csharp
+public class InlineMethodBad
+{
+    public int GetMultiplier(int number)
+    {
+        return IfNumberPositive(number) ? 1 : -1;
+    }
+
+    // bu metoda gerek yok
+    private static bool IfNumberPositive(int number)
+    {
+        return number >= 0;
+    }
+}
+```
+</details>
+
+#### Çözüm
+
+Metot çağrısını, metodun içeriğiyle değiştirin ve metodun kendisini silin.
+
+<details>
+  <summary>C#</summary>
+  
+```csharp
+public class InlineMethodGood
+{
+    public int GetMultiplier(int number)
+    {
+        return number >= 0 ? 1 : -1;
+    }
+}
+```
+</details>
+
+#### Neden?
+
+Bir metot basitçe başka bir metodu çağırır ve bunda aslında bir problem yoktur. Problem, bu şekilde gereksiz metotların artmasıdır. Böyle çok fazla metot olunca, kafa karıştırıcı kodlar ortaya çıkar. 
+
+#### Faydaları
+
+Gereksiz metotların sayısını en aza indirerek, kodu daha basit hale getiririz.
+
+### Extract Variable
+
+- **Tersi:** [Inline Temp](#inline-temp)
+- **Benzer:** [Extract Method](#extract-method)
+- **Düzeltiği kötü tasarımlar:** [Comments](#comments)
+
+#### Problem
+
+Anlaşılması zor koşulların/ifadelerin olması.
+
+<details>
+  <summary>C#</summary>
+  
+```csharp
+public class ExtractVariableBad
+{
+    public double GetTotalPrice()
+    {
+        var order = new Order();// get order 
+
+        return order.Quantity * order.ItemPrice -
+               Math.Max(0, order.Quantity - 500) * order.ItemPrice * 0.05 +
+               Math.Min(order.Quantity * order.ItemPrice * 0.1, 100);
+    }
+}
+```
+</details>
+
+#### Çözüm
+
+İfadenin/koşulların veya bölümlerinin sonucunu kendi kendini açıklayıcı olan ayrı değişkenlere taşıyın.
+
+<details>
+  <summary>C#</summary>
+  
+```csharp
+public class ExtractVariableGood
+{
+    public double GetTotalPrice()
+    {
+        var order = new Order();// get order 
+
+        var basePrice = order.Quantity * order.ItemPrice;
+        var quantityDiscount = Math.Max(0, order.Quantity - 500) * order.ItemPrice * 0.05;
+        var shipping = Math.Min(basePrice * 0.1, 100);
+
+        return basePrice - quantityDiscount + shipping;
+    }
+}
+```
+</details>
+
+#### Neden?
+
+Kod içerisindeki uzun ifadeler kodun anlaşılmasını zorlaştırır. Kodu karmaşıklaştırır ve gereksiz uzatır. Kodu daha anlaşılır, daha kısa yapmak ve [Extract Metot](#extract-metot) için bir adım oluşturmak.
+
+#### Faydaları
+
+Daha okunabilir ve anlaşılabilir kod. İfadenin ne anlama geldiğini ismi ile anlatan değişkenler.
+
+#### Dezavantajları
+
+Çok fazla değişken oluşmasına sebep olabilir. Ama kodun daha okunabilir olması bu yan etkiyi dengeler.
+
+### Inline Temp
 
 ---
 
@@ -796,3 +953,4 @@ public class B
 - https://softwareengineering.stackexchange.com/questions/338195/why-are-data-classes-considered-a-code-smell
 - https://stackoverflow.com/questions/16719270/is-data-class-really-a-code-smell
 - http://wiki3.cosc.canterbury.ac.nz/index.php/Middle_man_smell
+- https://refactoring.com/catalog/extractVariable.html
