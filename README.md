@@ -149,33 +149,27 @@ Refactoring yapılacak kod aslında kendisi alarm verir. Koddaki kötü kokular,
 
 #### Problem
 
-Bir metot çok fazla satırdan oluşuyorsa o metotta sorunlar olabilir. Genel olarak 10-15 satırdan fazla uzun metotlar olunca, metodun uzunluğunu sorgulamaya başlayabiliriz.
+Metodun gövdesinin gereksiz, aşırı, okunamayacak ve bakımı yapılamayacak derecede uzun olması.
 
 #### Sebep
 
-Yazılımcı için kod yazmak, kod okumaktan daha kolaydır. Bundan dolayı metotlara sürekli gerekli olan kodlar eklenir ama kullanılmayan satırlar silinmez. Her gelen bir şey ekler. Böylece metodun uzunluğu gittikçe artar, okunamaz ve bakım yapılamaz hale gelir. 
+Yazılımcı her zaman kodu kendisi yazmak ister. Kendi yazmadığı kodlara güvenmez/güvenmek istemez. Bundan dolayıda kod yazmak, kod okumaktan kolay gelir yazılımcıya. Her yeni gelen yazılımcı, bir yandan okumadan kod ekleyip, bir yandan da kullanılmayan kodları silinmeyince, metot gittikçe şişer, okunamaz ve bakımı yapılamaz hale gelir. Okunamayan kod, sürekli yeni kodların eklenmesini tetikleyerek kısır döngü oluşturur.
 
-Psikolojik olarak, yeni bir metot oluşturmak, var olana ekleme yapmaktan daha kolay gelebilir. İki satır kod için, yeni bir metoda ihtiyaç yok diye düşünebiliriz. Her defasında bu düşüncüyle eklenen her satırdan sonra, metot adım adım karmaşık bir spagetti koda dönüşür.
+İki satır kod için yeni bir metoda ihtiyaç yok diye düşünüp, tüm kodu var olan metotlara eklemek, her zaman yazılımcıya daha kolay gelir. Bu da kodu işin içinden çıkılmaz bir hale sokar.
 
 #### Çözüm
 
-Eğer metot içinde, yorum yazma gereksinimi olan satırlar varsa, bu satırların ayrı bir metoda alınması gerekebilir. Tek satırı bile açıklamaya ihtiyaç duyuyorsanız, ayırmanız gerekir. Ayrılan yeni metodun adı da, metodun ne iş yaptığını tanımlayıcı olursa, kimse kodun ne iş yaptığını anlamak için kodu okumak zorunda kalmaz. Çözüm için aşağıdaki refactoring kuralları uygulanabilir.
+Anlaşılması için illa açıklanması gereken her kod bloğu ayrı bir metoda taşınabilir. Kodların anlaşılması için taşınan metodun ismi, metodun ne yaptığına dair kesin bilgi vermelidir. Böylece metodu kullananlar, metodun ne yaptığını, içindeki kodları okumadan anlayabilir.
 
-- Metot uzunluğunu azaltmak için: [Extract Method](#extract-method) 
-- Değişkenler ve parametreler yeni metoda almayı engelliyorsa: [Temp with Query](#temp-with-query), [Introduce Parameter Object](#introduce-parameter-object), [Preserve Whole Object](#preserve-whole-object).
-- İlk 2 yöntem de yardımcı olmuyorsa: [Replace Method with Method Object](#replace-method-with-method-object)
-- Kod içerisindeki koşullu ifadeler ve döngüler metodun ayrılması için ipucu verirler. Koşullu ifadeler için: [Decompose Conditional](#decompose-conditional).
+Kod içerisindeki koşullu ifadeler, döngüler her zaman, kodları farklı metoda taşımak için birer adaydır. Kullanılabilecek rafactoring teknikleri: [Extract Method](#extract-method), [Temp with Query](#temp-with-query), [Introduce Parameter Object](#introduce-parameter-object), [Preserve Whole Object](#preserve-whole-object), [Replace Method with Method Object](#replace-method-with-method-object) ve [Decompose Conditional](#decompose-conditional).
 
 #### Sonuç
 
-- Tüm OOP dillerde en uzun yaşayan metotlar/sınıflar en kısa olanlarıdır. Metot ne kadar uzun olursa, anlamak ve bakım yapmak da o kadar zorlaşır.
-- Uzun kodlar içinde, tekrarlanan kodlar birikmiş olabilir. 
+Sürekli büyüyen kodlar için, tekrar eden, aynı işi yapan, belki de yanlış çalışan kodlar olabilir. Bu kodlar içinde hata bulmak, tekrar eden kodları temizlemek ve bakım yapmak çok zor iştir. Bu kötü tasarımdan kurtulursak, tüm bu olumsuzluklardan da kurtuluruz.
 
 #### Performans
 
-Akıllara gelen sorulardan birisi şu; metot sayısı arttıkça performans kötü etkilenir mi? Aslında neredeyse tüm durumlarda, etki o kadar önemsiz ki, sağladığı fayda yanında bu etkinin bir önemi yok.
-
-Ayrıca temiz ve bakımı kolay bir kodu istediğimiz gibi kolayca refactor edebilir, yeniden tasarlayabilir ve gerçekten performanslı bir hale daha kolay getirebiliriz. 
+Kodun daha anlaşılır, bakım yapılabilir ve daha az hataya açık olması, her zaman maliyeti düşürür ve geliştirme hızını artırır. Ayrıca daha iyi tasarlanmış bir kod, daha hızlı çalışır. Daha iyi tasarlanmış bir kodda gereksiz kodlarda olmaz. Yani aslında performansın dengelenmesinin yanında, fazladan geliştirme hızı ve maliyet düşüşü sağlamış oluruz.
 
 ### Large Class
 
