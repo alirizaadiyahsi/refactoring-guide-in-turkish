@@ -175,25 +175,21 @@ Kodun daha anlaşılır, bakım yapılabilir ve daha az hataya açık olması, h
 
 #### Problem
 
-Çok fazla satır, alan ve metot içeren sınıflar.
+Bir sınıfta gereğinden fazla alan, metot, özellik ve dolayısıyla fazla kod olması.
 
 #### Sebep
 
-Sınıflar en başta genelde küçük başlar. Ancak zamanla, program büyüdükçe şişerler.
-
-Uzun metotlarda olduğu gibi, programcılar genellikle mevcut bir sınıfa, yeni bir özellik/satır eklemenin, yeni bir sınıf oluşturmaya göre daha kolay olduğunu düşünür.
+Uzun metotlardaki gibi, uzun sınıfların oluşmasındaki en büyük sebep, kolay olmasından dolayı, kodu okumak yerine, direk koda ekleme yapmasıdır.
 
 #### Çözüm
 
-- Eğer sınıfın davranışının bir parçası ayrılabiliyorsa: [Extract Class](#extract-class)
-- Eğer sınıfın bir parçası, başka bir şekilde yazılabiliyorsa veya nadir durumlarda kullanılabilirse: [Extract Subclass](#extract-subclass)
-- İstemcinin kullanabileceği, sınıfın yaptığı işlerin bir listesini tutmak için: [Extract Interface](#extract-interface)
-- Grafik arayüzünden büyük bir sınıf sorumluysa, verilerinin ve davranışlarının bir kısmını ayrı bir domain object nesnesine taşımayı deneyebilirsiniz. Bunu yaparken, bazı verilerin kopyalarını iki yerde saklamak ve verileri tutarlı tutmak gerekebilir. Bunun için: [Duplicate Observed Data](#duplicate-observed-data)
+En iyi çözüm en başta sınıfı parçalara ayırmak. Mesela, GUI'nin kullandığı kısımlar ayrı bir sınıfa taşınabilir. Sınıf paralel veya hiyerarşik olarak ayrıştırılabilir. Aynı şekilde, sınıf içinde gruplanabilecek davranışlar, interface olarak da ayrıştırılabilir. 
+
+Kullanılabilecek refactoring teknikleri: [Extract Class](#extract-class), [Extract Subclass](#extract-subclass), [Extract Interface](#extract-interface), [Duplicate Observed Data](#duplicate-observed-data).
 
 #### Sonuç
 
-- Bu sınıfların yeniden yapılandırılması, geliştiricilerin bir sınıf için çok sayıda şeyi hatırlama zorunluluğundan kurtarır.
-- Çoğu durumda, büyük sınıfları parçalara bölmek, kod ve işlevselliklerin tekrarlanmasını önler.
+Sınıfın daha düzenli, daha okunabilir ve daha kolay bakım yapılabilir bir hale gelmesiyle, yazılımcı sınıfın ne yaptığını, içinde neler olduğunu hatırlama zorunluluğundan da kurtulur. Kod daha fazla kontrol altında tutulabildiğinden, kod tekrarlarının da önüne geçilmiş olur.
 
 ### Primitive Obsession
 
