@@ -195,30 +195,23 @@ Sınıfın daha düzenli, daha okunabilir ve daha kolay bakım yapılabilir bir 
 
 #### Problem
 
-- Küçük nesneler (range, currency, special strings) yerine primitif tipler kullanma.
-- Kodun içinde sabit değerlerde bilgi tutmak. (Örneğin; admin yetkisi için `USER_ADMIN_ROLE = 1` şeklinde bir tanımlama yapmak)
-- Her bir alanın adının, dizi içinde sabit olarak tutulması. (Örneğin; `dizi["istanbul", "34"]`)
+Kod içerisinde primitif tiplere, işlerinin dışında sorumluluklar vermek. Örneğin; `range` diye bir nesne yerine, `start` ve `end` diye değişken kullanmak, `USER_ADMIN_ROLE = 1` şeklinde, kodun içinde sabit veriler tutmak veya `dizi["istanbul", "34"]` gibi bir dizi içinde, bir nesnenin her bir alanının tutacağı verileri tutmak.
 
 #### Sebep
 
-Diğer hatalarda olduğu gibi, Primitive Obsession hatası, zayıf olduğumuz anlarda ortaya çıkar. Sadece 1 tane değişken için, sınıf oluşturmak zor gelir ve bu 1 veriyi tutmak için primitif tipte bir değişken tanımlanır. Yeni bir alan lazım olduğunda her defasında bu şekilde eklenir ve sınıflar/metotlar gereksiz olarak şişer.
+Biraz tembellikten, belki biraz da tecrübesizlikten, başta bir tane veri için, bir nesne oluşturmak yerine, kolay olan yolu yani değişken tanımlama yoluna gideriz. Benzer bir alan daha lazım olduğunda, kodu refactor edip nesneye çevirmek yerine, bu yeni alanı da, başka bir değişkene atarız. Her defasında bu hatayı yaptıkça, sınıflar/metotlar şişer.
 
-Bazen de sabit değerler, kod içinde kullanılacak olan bir entity hakkında bilgi tutmak için kullanılır. Ayrı bir tip tanımlaması yapmak yerine, sınıf içinde sabit değerler bu bilgiyi tutar. Bunun sebebi ise, kod içerisinde bu değerler kullanılırken daha anlaşılır olmasını sağlamak. Örneğin; `if(userRole == AppConsts.USER_ADMIN_ROLE)`. Bu kullanım çok yaygındır.
-
-Bir diğer hata ise, sınıfın her bir alanının tutması gereken veri, kolay olsun diye bir diziye atılır. 
+Bir diğer hata da kullanımı kolay ve anlaşılır olan değişkenlerde veritabanına ait olabilecek veriler tutmak. En kötüsü ise, bir sınıfın her alanının, bir dizide veri olarak tutulması. Neyse oluşturmak o kadar zor gelirki, bir dizide bu nesnenin her alanı için bir veri tutulur. 
 
 #### Çözüm
 
-- Çok çeşitli primitif tipler varsa, bu verileri ilişkilerine göre gruplayıp, kendi sınıflarına taşımak: [Replace Data Value with Object](#replace-data-value-with-object)
-- Gruplanabilecek primitif tipler, eğer metot parametresi olarak kullanılıyorsa: [Introduce Parameter Object](#introduce-parameter-object), [Preserve Whole Object](#preserve-whole-object)
-- Kendi başına bir nesne olabilecek, veri tutan bir değişken için: [Replace Type Code with Class](#replace-type-code-with-class), [Replace Type Code with Subclasses](#replace-type-code-with-subclasses), [Replace Type Code with State/Strategy](#replace-type-code-with-state/strategy)
-- Bir nesnenin alanlarını tutan dizi varsa: [Replace Array with Object](#replace-array-with-object)
+Çözüm basit: nesne oluşturmak. Gruplanabilecek olanlar bir nesne(sınıf) çatısı altında toplamalıyız. Sınıfın alanları olabilir, metodun parametreleri olabilir, kendi başına nesne olabilecek bir değişken olabilir veya zaten grup olan dizi elemanları olabilir; bunların hepsi ayrı bir nesne olabilir.
+
+Kullanılabilecek refactoring teknikleri: [Replace Data Value with Object](#replace-data-value-with-object), [Introduce Parameter Object](#introduce-parameter-object), [Preserve Whole Object](#preserve-whole-object), [Replace Type Code with Class](#replace-type-code-with-class), [Replace Type Code with Subclasses](#replace-type-code-with-subclasses), [Replace Type Code with State/Strategy](#replace-type-code-with-state/strategy), [Replace Array with Object](#replace-array-with-object).
 
 #### Sonuç
 
-- Primitif tipler yerine nesnelerin kullanılması, kodu daha esnek yapar.
-- Daha anlaşılabilir ve organizasyonu daha iyi bir kod yapısı sağlar. Veri üzerindeki her işlemi temsil eden alanlar aynı yerde ve düzenli olur. Diziler içindeki verilerin sürekli ne anlama geldiğini tahmin etmekten kurtarır.
-- Kod tekrarlarını (code duplication) keşfetmek daha kolay olur. 
+Kod daha düzenli, esnek, anlaşılır olur ve bu da kod tekrarının önüne geçer, bakım maliyetini düşürür. Çünkü artık dizi içindeki verilerin neyi ifade ettiğini anlamakla uğraşmayız, birbiri ile ilişkili verileri, tek bir yerden kontrol edebiliriz.
 
 ### Long Parameter List
 
