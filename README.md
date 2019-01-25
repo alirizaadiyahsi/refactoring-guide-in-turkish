@@ -241,23 +241,21 @@ Sınıflar arasında gereksiz bağımlılıklar oluşturabilecek her durumda gö
 
 #### Problem
 
-Ortak nesneye sahip olabilecek parametre listelerinin parametre olarak kullanılması. Müşteri bilgileri, adres bilgileri, veritabanı bağlantı bilgileri gibi. Bunların hepsi ayrı nesne olarak tanımlanabilir. 
+Ortak bir sınıfta toplanabilecek değişkenlerin, tek tek parametre olarak kullanılması. Örneğin; Müşteri bilgileri, adres bilgileri, veritabanı bağlantı bilgileri gibi sınıflar oluşturabilir ve ortak parametreleri bu sınıfların özelliği haline getirebiliriz.
 
 #### Sebep
 
-Genelde zayıf kod tasarımı veya "kopyala-yağıştır programcılığı" ile ortaya çıkar.
+Sebep `Long Parameter List` başlığındakilerle aynıdır.
 
 #### Çözüm
 
-- Parametreler, bir sınıfın alanları olabilecek şekilde gruplanabiliyorsa: [Extract Class](#extract-class)
-- Aynı veri kümeleri, parametre olarak geçiliyorsa (örneğin; startDate, endDate): [Introduce Parameter Object](#introduce-parameter-object)
-- Metot içindeki bazı veriler, başka metoda parametre olarak verilecekse, onun yerine komple nesneyi parametre vermek: [Preserve Whole Object](#preserve-whole-object)
+Çözüm de yine `Long Parameter List` başlığındakiler ile benzerdir. Parametreleri gruplayıp, bir sınıfa taşıyıp, sınıfı parametre olarak geçmek.
+
+Kullanılabilecek refactoring teknikler: [Extract Class](#extract-class), [Introduce Parameter Object](#introduce-parameter-object), [Preserve Whole Object](#preserve-whole-object).
 
 #### Sonuç
 
-Kodun anlaşılabilirliğini ve organizyonunun kalitesini artırır. Parametreler dağınık olarak, etrafta duracağına, bir sınıf içinde toplanmış olur. Kod tekrarı engellenir.
-
-Kodu kısaltır.
+Kodun anlaşılabilirliğini ve organizyonunun kalitesini artırır. Parametreler dağınık olarak, etrafta duracağına, bir sınıf içinde toplanmış olur. Kod tekrarı engellenir, dolayısıyla kod kısalır, okunabilirliği artar ve bakımı kolaylaşır.
 
 #### Ne zaman göz ardı edilebilir?
 
