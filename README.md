@@ -217,28 +217,25 @@ Kod daha düzenli, esnek, anlaşılır olur ve bu da kod tekrarının önüne ge
 
 #### Problem
 
-Bir metodun 3, 4 veya daha fazla parametre alması.
+Methodun çok fazla parametre alması.
 
 #### Sebep
 
-Birkaç farklı tipte algoritmanın bir metotda birleşmesi sonucunda, parametreler çoğalabilir. Metodun içindeki algoritmanın ne yapıyor olduğuna dair bilgi veren kontrol parametreleri kullanılıyor olabilir. Hangi algoritma hangi adımlarla çalışıyor diye çok ayrım yapınca, parametre sayısı artabilir.
-
-Birbirinden bağımsız sınıflar oluşturmak istemenin yan etkisi olarak da fazla parametre alan metodlar oluşabilir. Örneğin; bir sınıf içinde, bir nesne oluşturan metodlar kullanılırlar. Oluşan bu nesneler de başka bir metoda parametre olarak verilir. Böylece ana sınıf, nesneler arasındaki ilişkiyi bilmez ve bağımlılık azalır. Ama bu şekilde bir çalışma en son parametre alan metodun parametre sayısını artırır.
+Metot değiştikçe yeni parametreler eklemek gerekebilir. Her yeni parametre ekledikten sonra, önlem alınmazsa parametreler gittikçe çoğalır veya metot kendi içinde sınıfın verilerini kullanmak yerine, onları parametre olarak alabilir. Bunun sebebi bağımlılığı azaltmak ama yine metodun parametreleri artmış olur. 
 
 #### Çözüm
 
-- Bazı parametreler, metotların sonucunda gelen nesneler ise: [Replace Parameter with Method Call](#replace-parameter-with-method-call)
-- Başka bir nesneden alınan bir veri grubunu parametre olarak göndermek yerine, nesneyi kendisini metoda parametre olarak geçmek: [Preserve Whole Object](#preserve-whole-object)
-- Birden çok ilişkisiz parametre varsa bunları tek bir nesne içinde toplayıp, parametre olarak geçme: [Introduce Parameter Object](#introduce-parameter-object)
+Metot aynı sınıf içindeki verileri parametre alıyorsa buna gerek yok. Parametre geçmek yerine, metot içinde bu veriler kullanılabilir. Bir sınıfın alanlarını tek tek parametre geçmek yerine, sınıfın kendisini parametre geçmek daha mantıklıdır. Diğer bir durum ise, ilişkili olabilecek parametreleri, bir nesneye çevirmek. Örneğin, `start` ve `end` parametrelerini `range` nesnesine çevirip, bunu parametre olarak geçebiliriz. 
+
+Kullanılabilecek refactoring teknikleri: [Replace Parameter with Method Call](#replace-parameter-with-method-call), [Preserve Whole Object](#preserve-whole-object), [Introduce Parameter Object](#introduce-parameter-object).
 
 #### Sonuç
 
-- Daha okunabilir ve kısa kodlar.
-- Varsa daha önceden farkedilmemiş olan, kod tekrarı farkedilebilir.
+Daha okunabilir, kısa, bakımı kolay kodlar. Daha okunabilir kod içerisinde, gereksiz kodl tekrarları da daha rahat farkedilir, dolayısıyla, kod tekrarlarından da kurtulunabilir.
 
 #### Ne zaman göz ardı edilebilir?
 
-Sınıflar arasında gereksiz bağımlılık oluşturabilecek durumlarda parametrelerden kurtulmak iyi bir yöntem olmayabilir.
+Sınıflar arasında gereksiz bağımlılıklar oluşturabilecek her durumda göz ardı edilebilir.
 
 ### Data Clumps
 
