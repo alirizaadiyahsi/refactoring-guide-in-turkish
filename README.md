@@ -265,30 +265,29 @@ Eğer sınıflar arasında gereksiz bir bağımlılık oluşturacaksa göz ardı
 
 #### Problem
 
-Kompleks `switch-case` veya uzun `if-else` ifadeleri.
+Okunması/anlaşılması ve bakımı zor `switch-case` veya gereksiz uzunluktaki `if-else` ifadeleri.
 
 #### Sebep
 
-OOP dillerde `switch-case` ifadesinin az kullanımı, iyi tasarımın işaretlerinden biridir. Kompleks `switch-case` ifadeleri, genelde kodda birden çok yerde ihtiyaç olduğunda ve birden çok yerde aynı işi yapan ifadeler olduğunda oluşur. Yeni bir koşul geldiğinde, aynı `switch-case` ifadesi olan tüm yerlerde bu koşulu eklemek gerekir.
-
-Bir kural, `switch-case` gördüğün anda, polymorphism olabilme ihtimalini düşün.
+`switch-case` ifadeleri çok fazla koşul gerektiği durumda birer ihtiyaç olarak kullanılırlar. Gereğinden fazla uzun `if-else` ifalerinin oluşması da yine, her yeni gelen koşul için, kodda hiç bir değişiklik yapmadan, uç uca eklenen koşullardan dolayı oluşur.  
 
 #### Çözüm
 
-- `switch-case` ifadesini ayırmak ve bağımsız yapmak için: [Extract Method](#extract-method) ve ardından [Move Method](#move-method)
-- `switch-case` ifadesinde, tip karşılaştırması varsa: [Replace Type Code with Subclasses](#replace-type-code-with-subclasses) veya [Replace Type Code with State/Strategy](#replace-type-code-with-state/strategy)
-- Kalıtım yapısının nasıl olacağını belirledikten sonra: [Replace Conditional with Polymorphism](#replace-conditional-with-polymorphism)
-- `switch-case` ifadesinde çok fazla koşul varsa ve her koşulda, aynı metot farklı parametrelerle çağrılıyorsa, polymorphism gereksiz olacaktır. Bu durumda, metodu küçük farklı metodlara bölebiliriz: [Replace Parameter with Explicit Methods](#replace-parameter-with-explicit-methods)
-- Koşullardan birisi null karşılaştırma yapıyorsa: [Introduce Null Object](#introduce-null-object)
+`switch-case` veya uzun `if-else` olan yerde büyük ihtimalle bir sıkıntı vardır ve refactor edilmesi gerekebilir ve büyük olasılıkla `polymorphism` çözüm olabilir.
+
+`switch-case` ifadeleri genellikle sınıfların daha iyi tasarlanması ile çözülebiliyor. Çözülemediği durumlar, koşul ifadelerinde metotların kullanıldığı durumlardır ve bunların çözümü de farklıdır.
+
+Kullanılabilecek refactoring teknikler: [Extract Method](#extract-method), [Move Method](#move-method), [Replace Type Code with Subclasses](#replace-type-code-with-subclasses), [Replace Type Code with State/Strategy](#replace-type-code-with-state/strategy), [Replace Conditional with Polymorphism](#replace-conditional-with-polymorphism), [Replace Parameter with Explicit Methods](#replace-parameter-with-explicit-methods), [Introduce Null Object](#introduce-null-object).
 
 #### Sonuç
 
-Daha iyi kod organizasyonu.
+Uygulamanın tasarımı daha iyi bir hal alır ve bakımı kolaylaşır. 
 
 #### Ne zaman göz ardı edilebilir?
 
-- Basit `switch-case` ifadeleri.
-- Factory tasarım desenleri içindeki `switch-case` ifadeleri.
+Aslında `switch-case` ifadeleri çok kullanışlıdır ve yerinde kullanıldığında, hız kazandırır. Eğer uygulanın içerisinde, yönetilemeyecek kadar çok dağılırsa ve kodun okunabilirliğini ve bakımını zorlaştıracaksa, `switch-case` ifadelerinden kaçınılmalıdır. Ama basit kullanımlarda hiçbir sakıncası yoktur. 
+
+Ayrıca, `Factory design pattern` içinde de `switch-case` ifadeleri kullanmakta bir sakınca yoktur.
 
 ### Temporary Field
 
