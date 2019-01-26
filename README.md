@@ -293,22 +293,21 @@ Ayrıca, `Factory design pattern` içinde de `switch-case` ifadeleri kullanmakta
 
 #### Problem
 
-Geçici alanlar, sadece belirli koşullar altında değer alırlar. Bu koşullarında dışında, her zaman boş olurlar.
+Bir sınıf içinde, belirli bir kapsam dahilinde geçerli ve birbirine bağımlı olarak tanımlanmış, geçici alanların olması. Bu alanların, sınıfı geneli için ifade ettiği bir şey yoktur. Sadece bazı metotlar bunların değerlerini değiştir ve kullanır. Bu alanların ne için kullanıldığını bulmak çok zordur.
 
 #### Sebep
 
-Genellikle geçici alanlar, çok fazla girdisi olan bir algoritma içinde kullanılmak için oluşturulurlar. Dolayısıyla, metot için çok fazla parametre geçmek yerine, sınıfın içinde, veriyi tutması için bir alan oluşturulur. Bu alanlar sadece bu algoritma içinde kullanılır ve sonrasında artık anlamsızdır.
-
-Bu tarz bir kodun anlaşılması zordur. Siz sürekli ilgili alanın bir veri tuttuğunu varsayarsınız; ama o tek bir algoritma dışında, her zaman boştur.
+Karmaşık algoritmalar, her zaman çok fazla değişken kullanırlar. Bazen bu değişkenleri parametre olarak, metoda geçmek gerekir ve yazılımcı bunun kötü bir tasarım olduğunu bildiği için bunu yapmak istemez ama başka bir kötü tasarım yapabilir. Algoritma için gerekli olan değişkenleri, sınıfın alanları olarak tanımlar ve bu alanlar sadece ilgili algoritma tarafından kullanılır Dolayısıyla bu algoritma dışında bu değişkenlerin hiç bir manası yoktur.
 
 #### Çözüm
 
-- Geçici alanı ve onunla ilişkili olan işlemleri farklı bir sınıfa taşıma: [Extract Class](#extract-class) veya [Replace Method with Method Object](#replace-method-with-method-bject)
-- Geçici alanları kontrol etmek için: [Introduce Null Object](#introduce-null-object)
+Bu kötü tasarımdan kurtulmak için, ilişkili olan işlemleri farklı sınıfa taşıyabilir veya `Null object pattern` yöntemini kullanabiliriz.
+
+Kullanılabilecek refactoring teknikleri: [Extract Class](#extract-class), [Replace Method with Method Object](#replace-method-with-method-bject), [Introduce Null Object](#introduce-null-object).
 
 #### Sonuç
 
-Daha iyi kod organizasyonu ve sadelik.
+Daha rahat okunabilir ve sade kodlar.
 
 ### Refused Bequest
 
