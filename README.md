@@ -4,7 +4,7 @@
 
 Bu dokümanın bir makale olarak değil de GitHub'da olmasının sebebi, herkesin katkılarına açık bir şekilde sürekli güncel bir kılavuz hazırlamak.
 
-Bazı kelimeler Türkçeye çevrilmedi. Bunun sebebi, birçok kelime artık o kalıp içinde daha anlamlı oluyor. Örneğin; Refactoring, Extract Method, Primitive Obsession vs. 
+Bazı kelimeler Türkçeye çevrilmedi. Bunun sebebi, birçok kelime artık o kalıp içinde daha anlamlı oluyor. Örneğin; Refactoring, Extract Method, Primitive Obsession vs.
 
 ## İÇİNDEKİLER
 
@@ -50,7 +50,7 @@ Refactoring, kodun işlevselliğini değiştirmeden, kodun kalitesini artırma, 
 
 ### Temiz Kod Nedir?
 
-#### Temiz kod diğer geliştiriciler için gayet açık ve anlaşılabilirdir. 
+#### Temiz kod diğer geliştiriciler için gayet açık ve anlaşılabilirdir.
 
 Değişken isimlendirmeleri, sınıfların ve metotların uzunlukları ve karmaşıklıkları vs. gibi kodun okunmasını, anlaşılmasını ve bakımını zorlaştıran şeylerin olmaması.
 
@@ -70,7 +70,7 @@ Temiz kod bakımı kolaylaştırır, hız kazandırır ve bakım maliyetini dü�
 
 Hiç kimse, projeye zarar vermek için bilerek kötü kod yazmaz. Herkes elinden gelenin en iyisini yapmak ister. Kötü kod yazmaya iten sebepler vardır. Kötü yazılan kod da, ilerde başımıza dert açabilir.
 
-Teknik borcu anlatmak için, bankadan çekilen kredi örnek verilir. Acil ödemeniz gereken bir borç için, günü kurtarmak adına çekilen kredi, daha sonra daha fazla borç olarak tekrar karşımıza çıkar. Çekilen tutar tekrar faiziyle geri ödenir. 
+Teknik borcu anlatmak için, bankadan çekilen kredi örnek verilir. Acil ödemeniz gereken bir borç için, günü kurtarmak adına çekilen kredi, daha sonra daha fazla borç olarak tekrar karşımıza çıkar. Çekilen tutar tekrar faiziyle geri ödenir.
 
 Aynı şekilde, daha hızlı geliştirmek adına; mesela test yazmadan, geliştirilen her özellik, gün geçtikçe bakım maliyetini artırarak, geliştirme hızını da düşürür, ta ki teknik borcu ödeyene kadar.
 
@@ -84,15 +84,15 @@ Bazen iş koşulları, tamamlanmadan önce özellikleri kullanıma sunmaya zorla
 
 İşverenler/yöneticiler, geride teknik borç biriktirdikçe, maliyetin katlanarak arttığını anlamayabilirler. Bundan dolayı da, ekibin refactoring için zaman ayırmasını, vakit kaybı olarak görürler ve değer vermezler.
 
-#### Ekip üyeleri arasındaki iletişim eksikliği 
+#### Ekip üyeleri arasındaki iletişim eksikliği
 
-İletişim eksikliğinden dolayı bilgi, ekip üyeleri arasında sağlıklı dağılmaz veya tecrübeli birisi bilgiyi tecrübesiz olana yanlış aktarabilir. Bundan dolayı da ekip elindeki güncel olmayan, eksik veya yanlış anlaşılmış bilgiyle geliştirme yapabilir. 
+İletişim eksikliğinden dolayı bilgi, ekip üyeleri arasında sağlıklı dağılmaz veya tecrübeli birisi bilgiyi tecrübesiz olana yanlış aktarabilir. Bundan dolayı da ekip elindeki güncel olmayan, eksik veya yanlış anlaşılmış bilgiyle geliştirme yapabilir.
 
 #### Uzun süre farklı dallarda (branch) çalışılması
 
 Teknik borcun birikmesine ve birleştirme işleminde daha da artmasına sebep olur. Toplam teknik borç, ayrı ayrı biriken teknik borç toplamından daha büyük olur.
 
-#### Gecikmeli refactoring 
+#### Gecikmeli refactoring
 
 Refactoring gerekli durumlarda, refactoring ertelenirse, düzenlenmesi gereken bu parçaya bağımlı yeni yazılan her kod, eski düzene göre yazılacağından, teknik borç her yeni yazılan kod için de artar. Oysa anında müdahale edilse, arkasından gelen kodlar için de aynı düzenleme gerekmeyecek.
 
@@ -114,7 +114,7 @@ Refactoring, başkalarının kodlarını anlamayı kolaylaştırır. Yeni özell
 
 #### Hata düzeltme
 
-Yine hata bulmak için öncelikle kodun iyi anlaşılması lazımdır. Daha iyi anlamak için kodu refactor ederiz. Refactor işlemi sırasında, çoğunlukla hata bulunur. 
+Yine hata bulmak için öncelikle kodun iyi anlaşılması lazımdır. Daha iyi anlamak için kodu refactor ederiz. Refactor işlemi sırasında, çoğunlukla hata bulunur.
 
 #### Kod inceleme (code review)
 
@@ -183,7 +183,7 @@ Uzun metotlardaki gibi, uzun sınıfların oluşmasındaki en büyük sebep, kol
 
 #### Çözüm
 
-En iyi çözüm en başta sınıfı parçalara ayırmak. Mesela, GUI'nin kullandığı kısımlar ayrı bir sınıfa taşınabilir. Sınıf paralel veya hiyerarşik olarak ayrıştırılabilir. Aynı şekilde, sınıf içinde gruplanabilecek davranışlar, interface olarak da ayrıştırılabilir. 
+En iyi çözüm en başta sınıfı parçalara ayırmak. Mesela, GUI'nin kullandığı kısımlar ayrı bir sınıfa taşınabilir. Sınıf paralel veya hiyerarşik olarak ayrıştırılabilir. Aynı şekilde, sınıf içinde gruplanabilecek davranışlar, interface olarak da ayrıştırılabilir.
 
 Kullanılabilecek refactoring teknikleri: [Extract Class](#extract-class), [Extract Subclass](#extract-subclass), [Extract Interface](#extract-interface), [Duplicate Observed Data](#duplicate-observed-data).
 
@@ -201,7 +201,7 @@ Kod içerisinde primitif tiplere, işlerinin dışında sorumluluklar vermek. Ö
 
 Biraz tembellikten, belki biraz da tecrübesizlikten, başta bir tane veri için, bir nesne oluşturmak yerine, kolay olan yolu yani değişken tanımlama yoluna gideriz. Benzer bir alan daha lazım olduğunda, kodu refactor edip nesneye çevirmek yerine, bu yeni alanı da, başka bir değişkene atarız. Her defasında bu hatayı yaptıkça, sınıflar/metotlar şişer.
 
-Bir diğer hata da kullanımı kolay ve anlaşılır olan değişkenlerde veritabanına ait olabilecek veriler tutmak. En kötüsü ise, bir sınıfın her alanının, bir dizide veri olarak tutulması. Neyse oluşturmak o kadar zor gelirki, bir dizide bu nesnenin her alanı için bir veri tutulur. 
+Bir diğer hata da kullanımı kolay ve anlaşılır olan değişkenlerde veritabanına ait olabilecek veriler tutmak. En kötüsü ise, bir sınıfın her alanının, bir dizide veri olarak tutulması. Neyse oluşturmak o kadar zor gelirki, bir dizide bu nesnenin her alanı için bir veri tutulur.
 
 #### Çözüm
 
@@ -221,11 +221,11 @@ Methodun çok fazla parametre alması.
 
 #### Sebep
 
-Metot değiştikçe yeni parametreler eklemek gerekebilir. Her yeni parametre ekledikten sonra, önlem alınmazsa parametreler gittikçe çoğalır veya metot kendi içinde sınıfın verilerini kullanmak yerine, onları parametre olarak alabilir. Bunun sebebi bağımlılığı azaltmak ama yine metodun parametreleri artmış olur. 
+Metot değiştikçe yeni parametreler eklemek gerekebilir. Her yeni parametre ekledikten sonra, önlem alınmazsa parametreler gittikçe çoğalır veya metot kendi içinde sınıfın verilerini kullanmak yerine, onları parametre olarak alabilir. Bunun sebebi bağımlılığı azaltmak ama yine metodun parametreleri artmış olur.
 
 #### Çözüm
 
-Metot aynı sınıf içindeki verileri parametre alıyorsa buna gerek yok. Parametre geçmek yerine, metot içinde bu veriler kullanılabilir. Bir sınıfın alanlarını tek tek parametre geçmek yerine, sınıfın kendisini parametre geçmek daha mantıklıdır. Diğer bir durum ise, ilişkili olabilecek parametreleri, bir nesneye çevirmek. Örneğin, `start` ve `end` parametrelerini `range` nesnesine çevirip, bunu parametre olarak geçebiliriz. 
+Metot aynı sınıf içindeki verileri parametre alıyorsa buna gerek yok. Parametre geçmek yerine, metot içinde bu veriler kullanılabilir. Bir sınıfın alanlarını tek tek parametre geçmek yerine, sınıfın kendisini parametre geçmek daha mantıklıdır. Diğer bir durum ise, ilişkili olabilecek parametreleri, bir nesneye çevirmek. Örneğin, `start` ve `end` parametrelerini `range` nesnesine çevirip, bunu parametre olarak geçebiliriz.
 
 Kullanılabilecek refactoring teknikleri: [Replace Parameter with Method Call](#replace-parameter-with-method-call), [Preserve Whole Object](#preserve-whole-object), [Introduce Parameter Object](#introduce-parameter-object).
 
@@ -281,11 +281,11 @@ Kullanılabilecek refactoring teknikler: [Extract Method](#extract-method), [Mov
 
 #### Sonuç
 
-Uygulamanın tasarımı daha iyi bir hal alır ve bakımı kolaylaşır. 
+Uygulamanın tasarımı daha iyi bir hal alır ve bakımı kolaylaşır.
 
 #### Ne zaman göz ardı edilebilir?
 
-Aslında `switch-case` ifadeleri çok kullanışlıdır ve yerinde kullanıldığında, hız kazandırır. Eğer uygulanın içerisinde, yönetilemeyecek kadar çok dağılırsa ve kodun okunabilirliğini ve bakımını zorlaştıracaksa, `switch-case` ifadelerinden kaçınılmalıdır. Ama basit kullanımlarda hiçbir sakıncası yoktur. 
+Aslında `switch-case` ifadeleri çok kullanışlıdır ve yerinde kullanıldığında, hız kazandırır. Eğer uygulanın içerisinde, yönetilemeyecek kadar çok dağılırsa ve kodun okunabilirliğini ve bakımını zorlaştıracaksa, `switch-case` ifadelerinden kaçınılmalıdır. Ama basit kullanımlarda hiçbir sakıncası yoktur.
 
 Ayrıca, `Factory design pattern` içinde de `switch-case` ifadeleri kullanmakta bir sakınca yoktur.
 
@@ -577,7 +577,7 @@ Alanlar veri sınıfına taşınırken oluşur. Bu durumda, veriyle işlem yapan
 
 #### Çözüm
 
-Genelde veri ve bu veriyi kullanan kod blokları birlikte değişir. Bundan dolayı hepsini aynı yerde tutmak gerekir. 
+Genelde veri ve bu veriyi kullanan kod blokları birlikte değişir. Bundan dolayı hepsini aynı yerde tutmak gerekir.
 
 - Eğer metotlar taşınacaksa: [Move Method](#move-method).
 - Bir metodun yalnızca bir kısmı başka bir nesnenin verilerine erişiyorsa: [Extract Method](#extract-method).
@@ -611,7 +611,7 @@ Kodların parça parça taşınması sırasında veya yanlış tasarımdan kayna
 
 #### Sonuç
 
-- Kod organizasyonunu geliştirir. 
+- Kod organizasyonunu geliştirir.
 - Bakımı ve kodun yeniden kullanımını kolaylaştırır.
 
 ### Message Chains
@@ -622,7 +622,7 @@ Kodda `$a->b()->c()->d()` gibi bir dizi çağrı görürsünüz. Bu zincirler, s
 
 #### Sebep
 
-Bir istemci bir nesne talep ettiğinde, talep edilen nesne başka bir tane daha ister ve bir mesaj zinciri oluşur. 
+Bir istemci bir nesne talep ettiğinde, talep edilen nesne başka bir tane daha ister ve bir mesaj zinciri oluşur.
 
 #### Çözüm
 
@@ -631,7 +631,7 @@ Bir istemci bir nesne talep ettiğinde, talep edilen nesne başka bir tane daha 
 
 #### Sonuç
 
-- Bir zincirin sınıfları arasındaki bağımlılığı azaltır. 
+- Bir zincirin sınıfları arasındaki bağımlılığı azaltır.
 - Şişirilmiş kodun miktarını azaltır.
 
 #### Ne zaman göz ardı edilebilir?
@@ -699,7 +699,7 @@ Gruplanabilecek kod bloklarının olması.
 
 <details>
   <summary>C#</summary>
-  
+
 ```csharp
 public class ExtractMethodBad
 {
@@ -714,10 +714,10 @@ public class ExtractMethodBad
 }
 ```
 </details>
-  
+
 <details>
   <summary>Go</summary>
-  
+
 ```go
 package main
 
@@ -738,7 +738,7 @@ Bu kodu ayrı bir yeni metoda taşıyın ve eski kodun yerine bu metodu çağır
 
 <details>
   <summary>C#</summary>
-  
+
 ```csharp
 public class ExtractMethodGood
 {
@@ -762,7 +762,7 @@ public class ExtractMethodGood
 
 <details>
   <summary>Go</summary>
-  
+
 ```go
 package main
 
@@ -804,7 +804,7 @@ Bir metodun gövdesinin, metodun kendisinden daha açık olması.
 
 <details>
   <summary>C#</summary>
-  
+
 ```csharp
 public class InlineMethodBad
 {
@@ -822,13 +822,34 @@ public class InlineMethodBad
 ```
 </details>
 
+<details>
+  <summary>Go</summary>
+
+```go
+package main
+
+func GetMultiplier(number int) int {
+    if ifNumberPositive(number) {
+        return 1
+    } else {
+        return -1
+    }
+}
+
+// bu metoda gerek yok
+func ifNumberPositive(number int) bool {
+    return number >= 0
+}
+```
+</details>
+
 #### Çözüm
 
 Metot çağrısını, metodun içeriğiyle değiştirin ve metodun kendisini silin.
 
 <details>
   <summary>C#</summary>
-  
+
 ```csharp
 public class InlineMethodGood
 {
@@ -840,9 +861,28 @@ public class InlineMethodGood
 ```
 </details>
 
+<details>
+  <summary>Go</summary>
+
+  [Go Playground ile çalıştır](https://play.golang.org/p/ZGXxzGxKSRZ)
+```go
+package main
+
+func GetMultiplier(number int) int {
+    if number >= 0 {
+        return 1
+    } else {
+        return -1
+    }
+}
+```
+</details>
+
+
+
 #### Neden?
 
-Bir metot basitçe başka bir metodu çağırır ve bunda aslında bir problem yoktur. Problem, bu şekilde gereksiz metotların artmasıdır. Böyle çok fazla metot olunca, kafa karıştırıcı kodlar ortaya çıkar. 
+Bir metot basitçe başka bir metodu çağırır ve bunda aslında bir problem yoktur. Problem, bu şekilde gereksiz metotların artmasıdır. Böyle çok fazla metot olunca, kafa karıştırıcı kodlar ortaya çıkar.
 
 #### Faydaları
 
@@ -860,18 +900,34 @@ Anlaşılması zor koşulların/ifadelerin olması.
 
 <details>
   <summary>C#</summary>
-  
+
 ```csharp
 public class ExtractVariableBad
 {
     public double GetTotalPrice()
     {
-        var order = new Order();// get order 
+        var order = new Order();// get order
 
         return order.Quantity * order.ItemPrice -
                Math.Max(0, order.Quantity - 500) * order.ItemPrice * 0.05 +
                Math.Min(order.Quantity * order.ItemPrice * 0.1, 100);
     }
+}
+```
+</details>
+
+<details>
+  <summary>Go</summary>
+
+```go
+package main
+
+func GetTotalPrice() float64 {
+    var order = Order{} // get order
+
+    return order.Quantity * order.ItemPrice -
+           math.Max(0, order.Quantity - 500) * order.ItemPrice * 0.05 +
+           math.Min(order.Quantity * order.ItemPrice * 0.1, 100)
 }
 ```
 </details>
@@ -882,13 +938,13 @@ public class ExtractVariableBad
 
 <details>
   <summary>C#</summary>
-  
+
 ```csharp
 public class ExtractVariableGood
 {
     public double GetTotalPrice()
     {
-        var order = new Order();// get order 
+        var order = new Order();// get order
 
         var basePrice = order.Quantity * order.ItemPrice;
         var quantityDiscount = Math.Max(0, order.Quantity - 500) * order.ItemPrice * 0.05;
@@ -896,6 +952,25 @@ public class ExtractVariableGood
 
         return basePrice - quantityDiscount + shipping;
     }
+}
+```
+</details>
+
+<details>
+  <summary>Go</summary>
+
+  [Go Playground ile çalıştır](https://play.golang.org/p/f8MFx7GoHG3)
+```go
+package main
+
+func GetTotalPrice() float64 {
+    var order = Order{} // get order
+
+    var basePrice = order.Quantity * order.ItemPrice
+    var quantityDiscount = math.Max(0, order.Quantity - 500) * order.ItemPrice * 0.05
+    var shipping = math.Min(basePrice * 0.1, 100)
+
+    return basePrice - quantityDiscount + shipping
 }
 ```
 </details>
@@ -918,7 +993,7 @@ Daha okunabilir ve anlaşılabilir kod. İfadenin ne anlama geldiğini ismi ile 
 
 ## KAYNAKLAR
 
-**NOT**: Yararlanılan kaynaklar sürekli eklenecek. 
+**NOT**: Yararlanılan kaynaklar sürekli eklenecek.
 
 - https://refactoring.guru/
 - http://www.yilmazcihan.com/yazilim-gelistirmede-teknik-borc/
