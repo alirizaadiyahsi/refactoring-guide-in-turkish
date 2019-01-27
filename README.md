@@ -313,16 +313,21 @@ Daha rahat okunabilir ve sade kodlar.
 
 #### Problem
 
-Bir sınıf kalıtım aldığı sınıfın sadece birkaç metodunu veya özelliğini kullanıyorsa, sınıflar arasındaki hiyerarşi bozulur. İhtiyaç duyulmayan metotlar artık gereksiz hale gelir.
+Bir sınıfın, kalıtım aldığı sınıfın çok az özelliğini veya metodunu kullanması.
 
 #### Sebep
 
-Kodun yeniden kullanılması isteği, bazen gereksiz hiyerarşi kurmaya sebep olabilir. Ama kalıtım alınan sınıfla alan sınıf arasında çok farklılık vardır. Örneğin; `AnimalLegs` sınıfından türeyen, `DogLegs` ve `ChairLegs`.
+Kodun yeniden kullanılması, kalıtım ve benzer tasarım desenlerini kullanma isteği bazen bunların gereksiz kullanımına bizi iter. Ama hiyerarşi kurmak istediğimiz sınıflar çok farklı olabilir. Örneğin birisi ördek, diğeri oyuncak ördek olabilir.
+
+"The Liskov Substitution Principle" şöyle der: Ördeğe benziyor, ördek gibi ses çıkarıyor ama bataryaya ihtiyacı varsa, büyük ihtimalle yanlış bir soyutlama peşindesin.
 
 #### Çözüm
 
-- Kalıtım mantıklı değil ve kalıtım alan sınıfla üst sınıf arasında bir benzerlik yok ise: [Replace Inheritance with Delegation](#replace-inheritance-with-delegation)
-- Eğer kalıtım yapmak uygunsa, kalıtım alan sınıf içindeki gereksiz alanlardan ve metotlardan kurtulun. Üst sınıfta olan ve alt sınıfta kullanılan metot ve alanları ayrı bir alt sınıfa taşıyın ve bu sınıftan kalıtım alın: [Extract Superclass](#extract-superclass)
+Kalıtımla da çözülebilir, kalıtım olmadan da çözülebilir. Kalıtım mantıklı değilse, sınıflar paralel hiyerarşiye çekilir.
+
+Kalıtım yapmak uygunsa, kalıtım alan sınıf içindeki gereksiz metotlardan, alanlardan ve özelliklerden kurtulup, başka bir üst sınıf oluşturup, uygun şekilde yeniden hiyerarşi sağlanabilir.
+
+Kullanılabilecek refactoring teknikleri: [Replace Inheritance with Delegation](#replace-inheritance-with-delegation), [Extract Superclass](#extract-superclass).
 
 #### Sonuç
 
