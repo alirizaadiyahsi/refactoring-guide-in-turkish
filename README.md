@@ -995,7 +995,7 @@ Daha okunabilir ve anlaşılabilir kod. İfadenin ne anlama geldiğini ismi ile 
 
 ## KAYNAKLAR
 
-**NOT**: Yararlanılan kaynaklar sürekli eklenecek.
+**NOT**: Yararlanılan kaynaklar sürekli eklenecek. Bu döküman anlatım tarzı olarak https://refactoring.guru/ sitesindekine benzer bir yapı kullanıyor. Ana kaynak olarak bu siteden yararlanılıyor. Bu sitenin sahibi Alexander Shvets, içeriğin üzerine bina ettiği başka bir içeriği paralı olarak sattığı için, bedava olan kısmın birebir çevirisinin MIT lisans altında GitHub da olmasını istemiyor. Dolayısıyla bu dökümanın içeriği olabildiğince özgün, araştırılmış, tecrübe ile desteklenmiş, farklı kaynaklardan düzenlenmiş içeriklerden oluşmaktadır.
 
 - https://refactoring.guru/
 - http://www.yilmazcihan.com/yazilim-gelistirmede-teknik-borc/
