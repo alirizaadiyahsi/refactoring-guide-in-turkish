@@ -361,22 +361,21 @@ Bazı sınıflar farklı kütüphanelerde olabilir ve bunlar kendi içinde geli�
 
 #### Problem
 
-Bir sınıfta değişiklik yaparken, kendinizi bir sürü metodu değiştirirken bulabilirsiniz. Örneğin; yeni bir ürün tipi eklediğinizde, bulma, gösterme, sıralama yapan metotları da değiştirmek zorunda kalabilirsiniz.
+Bir kod bloğunu değiştirirken, kendinizi silsile halinde başka kodları da değiştirirken bulabilirsiniz. Örneğin; bir nesne değiştiği zaman, onun listelendiği, sıralandığı, eklenip, düzenlendiği gibi ilişkili yerlerinde değişmesi gerekebilir.
 
 #### Sebep
 
-Genelde bu problemin sebebi, yazılımın kötü yapısı/tasarımı ve "copy-paste programming" in sonucudur.
+Kötü tasarım ve kötü kod altyapısından veya birbirine aşırı bağımlı kod parçalarının olmasından kaynaklanan bir durum olabilir.
 
 #### Çözüm
 
-- Sınıfın davranışını bölmek: [Extract Class](#extract-class).
-- Farklı sınıflar aynı davranışa sahipse, sınıfları kalıtım yoluyla birleştirmek: [Extract Superclass](#extract-superclass) ve [Extract Subclass](#extract-subclass).
+Sınıfların davranışlarını bölmek veya duruma göre eğer aynı işi yapıyorlarsa birleştirmek.
+
+Kullanılabilecek refactoring teknikleri: [Extract Class](#extract-class), [Extract Superclass](#extract-superclass), [Extract Subclass](#extract-subclass).
 
 #### Sonuç
 
-- Kod organizasyonunun iyileştirilmesi.
-- Kod tekrarının azaltılması.
-- Desteği basitleştirme.
+Daha iyi kod organizasyonu, kod tekrarının azaltılması, bakımın kolaylaşması.
 
 ### Shotgun Surgery
 
