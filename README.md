@@ -337,27 +337,25 @@ Kodun okunabilirliğini ve organizasyonunu artırır. Artık, neden `Chair` sın
 
 #### Problem
 
-İki farklı sınıfın, aynı işlemi farklı metot isimleriyle yapması.
+Farklı `interface` kullanan veya hiç `interface` kullanmayan, ama aynı işi yapan kod bloklarının, sınıfların veya metotların olması. Bu sınıfların içindeki aynı işleri yapan metotların isimleri, imzaları falan farklıdır. Hangisinin ne zaman kullanılacağı tam olarak belli değildir. Birbirlerinin alternatifleri bile olurlar.
 
 #### Sebep
 
-Sınıflardan birini oluşturan yazılımcının, muhtemelen aynı işlevi yapan başka bir sınıfın varlığından haberi yoktur.
+Yazılımcının kod okumaması, kötü tasarlanmış kodların olması, sürekli yeni yazılımcıların katılmasından kaynaklı olarak, yazılımcıların, muhtemelen böyle bir işlevi yapan kod parçalarından habersiz olarak, aynı işi yapan kod blokları eklemesinden kaynaklanır.
 
 #### Çözüm
 
-- Tüm metotların tamamen aynı olması için: [Rename Method](#rename-method)
-- Metodların imzasının ve uygulanmasının aynı olması için: [Move Method](#move-method), [Add Parameter](#add-parameter) ve [Parameterize Method](#parameterize-method)
-- Sınıflardan sadece bir bölümünün benzer olduğu durumlarda: [Extract Superclass](#extract-superclass)
-- Sınıflardan birisinin tüm işlemleri yaptığı ve diğerinin aslında gereksiz olduğunu düşündüğünüzde, gereksiz sınıfın silinmesi.
+Sınıfların ve metotların isimlerinin, imzalarının ve uygulanmalarının birebir aynı olması sağlanmalıdır. Birebir aynı olduğunda sınıflardan birisinin gereksiz olduğu anlaşılırsa, gereksiz olan silinir. Sınıfların ortak kullandıkları bölümler varsa bunlar, ortak başka bir sınıfa alınabilir.
+
+Kullanılabilecek refactoring teknikleri: [Rename Method](#rename-method), [Move Method](#move-method), [Add Parameter](#add-parameter), [Parameterize Method](#parameterize-method), [Extract Superclass](#extract-superclass).
 
 #### Sonuç
 
-- Gereksiz kodların silinmesi.
-- Kod daha temiz ve okunabilir olması.
+Daha az ve temiz, kolay okunabilir, kolay bakım yapılabilir, geliştirme maliyeti azalmış kod altyapısı sağlar.
 
 #### Ne zaman göz ardı edilebilir?
 
-Bazen sınıfları birleştirmek mümkün olmayabilir veya çok zor olabilir. Mesela, sınıflar farklı kütüphanelerde olabilir. Her kütüphanenin geliştirilmesi, versiyonlanması farklı yönetilir.
+Bazı sınıflar farklı kütüphanelerde olabilir ve bunlar kendi içinde geliştirilir ve versiyonlanırlar. Bu gibi durumlarda, birleştirmek, silmek ve taşımak mantıksızdır.
 
 ### Divergent Change
 
