@@ -381,22 +381,21 @@ Daha iyi kod organizasyonu, kod tekrarının azaltılması, bakımın kolaylaşm
 
 #### Problem
 
-Herhangi bir değişiklik yapmak, birçok farklı sınıfta birçok küçük değişiklik yapmanızı gerektirir.
+Kodun çok daha derinlerindeki, büyük bir sıkıntının, bize görünen küçük kısmı. Buzdağının görünen yüzü de diyebiliriz. Küçük gibi görünen bu kötü tasarımı düzeltmeye kalktığında çok farklı yerlerin etkilendiğini görürüz.
 
 #### Sebep
 
-Çok sayıda sınıf arasında tek bir sorumluluk dağılmıştır. Bu aşırı bir şekilde "Divergent Change" uygulamasından sonra olabilir.
+Genelde sorumlulukların iyi ayrılamamasından (Seperation of Concerns ve Single Responsibility), tasarım desenlerinin acemice ve kötü uygulanmasından kaynaklanabilir.
 
 #### Çözüm
 
-- Mevcut sınıf davranışlarını tek bir sınıfa taşı: [Move Method](#move-method) ve [Move Field](#move-field).
-- Kodları taşıdıkdan sonra, diğer sınıflar neredeyse boş kalıyorsa, boş kalan sınıflardan kurtul: [Inline Class](#inline-class).
+Çözüm basit, nesneleri ve davranışları kuralına uygun olarak ayırmak, gereksiz nesneleri ve davranışları silmek.
+
+Uygulanabilecek refactoring teknikleri: [Move Method](#move-method), [Move Field](#move-field), [Inline Class](#inline-class).
 
 #### Sonuç
 
-- Daha iyi bir kod organizasyonu.
-- Daha az kod tekrarı.
-- Kolay bakım.
+Daha okunabilir, daha kolay bakım yapılabilir, kod tekrarlarının az olduğu, daha iyi bir kod organizasyonu sağlar.
 
 ### Parallel Inheritance Hierarchies
 
@@ -1007,3 +1006,4 @@ Daha okunabilir ve anlaşılabilir kod. İfadenin ne anlama geldiğini ismi ile 
 - https://stackoverflow.com/questions/16719270/is-data-class-really-a-code-smell
 - http://wiki3.cosc.canterbury.ac.nz/index.php/Middle_man_smell
 - https://refactoring.com/catalog/extractVariable.html
+- https://dzone.com/articles/code-smell-shot-surgery
