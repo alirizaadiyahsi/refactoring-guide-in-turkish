@@ -110,7 +110,7 @@ Bazen sadece tecrübesizlikten veya beceriksizlikten kötü kod yazarak, teknik 
 
 #### Özellik ekleme
 
-Refactoring, başkalarının kodlarını anlamayı kolaylaştırır. Yeni özellik eklemek için kodun iyi anlaşılması gereklidir. Kod ne kadar temiz olursa o kadar anlaşılır olur. Dolayısıyle yeni özellik eklemeden önce kodlar refactor edilebilir.
+Refactoring, başkalarının kodlarını anlamayı kolaylaştırır. Yeni özellik eklemek için kodun iyi anlaşılması gereklidir. Kod ne kadar temiz olursa o kadar anlaşılır olur. Dolayısıyla yeni özellik eklemeden önce kodlar refactor edilebilir.
 
 #### Hata düzeltme
 
@@ -118,7 +118,7 @@ Yine hata bulmak için öncelikle kodun iyi anlaşılması lazımdır. Daha iyi 
 
 #### Kod inceleme (code review)
 
-Kod inceleme, hem kodu yazan hem de inceleyen için en faydalı iştir. Kod incleme yaparken, hata bulmak daha kolay ve hızlı olur. İlerde yapılabilecek daha büyük hatalar için de, önceden bilgi sahibi olmayı sağlar.
+Kod inceleme, hem kodu yazan hem de inceleyen için en faydalı iştir. Kod inceleme yaparken, hata bulmak daha kolay ve hızlı olur. İlerde yapılabilecek daha büyük hatalar için de, önceden bilgi sahibi olmayı sağlar.
 
 ### Refactoring Nasıl Yapılır?
 
@@ -161,7 +161,7 @@ Yazılımcı her zaman kodu kendisi yazmak ister. Kendi yazmadığı kodlara gü
 
 Anlaşılması için illa açıklanması gereken her kod bloğu ayrı bir metoda taşınabilir. Kodların anlaşılması için taşınan metodun ismi, metodun ne yaptığına dair kesin bilgi vermelidir. Böylece metodu kullananlar, metodun ne yaptığını, içindeki kodları okumadan anlayabilir.
 
-Kod içerisindeki koşullu ifadeler, döngüler her zaman, kodları farklı metoda taşımak için birer adaydır. Kullanılabilecek rafactoring teknikleri: [Extract Method](#extract-method), [Temp with Query](#temp-with-query), [Introduce Parameter Object](#introduce-parameter-object), [Preserve Whole Object](#preserve-whole-object), [Replace Method with Method Object](#replace-method-with-method-object) ve [Decompose Conditional](#decompose-conditional).
+Kod içerisindeki koşullu ifadeler, döngüler her zaman, kodları farklı metoda taşımak için birer adaydır. Kullanılabilecek refactoring teknikleri: [Extract Method](#extract-method), [Temp with Query](#temp-with-query), [Introduce Parameter Object](#introduce-parameter-object), [Preserve Whole Object](#preserve-whole-object), [Replace Method with Method Object](#replace-method-with-method-object) ve [Decompose Conditional](#decompose-conditional).
 
 #### Sonuç
 
