@@ -401,24 +401,25 @@ Daha okunabilir, daha kolay bakım yapılabilir, kod tekrarlarının az olduğu,
 
 #### Problem
 
-Her ne zaman bir sınıf için alt sınıf oluştursan, kendini başka bir sınıf için alt sınıf oluşturma ihtiyacı duyarken bulabilirsin. İlişkili iki sınıf farklı dallardan hiyerarşi oluşturur.
+Hiyerarşik bir sınıf grubunun, bu grupla ilişkili ve paralelinde başka bir sınıf hiyerarşisinin olması. Mesela `Vehicle` sınıfından türeyen, `Car` ve `Truck` nesnelerinin, paralelinde bu hiyerarşiyle alakalı, `XmlFormatter` sınıfından türeyen `CarXmlFormatter` ve `TruckXmlFormatter` sınıflarının olması durumu. İki ağaç da birbirine paralel olarak dallanıyor.
 
 #### Sebep
 
-Hiyerarşi küçük olduğu sürece çok problem değil ama yeni sınıflar eklenmeye başlandıkça, değişiklik yapmak sürekli zorlaşmaya başlar.
+Okunamayacak kadar kötü tasarımlı kod altyapısı ile çalışmaktan dolayı, kod/tasarım tam olarak anlaşılmamış olabilir. Bir diğer sabep ise tecrübesizlikten kaynaklanmış olabilir. 
 
 #### Çözüm
 
-- Hiyerarşilerin en tepesindeki sınıfların ikisini de kalıtım alan yeni bir hiyerarşi veya tepedeki paralel sınıfların birleşiminden yeni bir hiyerarşi: [Move Method](move-method) ve [Move Field](#move-field).
+Bu kötü tasarımı çözmenin birçok yöntemi var. Bu yöntemlerin hepsi farklı bir tasarım desenini içeriyor. Örneğin, en tepedeki iki sınıfı da kalıtım alan yeni bir hiyerarşi veya tepedeki sınıfların birleşiminden yeni bir hiyerarşi oluşturulabilir. Çok farklı tasarımlarla çözülebilir ve bu tasarımlar da, tasarım desenleri konusuna girmektedir, ama temelde kullanılacak refactoring teknikleri bellidir.
+
+Kullanılabilecek refactoring teknikleri: [Move Method](move-method), [Move Field](#move-field).
 
 #### Sonuç
 
-- Kod organizasyonu iyileşmesi.
-- Kod tekrarını engellemesi.
+Kod tekrarının engellenerek, daha iyi bir kod altyapısının oluşmasının sağlanması. Daha iyi tasarıma sahip kodun, bakımının kolaylaşması.
 
 #### Ne zaman göz ardı edilebilir?
 
-Bazen paralel sınıf hiyerarşilerine sahip olmak, yazılımın mimarisiyle daha büyük karışıklıktan kaçınmanın bir yoludur. Hiyerarşileri çoğaltma girişimlerinizin daha çirkin kodlar ürettiğini tespit ederseniz, tüm değişikliklerinizi geri alın ve bu koda alışın.
+Paralel hiyerarşi, her ne kadar değişiklik maliyeti yüksek kod üretse de, dengeli kullanımda aslında daha okunabilir bir kod yapısı sunar. Bazen bu tasarımdan kurtulmak için, çok daha karışık ve gereksiz tasarımlara doğru kayabiliriz. Paralel hiyerarşi çok fazla dallanmadığı sürece göz ardı edilebilir.
 
 ### Comments
 
@@ -1007,3 +1008,4 @@ Daha okunabilir ve anlaşılabilir kod. İfadenin ne anlama geldiğini ismi ile 
 - http://wiki3.cosc.canterbury.ac.nz/index.php/Middle_man_smell
 - https://refactoring.com/catalog/extractVariable.html
 - https://dzone.com/articles/code-smell-shot-surgery
+- https://stackoverflow.com/questions/696350/avoiding-parallel-inheritance-hierarchies
