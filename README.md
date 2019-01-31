@@ -425,31 +425,25 @@ Paralel hiyerarşi, her ne kadar değişiklik maliyeti yüksek kod üretse de, d
 
 #### Problem
 
-Metodun açıklayıcı yorumlarla dolu olması.
+Kod bloklarını açıklamak için yazılmış yorumların olması. Bir söz var; kod yazmak espri yapmak gibidir, eğer açıklamak zorunda kalıyorsan, kötü yazılmıştır. Yorum satırları, kod içerisine yazılmış döküman gibidir. Kod her değiştiğinde yorum da değişmelidir. Ama çoğu zaman kimse kod değiştikçe, yorum satırlarını da güncellemez. Kod bir şey yapıyorken, yorum başka şey anlatıyor olabilir.
 
 #### Sebep
 
-Yorumlar genellikle yazılımcının kendi kodunun sezgisel olarak anlaşılmadığını veya açık olmadığını fark etmesiyle, iyi niyetle yazılır. Bu gibi durumlarda, yorumlar, kötü kokan kodun kokusunu gizleyen deodorant gibidir.
-
-En iyi yorum bir metot veya sınıf için iyi bir addır.
-
-Bir kod parçasının yorum yapılmadan anlaşılmayacağını düşünüyorsanız, kod yapısını yorumları gereksiz kılacak şekilde değiştirmeyi deneyin.
+İyi tasarlanmamış, kötü isimlendirilmiş, kod tekrarının çok olduğu, okunması zor olan kodlar için, yazılımcı yorum yazma yoluna gidebilir. Oysaki en iyi yorum, isimlendirmeler ve iyi tasarımdır. Yazılımcı okunmayan kodu yorumlarla anlatmaya çalışmıştır.
 
 #### Çözüm
 
-- Bir yorumun karmaşık bir ifadeyi açıklaması amaçlanıyorsa, ifade, anlaşılabilir alt ifadelere bölünmelidir: [Extract Variable](#extract-variable).
-- Bir yorum kodun bir bölümünü açıklıyorsa, bu bölüm ayrı bir metot olarak yazılabilir. Yeni yöntemin adı, büyük olasılıkla, yorum metninin kendisinden alınabilir: [Extract Method](#extract-method).
-- Bir metot zaten oluşturulmuşsa, ancak metodun ne yaptığını açıklamak için yorumlar hala gerekliyse, metoda açıklayıcı bir isim verin: [Rename Method](#rename-method).
-- Sistemin çalışması için gerekli olan bir durum hakkında kurallar koymak için yorum yazmak gerekirse: [Introduce Assertion](#introduce-assertion).
+Yorum satırlarından kurtulmak için, kodu parçalayarak, yorum gereken kod bloklarını ayrı yerlere taşıyıp, güzel bir isimlendirme yapmak gereker. Açıklayıcı parçalara ayrılan ve açıklayıcı isimlendirmeler yapılan kod blokları hala yorum satırlarına ihtiyaç duyuyorsa, yorum yerine, "assertion" ifadeleri yazılabilir.
+
+Kullanılabilecek refactoring teknikleri: [Extract Variable](#extract-variable), [Extract Method](#extract-method), [Rename Method](#rename-method), [Introduce Assertion](#introduce-assertion).
 
 #### Sonuç
 
-Kod daha sezgisel ve açık hale gelir.
+Kodu okumak ve anlamak daha kolaylaşır. Koda bakınca, içini okumadan, daha net bir şekilde ne yaptığını anlayabilir. Dolayısıyla daha kolay bakım yapılabilir hale gelir.
 
 #### Ne zaman göz ardı edilebilir?
 
-- Bir şeyin neden belirli bir şekilde uygulandığını açıklarken.
-- Karmaşık algoritmaları açıklarken (algoritmayı basitleştirmek için tüm diğer yöntemler denendikten sonra).
+Bazı durumlarda yorum satırları yazılabilir. Mesela; bir metot içinde yapılan hesaplamanın neden bu şekilde yapıldığı, çıktısında ne beklendiği, örnek girdi gibi kısımlar için yorum yazılabilir. Bazende karmaşık bir algoritmada, tüm refactoring işlemlerinden sonra bile hala anlaşılmayan noktalar kalıyorsa, yine yorum satırları eklenebilir.
 
 ### Duplicate Code
 
