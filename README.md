@@ -449,38 +449,29 @@ Bazı durumlarda yorum satırları yazılabilir. Mesela; bir metot içinde yapı
 
 #### Problem
 
-İki kod parçasının neredeyse aynı olması.
+Gereksiz tekrar eden kodların olması.
 
 #### Sebep
 
-Kod tekrarı, birden çok yazılımcının aynı yazılımın farklı bölümlerinde aynı anda çalıştığı durumlarda olur. Farklı işler üzerinde çalıştıklarından, diğer yazılımcının kendi ihtiyaçları için benzer bir kod yazmış olabileceğinin farkında olmayabilir.
+Kod tekrarı yapmak çok kolaydır. Yazılımcının kod okumayı sevmediğini belirtmiştik. Kod okunmadığı zaman, gerekli dökümanlarının olmaması durumları da eklenince, belkide kodda var olan fonksiyonellikler, bizim haberimizin olmamasından dolayı tekrardan yazılabilir.
 
-Ayrıca, kodun belirli kısımları farklı göründüğü halde aslında aynı işi yaptığı durumlar da vardır. Bu tür bir kod tekrarını bulmak ve düzeltmek zor olabilir.
+Kod tekrarları, yazılımın farklı yerlerinde çalışan ve çok birbirleri ile kesişen işler olmadığında veya yazılımcıların birbirinden haberi olmamasından dolayı, iki yazılımcı aynı işi yapan kodları aynı anda yazabilir. Bazende, kodun bazı kısımları, isimleri falan farklı olduğu halde aynı işi yaptığı durumlar da olabilir. Bunun sebebi de, yine kötü tasarımdan dolayı var olan koddan bihaber olmak ve yine aynı işi yapan kodları yazmak.
 
-Bazen kod tekrarı bilerek yapılır. İşin yetişmesi gerek zamanın sonuna geliniyorsa ve mevcut kod gereken iş için "neredeyse doğru" ise acemi yazılımcı, "kopyala-yapıştır" yapmaktan kendini alamayabilir. Bazen de yazılımcı tembellik ederek kod tekrarına göz yumabilir.
+Bazende kod tekrarı bilerek yapılabilir. Kodun çalışan kısımlarını, o an günü kurtarmak için yazılımcı kopyala-yapıştır ile alıp kullanmak isteyebilir. Bu düşünce bazen acemilikten, bazen de tembellikten olabilir.
 
 #### Çözüm
 
-- Aynı kod, aynı sınıfta iki veya daha fazla metotta bulunursa: [Extract Method](#extract-method).
-- Aynı kod, aynı seviyedeki iki alt sınıfta bulunursa;
-  - İki sınıf için de, alanı üste taşıma [Pull Up Field](#pull-up-field) yöntemini takip ederek: [Extract Method](#extract-method).
-  - Tekrar eden kod bir yapıcı metot içinde ise: [Pull Up Constructor Body](#pull-up-constructor-body).
-  - Eğer yinelenen kod benzer ancak tamamen aynı değilse: [Form Template Method](#form-template-method).
-  - İki metot da aynı şeyi yapar, ancak farklı algoritmalar kullanırsa, en iyi algoritmayı seçin: [Substitute Algorithm](#substitute-algorithm).
-- Tekrar eden kod iki farklı sınıfta bulunursa;
-  - Sınıflar bir hiyerarşinin parçası değilse: [Extract Superclass](#extract-superclass).
-  - Bir üst sınıf oluşturmak zor veya imkansızsa: [Extract Class](#extract-class).
-- Çok sayıda koşullu ifade varsa ve aynı kodu çalıştırıyorsa (yalnızca koşullu ifadeler farklı), bu operatörleri tek bir koşulda birleştirin: [Consolidate Conditional Expression](#consolidate-conditional-expression) ve [Extract Method](#extract-method).
-- Aynı kod, koşullu bir ifadenin tüm dallarında uygulanıyorsa: aynı kodu, koşul ağacının dışına yerleştirin: [Consolidate Duplicate Conditional Fragments](#consolidate-duplicate-conditional-fragments).
+Temel olarak bu sorunun çözümü ya parçalamaktır ya da tam tersi birleştirmektir. Bazen de tekrar eden kodlardan/algoritmalardan en iyisini seçip, diğerini silmekdir.
+
+Uygulanabilecek refactoring teknikleri: [Extract Method](#extract-method), [Pull Up Field](#pull-up-field), [Pull Up Constructor Body](#pull-up-constructor-body), [Form Template Method](#form-template-method), [Substitute Algorithm](#substitute-algorithm), [Extract Superclass](#extract-superclass), [Extract Class](#extract-class), [Consolidate Conditional Expression](#consolidate-conditional-expression), [Consolidate Duplicate Conditional Fragments](#consolidate-duplicate-conditional-fragments).
 
 #### Sonuç
 
-- Tekrar eden kodun birleştirilmesi, kodunuzun yapısını basitleştirir ve daha kısa hale getirir.
-- Sadeleştirme + kısayol = basitleştirmesi kolay ve bakımı daha ucuz kod.
+Kodun kısalması, sadeleşmesi ve daha kolay anlaşılması sağlanır. Daha iyi anlaşılan kod, daha rahat bakım yapılabilir.
 
 #### Ne zaman göz ardı edilebilir?
 
-Çok nadir durumlarda, iki kod parçasının birleştirilmesi, kodu daha az sezgisel ve haha az açık hale getirebilir.
+Kodun, kod tekrarı olan durumlarda, bazen daha iyi anlaşıldığı nadir durumlar olabilir. Bu durumda kodların birleştirilmesi, bazen kodun anlaşılmasını engelleyebilir.
 
 ### Lazy Class
 
