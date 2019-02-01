@@ -477,25 +477,25 @@ Kodun, kod tekrarı olan durumlarda, bazen daha iyi anlaşıldığı nadir durum
 
 #### Problem
 
-Bir sınıfın anlaşılması ve bakımı, zaman ve maliyet gerektirir. Dolayısıyla bir sınıf anlaşılmıyorsa ve istekleri yeterince karşılamıyorsa, o sınıf silinmelidir.
+Neredeyse hiçbir şey yapmayan, gerekliliğinin sorgulanmasına sebep olan sınıfların olması.
 
 #### Sebep
 
-Belki bir sınıf tamamen işlevsel olacak şekilde tasarlanmıştır, ancak refactoring yaptıktan sonra saçma derecede küçük hale gelmiştir. Veya gelecekte yapılacak ama daha yapılmamış bir özellik için tasarlanmış olabilir.
+Sınıf zaman içerisinde değişikliklere uğrar. İçerisindeki işlevlerin taşınması, rafactor edilmesi gibi nedenlerden dolayı, sınıfın içi boşalabilir veya içerisindeki kodlar artık çok da fazla iş yapmaz duruma gelebilir. Ya da daha sonra yapılacak bir özelliklik için, baştan tasarlanmış olabilir.
 
 #### Çözüm
 
-- Neredeyse işe yaramaz olan bileşenler için: [Inline Class](#inline-class).
-- Az işlevli alt sınıflar için: [Collapse Hierarchy](#collapse-hierarchy).
+Sınıfın işlevleri başka sınıfa taşınabilir. Bu sınıflar aynı hiyerarşide veya üst hiyerarşideki sınıflar olabilir.
+
+Uygulanabilecek refactoring teknikleri: [Inline Class](#inline-class), [Collapse Hierarchy](#collapse-hierarchy).
 
 #### Sonuç
 
-- Kod uzunluğunu azaltır.
-- Bakımı kolaylaştırır.
+Gereksiz kodların silinmesi ile kod daha kısa, sade ve anlaşılabilir olur. Kodun bakımı daha da kolaylaşır.
 
 #### Ne zaman göz ardı edilebilir?
 
-Koddaki basitlik ve açıklık arasınki dengeyi korumak şartıyla, gelecekteki gelişmelere yönelik niyetleri betimlemek için bir Lazy Class oluşturulabilir.
+Gelecekteki gelişmelere yönelik, önceden fikir vermesi, yol haritası çizmesi bakımından, bu tarz gereksiz sınıflarında oluşturulabileceğinden bahsetmiştik. Kodun karmaşıklığını artırmadan, sadeliği ve okunabilirliği bozmadan, dengeli bir kullanım durumunda göz ardı edilebilir.
 
 ### Data Class
 
