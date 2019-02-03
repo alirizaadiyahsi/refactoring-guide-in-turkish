@@ -525,29 +525,27 @@ Gereksiz kodların silinmesi daha sade, kısa ve okunabilir kod sağlar. Böylec
 
 #### Problem
 
-Kullanılmayan bir sınıf, metot, alan veya parametrenin olmaması.
+Gelecekte kullanılacak diye eklenen ama hiç kullanılmayan kod parçalarının olması.
 
 #### Sebep
 
-Bazen kod, asla uygulanamayacak olan gelecekteki özellikleri desteklemek için yazılır. Sonuç olarak, kodun anlaşılması ve bakımı zorlaşır.
+Gelecekte yapılacak bir özellik için, belki fikir de versin diye önceden eklemek isteyebiliriz. Ama bu eklenen kodlar, kullanılmadı için sistem hakkında yanlış bilgi veriyor olabilirler. Başka bir yazılımcı bunun varlığını sorgulayabilir ve kodun bakımını zorlaştırır.
 
 #### Çözüm
 
-- Kullanılmayan soyut sınıfları kaldırmak için: [Collapse Hierarchy](#collapse-hierarchy).
-- Gereksiz fonksiyonelliklerin başka bir sınıfa devredilmesi engellemek için: [Inline Class](#inline-class).
-- Kullanılmayan metotlardan kurtulmak için: [Inline Method](#inline-method).
-- Gereksiz parametreli metotlar için: [Remove Parameter](#remove-parameter).
-- Kullanılmayan alanlar kolayca silinebilir.
+Kullanılmayan kodların silinmesi veya taşınması.
+
+Kullanılabilecek refactoring teknikleri: [Collapse Hierarchy](#collapse-hierarchy), [Inline Class](#inline-class), [Inline Method](#inline-method), [Remove Parameter](#remove-parameter).
 
 #### Sonuç
 
-- Temiz kod.
-- Daha kolay bakım.
+Daha kısa, sade ve temiz kod. Dolayısıyla bakımı daha kolay kod.
 
 #### Ne zaman göz ardı edilebilir?
 
-- Eğer bir framework geliştiriyorsanız, framework'ün kendisinin kullanmadığı ama kullanıcılarının kullanabileceği bir işlev için göz ardı edilebilir.
-- Bazı birim testler, sınıf hakkında bilgileri kullanamk için ekstra alanlara ihtiyaç duyabilir. Bundan dolayı, gereksiz kod bloklarını silerken, birim testlerin bu kod bloklarını kullanıp kullanmadığından emin olun.
+Eğer bir framework geliştiriyorsanız, framework'ün kendisinin kullanmadığı ama kullanıcılarının kullanabileceği bir işlev için göz ardı edilebilir.
+
+Bazı birim testler, sınıf hakkında bilgileri kullanmak için ekstra alanlara ihtiyaç duyabilir. Bundan dolayı, gereksiz kod bloklarını silerken, birim testlerin bu kod bloklarını kullanıp kullanmadığından emin olun.
 
 ### Feature Envy
 
