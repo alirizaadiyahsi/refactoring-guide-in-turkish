@@ -505,24 +505,21 @@ Martin Fowler'ın "Code Smell" dediği "Data Class", çoğu yazılımcı tarafı
 
 #### Problem
 
-Bir değişken, parametre, alan, metot veya sınıfın artık kullanılmamasıdır (genellikle artık eskimiş olduğundan).
+Artık kullanılmayan kod parçası (alan, parametre, değişken, metot, sınıf).
 
 #### Sebep
 
-Yazılımın gereksinimleri değiştiğinde veya düzeltmeler yapıldığında, eski kodu temizlemek için hiç kimse zaman harcamak istemez. Bu tür bir kod karmaşık kod bloklarında da bulunabilir.
+Yeni geliştirmeler, eklemeler, refactoring işlemlerinden sonra eski kodların, işe yarayıp yaramadığını anlamak ve bunlara aksiyon almak için çoğu zaman kimse vakit ayırmak istemez. Üstelik bir de kötü ve okunması zor bir kod altyapısı ile çalışıyorken, bu işe yaramaz kod parçalarının bulunması da ayrıca zordur. Bundan dolayıda, işe yaramaz kod blokları oluşabilir. 
 
 #### Çözüm
 
-Ölü kodu bulmanın en hızlı yolu iyi bir IDE kullanmaktır. Çözmek ise basit: sil.
+İşe yaramazyan kodları bulmanın en iyi yolu, iyi bir IDE veya IDE ile uyumlu, kod eklentilerin kullanılmasıdır. Bu en etkili ve hızlı yöntemdir. Tabiki işe yaramayan kod parçaları bulununca yapılacak ilk şey silmek veya taşımak.
 
-- Kullanılmayan kodu ve gereksiz dosyaları silin.
-- Gereksiz bir sınıfın bulunması durumunda: [Inline Class](#inline-class) ve [Collapse Hierarchy](#collapse-hierarchy).
-- Gereksiz parametreleri kaldırmak için: [Remove Parameter](#remove-parameter).
+Uygulanabilecek refactoring yöntemleri: [Inline Class](#inline-class), [Collapse Hierarchy](#collapse-hierarchy), [Remove Parameter](#remove-parameter).
 
 #### Sonuç
 
-- Kod uzunluğu azalır.
-- Kolay bakım.
+Gereksiz kodların silinmesi daha sade, kısa ve okunabilir kod sağlar. Böylece bakım maliyeti düşer.
 
 ### Speculative Generality
 
