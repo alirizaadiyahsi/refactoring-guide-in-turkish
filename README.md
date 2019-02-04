@@ -551,28 +551,25 @@ Bazı birim testler, sınıf hakkında bilgileri kullanmak için ekstra alanlara
 
 #### Problem
 
-Bir metodun, başka bir sınıfın verisine, kendisindeki veriden daha fazla erişmesi.
+Bir sınıf içindeki metotun, başka bir sınıfın verisine, bulunduğu sınıfınkinde fazla erişmesi. Örneğin; `Customer` sınıfındaki, `getPhoneNumber` adındaki metot, `Phone` adındaki sınıfın `"(" + phone.getAreaCode() + ") " + phone.getPrefix() + "-" + phone.getNumber();` şeklinde metotlarını çağırıyorsa.
 
 #### Sebep
 
-Alanlar veri sınıfına taşınırken oluşur. Bu durumda, veriyle işlem yapan kodları da bu sınıfa taşımak isteyebilirsiniz.
+Bazen sınıflar parçalanırken, alanların veri sınıfına taşınamasından sonra, o alanlarla işlem yapan metotların, diğer sınıfta kalmasından dolayı ortaya çıkar.
 
 #### Çözüm
 
-Genelde veri ve bu veriyi kullanan kod blokları birlikte değişir. Bundan dolayı hepsini aynı yerde tutmak gerekir.
+Çözüm; alanları taşıdığımızda, bu alanları kullanan metotları da birlikte taşımamız gerekir.
 
-- Eğer metotlar taşınacaksa: [Move Method](#move-method).
-- Bir metodun yalnızca bir kısmı başka bir nesnenin verilerine erişiyorsa: [Extract Method](#extract-method).
-- Bir yöntem diğer birkaç sınıftan fonksiyonlar kullanıyorsa, ilk önce hangi sınıfların kullanılan veriyi içerdiğini belirleyin. Ardından metodu bu sınıfa diğer verilerle birlikte taşıyın. Alternatif olarak, metot küçük parçalara ayrılıp, farklı sınıflar içinde farklı metotlar olarak yer alabilirler: [Extract Method](#extract-method).
+Kullanılabilecek refactoring teknikleri: [Move Method](#move-method), [Extract Method](#extract-method).
 
 #### Sonuç
 
-- Daha az kod tekrarı (veri işleme kodu merkezi bir yere yerleştirilirse).
-- Daha iyi kod organizasyonu (veri işleme metotlarıyla veri aynı yerde olursa).
+Metotlar ve bu metotların kullandığı alanlar aynı yerde olursa, kod merkezi bir yerde olur ve merkezi bir yerden yönetilir. Böylece kod tekrarının önüne geçilebilir ve daha iyi bir kod organizsyonu ile beraber daha kolay bir bakım maliyeti sağlanır.
 
 #### Ne zaman göz ardı edilebilir?
 
-Bazen davranış bilerek verileri tutan sınıftan ayrı tutulur. Bunun genel avantajı, davranışı dinamik olarak değiştirme yeteneğidir.
+Bazen, davranışın veriden ayrı tutulması ile, davranışın bağımsız olması ve daha dinamik bir şekilde yönetilmesi, değiştirilmesi sağlanabilir. Bu gibi durumlarda göz ardı edilebilir.
 
 ### Inappropriate Intimacy
 
