@@ -575,23 +575,21 @@ Bazen, davranışın veriden ayrı tutulması ile, davranışın bağımsız olm
 
 #### Problem
 
-Bir sınıf, başka bir sınıfın "internal" alanlarını ve metotlarını kullanır. Sınıflar ne kadar birbirinden bağımsız olursa, yeniden kullanımı ve bakımı kolaylaşır.
+Sınıfların, birbirlerinin alanlarını ve metotlarını çok kullanması ve böylece birbirlerine çok bağımlı olmaları.
 
 #### Sebep
 
-Kodların parça parça taşınması sırasında veya yanlış tasarımdan kaynaklanabilir.
+Yanlış tasarım veya refactoring sırasında, parça parça taşınan kodlardan dolayı, bazı parçaların diğer sınıfta kalmasından kaynaklanabilir.
 
 #### Çözüm
 
-- En hızlı ve basit çözüm, bir sınıfın metotlarını ve alanlarını başka sınıfa taşımak (eğer ilk sınıf bu metotlara tamamen ihtiyaç duymuyorsa): [Move Method](#move-method) ve [Move Field](#move-field).
-- Sınıflar ilişkiliyse, o zaman gerçekten ilişkili sınıflar yapmak: [Extract Class](#extract-class) ve [Hide Delegate](#hide-delegate).
-- Sınıflar karşılıklı olarak birbirine bağımlıysa: [Change Bidirectional Association to Unidirectional](#change-bidirectional-association-to-unidirectional).
-- Bu "samimiyet" bir alt sınıfla üst sınıf arasındaysa: [Replace Delegation with Inheritance](#replace-delegation-with-inheritance).
+Çözüm kodların uygun şekilde taşınması varsa gereksiz kod blokları, bunların silinmesi.
+
+Uygulanabilecek refactoring teknikleri: [Move Method](#move-method), [Move Field](#move-field), [Extract Class](#extract-class), [Hide Delegate](#hide-delegate), [Change Bidirectional Association to Unidirectional](#change-bidirectional-association-to-unidirectional), [Replace Delegation with Inheritance](#replace-delegation-with-inheritance).
 
 #### Sonuç
 
-- Kod organizasyonunu geliştirir.
-- Bakımı ve kodun yeniden kullanımını kolaylaştırır.
+Sade, kısa ve kolay anlaşılır kod. Dolayısıyla, daha sağlam kod altyapısı ve daha az bakım maliyeti.
 
 ### Message Chains
 
