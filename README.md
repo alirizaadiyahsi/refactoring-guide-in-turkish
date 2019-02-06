@@ -595,25 +595,25 @@ Sade, kısa ve kolay anlaşılır kod. Dolayısıyla, daha sağlam kod altyapıs
 
 #### Problem
 
-Kodda `$a->b()->c()->d()` gibi bir dizi çağrı görürsünüz. Bu zincirler, sınıfların birbirlerine aşırı bağlı olmasına sebep olur. Bir sınıfta yapılan değişiklikler, diğerlerini de etkiler.
+Birbirine aşırı sınıfların oluşmasına neden olan, `classA.classB.classC.classD` şeklindeki zincirlerin olması. Bir sınıfta yapılan değişiklikler, diğer sınıfları da etkileyebilir ve bakım maliyetini artırır.
 
 #### Sebep
 
-Bir istemci bir nesne talep ettiğinde, talep edilen nesne başka bir tane daha ister ve bir mesaj zinciri oluşur.
+Kod altyapısında başka kötü tasarımlar olması, yazılımcının tasarım iyi bir tasarım yapmak yerine, hızlıca bir sınıf içinde başka bir sınıfı alan olarak tanımlamasından (bazen tembellik, bazen tecrübesizlik) dolayı bu şekilde kötü bir tasarım ortaya çıkabilir.
 
 #### Çözüm
 
-- Bir mesaj zincirini silmek için: [Hide Delegate](#hide-delegate).
-- Bazen son nesnenin neden kullanıldığını düşünmek daha iyidir. Belki de bunu zincirin en önüne taşımak daha mantıklı hale gelecektir: [Extract Method](#extract-method) ve [Move Method](#move-method).
+İlişkili sınıflar arasındaki bağı kaldırmak için, zinciri kırıp, sınıfları farklı hiyerarşilere alıp, gereksiz yerlerin silinmesini sağlamak.
+
+Uygulanabilecek refactoring teknikleri: [Hide Delegate](#hide-delegate), [Extract Method](#extract-method), [Move Method](#move-method).
 
 #### Sonuç
 
-- Bir zincirin sınıfları arasındaki bağımlılığı azaltır.
-- Şişirilmiş kodun miktarını azaltır.
+Sınıflar arasındaki bağ azaldığı için, bakım maliyeti de azalır. Kod daha sade ve kısa hale gelebilir.
 
 #### Ne zaman göz ardı edilebilir?
 
-Aşırı agresif sınıf gizleme, işlevselliğin gerçekte nerede olduğunu görmenin zor olduğu kodlara neden olabilir. Aksi halde başka bir sıkıntı oluşabilir: [Middle Man](#middle-man).
+Sınıflar arasındaki bağın aşırı derecede kırılması da doğru olmayabilir. Bu kezde ilişkili sınıflar arasındaki bağlantılı işlevlerin, gerçekte nerede olduğunu görmek zorlaşır. Bu kötü tasarımı çözmek isterken, dengeli olunmaması durumunda, başka bir kötü tasarıma sebep olur; [Middle Man](#middle-man).
 
 ### Middle Man
 
