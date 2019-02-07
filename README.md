@@ -619,24 +619,25 @@ Sınıflar arasındaki bağın aşırı derecede kırılması da doğru olmayabi
 
 #### Problem
 
-Bir sınıfın tek işi, tüm işleri başka sınıflara yaptırmak.
+Bir sınıfın, başka sınıflara iş yaptırmaktan başka işinin olmaması.
 
 #### Sebep
 
-"Message Chains" den kurtulmak için aşırı derecede kod başka sınıflara taşındığında bu durum oluşabilir. Diğer bir sebep de, bir sınıfın kodları parça parça başka sınıflara taşındığında ortaya çıkar. İçi boşalan bir sınıf, içi boş bir kabuk gibi kalır.
+Hiyerarşik bir şekilde birbirini çağıran sınıflardan ([Message Chains](#message-chains)) kurtulmak için yapılan refactoring aşırıya kaçınca, bu şekilde bir kötü tasarım ortaya çıkabiliyor. Diğer bir sebep de, sınıfın kodlarının, başka sınıflara taşınmasından dolayı, ilgili sınıfta sadece o metotların çağrıları kalabilir. Bu da içi boşalmış, sadece başka sınıfların metotlarını çağıran bir sınıfa dönüşmesine sebep olur.
 
 #### Çözüm
 
-Bir sınıf içindeki bir çok metot başka sınıflara alınıyorsa: [Remove Middle Man](#remove-middle-man).
+Tek çözüm var, o da bu sınıfı silmek.
+
+Uygulanabilecek refactoring teknikleri: [Remove Middle Man](#remove-middle-man).
 
 #### Sonuç
 
-Daha az kod.
+Daha anlaşılır, temiz ve sade kod. Böylece daha az bakım maliyeti.
 
 #### Ne zaman göz ardı edilebilir?
 
-- Sınıflar arası bağımlılıkları önlemek için [Middle Man](#middle-man) eklenmiş olabilir.
-- Bazı tasarım desenleri bilerek [Middle Man](#middle-man) yaratır.
+Sınıflar arası aşırı bağımlılığı engellemek için bu tasarım kullanılabilir. Bu tarz tasarımlarda refactoring, dengeli olmalıdır. Bir tarafı aşırı olursa [Middle Man](#middle-man), diğer tarafı aşırı olursa [Message Chains](#message-chains) oluşabilir.
 
 ### Incomplete Library Class
 
