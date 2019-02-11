@@ -643,24 +643,25 @@ Sınıflar arası aşırı bağımlılığı engellemek için bu tasarım kullan
 
 #### Problem
 
-Er ya da geç, kütüphaneler kullanıcı ihtiyaçlarını karşılamayı durdurur. Tek çözüm ise kütüphaneyi değiştirmek ama kütüphanenin sadece okunabilir (read-only) olması, kütüphanenin değiştirilmesini imkansız hale getirir.
+Yeni ihtiyaçlara cevap veremeyen kütüphanelerin olması.
 
 #### Sebep
 
-Kütüphanenin yazarı, ihtiyaç duyduğunuz özellikleri sağlamadığında ya da geliştirmeyi reddettiğinde ortaya çıkar.
+Kütüphaneler kullanıcıların ihtiyaçlarını karşılayamaz duruma duruma geldiğinde, kütüphaneti geliştirmek ve değiştirmek gerekebilir. Ama kütüphanenin kapalı olması, sadece okunabilir olması durumlarında, kütüphaneyi yazanların bakımı ve geliştirmeyi durdurmasından dolayı geliştirmeler durma noktasına gelebilir.
 
 #### Çözüm
 
-- Bir kütüphane sınıfına birkaç metot tanıtmak: [Introduce Foreign Method](#introduce-foreign-method).
-- Bir sınıf kütüphanesinde büyük değişiklikler için: [Introduce Local Extension](#introduce-local-extension).
+Kütüphaneye dışarıdan metotlar ve extension'lar geliştirilebilir.
+
+Uygulanabilecek refactoring teknikleri: [Introduce Foreign Method](#introduce-foreign-method), [Introduce Local Extension](#introduce-local-extension).
 
 #### Sonuç
 
-Kod çoğaltmasını azaltır (sıfırdan kendi kütüphanenizi oluşturmak yerine, hala mevcut olandan birisini kullanabilirsiniz).
+Kütüphaneleri sistemden çıkarmak ve sıfırdan yazmak yerine eklemeler yaparsak, projede çok fazla kod olmaz.
 
 #### Ne zaman göz ardı edilebilir?
 
-Bir kütüphaneyi genişletmek, eğer kütüphanedeki değişiklikler koddaki değişiklikleri içeriyorsa ek iş üretebilir.
+Kütüphaneyi genişletmek için kendi kodumuzda da çok fazla değişikliğe yol açıyorsa, fazladan iş çıkarabilir. Bu durumda, göz ardı edilebilir.
 
 ## REFACTORING TEKNİKLERİ
 
