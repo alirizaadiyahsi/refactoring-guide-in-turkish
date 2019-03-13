@@ -42,6 +42,7 @@ Bazı kelimeler Türkçeye çevrilmedi. Bunun sebebi, birçok kelime artık o ka
   - [Inline Method](#inline-method)
   - [Extract Variable](#extract-variable)
   - [Inline Temp](#inline-temp)
+  - [Replace Temp with Query](#replace-temp-with-query)
 - [Kaynaklar](#kaynaklar)
 
 ## REFACTORING NEDİR?
@@ -857,8 +858,6 @@ func GetMultiplier(number int) int {
 ```
 </details>
 
-
-
 #### Neden?
 
 Bir metot basitçe başka bir metodu çağırır ve bunda aslında bir problem yoktur. Problem, bu şekilde gereksiz metotların artmasıdır. Böyle çok fazla metot olunca, kafa karıştırıcı kodlar ortaya çıkar.
@@ -967,6 +966,60 @@ Daha okunabilir ve anlaşılabilir kod. İfadenin ne anlama geldiğini ismi ile 
 Çok fazla değişken oluşmasına sebep olabilir. Ama kodun daha okunabilir olması bu yan etkiyi dengeler.
 
 ### Inline Temp
+
+- **Yardımcı olduğu diğer teknikler:** [Replace Temp with Query](#replace-tempwith-query), [Extract Method](#extract-method)
+
+#### Problem
+
+Tek görevi, geçici olarak veri tutan değişkenlerin olması.
+
+<details>
+  <summary>C#</summary>
+
+```csharp
+public class InlineTempBad
+{
+    public int CalculateVolume(int l, int w, int h)
+    {
+        var volume = l * w * h;
+
+        return volume;
+    }
+}
+```
+</details>
+
+#### Çözüm
+
+Geçici değişken yerine ifadenin kendisi direk kullanılabilir.
+
+<details>
+  <summary>C#</summary>
+
+```csharp
+public class InlineTempGood
+{
+    public int CalculateVolume(int l, int w, int h)
+    {
+        return l * w * h;
+    }
+}
+```
+</details>
+
+#### Neden?
+
+İfadelerin çok karmaşık olmadığı durumlarda geçici değişken kullanıp kodu uzatmanın anlamı yoktur. İfadenin kendisini kullanmak daha sade bir kod yapısı sağlar.
+
+#### Faydaları
+
+Kodu biraz sadeleştirir. Önemi çoğu zaman kritik seviyede değildir.
+
+#### Dezavantajları
+
+Bazen geçici değişkenler, sonraki kod satırlarında da kullanılıyor olabilir. Geçici değişken kullanılmadığında, ifade her defasında lazım olduğunda yeniden hesaplanıyorsa, o zaman geçici değişken kullanmak mantıklıdır. Böyle durumlarda bu tekniği uygulamak yanlıştır.
+
+### Replace Temp with Query
 
 ---
 
