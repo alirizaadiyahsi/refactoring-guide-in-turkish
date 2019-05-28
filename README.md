@@ -434,7 +434,7 @@ Kod bloklarını açıklamak için yazılmış yorumların olması. Bir söz var
 
 #### Çözüm
 
-Yorum satırlarından kurtulmak için, kodu parçalayarak, yorum gereken kod bloklarını ayrı yerlere taşıyıp, güzel bir isimlendirme yapmak gereker. Açıklayıcı parçalara ayrılan ve açıklayıcı isimlendirmeler yapılan kod blokları hala yorum satırlarına ihtiyaç duyuyorsa, yorum yerine, "assertion" ifadeleri yazılabilir.
+Yorum satırlarından kurtulmak için, kodu parçalayarak, yorum gereken kod bloklarını ayrı yerlere taşıyıp, güzel bir isimlendirme yapmak gerekir. Açıklayıcı parçalara ayrılan ve açıklayıcı isimlendirmeler yapılan kod blokları hala yorum satırlarına ihtiyaç duyuyorsa, yorum yerine, "assertion" ifadeleri yazılabilir.
 
 Kullanılabilecek refactoring teknikleri: [Extract Variable](#extract-variable), [Extract Method](#extract-method), [Rename Method](#rename-method), [Introduce Assertion](#introduce-assertion).
 
