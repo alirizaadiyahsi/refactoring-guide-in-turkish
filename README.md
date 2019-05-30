@@ -1021,6 +1021,53 @@ Bazen geçici değişkenler, sonraki kod satırlarında da kullanılıyor olabil
 
 ### Replace Temp with Query
 
+#### Problem
+
+Bir ifadenin sonucunu daha sonra kullanmak üzere lokal bir değişkende tutulması.
+
+<details>
+  <summary>C#</summary>
+
+```csharp
+  double getTotalCartPrice()
+  {
+      double totalPrice = productQuantity * productPrice;
+
+      return totalPrice < 200 ? totalPrice + 80 : totalPrice;
+  }
+```
+</details>
+
+#### Çözüm
+
+İfadenin sonucunu döndüren bir metot oluşturun. Değişken kullandığınız yerde metodu çağırın.
+
+<details>
+  <summary>C#</summary>
+
+```csharp
+double getTotalCartPrice()
+{
+    double totalPrice = getTotalPrice();
+
+    return totalPrice < 200 ? totalPrice + 80 : totalPrice;
+}
+
+double getTotalPrice()
+{
+    return productQuantity * productPrice;
+}
+```
+</details>
+
+#### Neden?
+
+ Bir ifade bazı durumlarda birden fazla metot tarafından kullanılabilir. Bu durumlarda ifadenin sonucunu döndüren bir metot oluşturulup diğer metotlar tarafından kullanılabilir.
+ 
+ #### Faydaları
+
+Kodun okunabilirliği artar. Örneğin productPrice * 0.9 ifadesini sonuç olarak döndüren getTax() metodunun vergi miktarını hesapladığını kolaylıkla anlayabilirsiniz.
+
 ---
 
 ## KAYNAKLAR
