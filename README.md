@@ -1040,7 +1040,7 @@ Bir ifadenin sonucunu daha sonra kullanmak üzere lokal bir değişkende tutulma
 
 #### Çözüm
 
-İfadenin sonucunu döndğren bir metod oluşturun. Değişken kullandığınız yerde metodu çağırın.
+İfadenin sonucunu döndüren bir metot oluşturun. Değişken kullandığınız yerde metodu çağırın.
 
 <details>
   <summary>C#</summary>
@@ -1062,7 +1062,7 @@ double getTotalPrice()
 
 #### Neden?
 
- Bir ifade bazı durumlarda birden fazla metod tarafından kullanılabilir. Bu durumlarda ifadenin sonucunu döndüren bir metod oluşturulup diğer metodlar tarafından kullanılabilir.
+ Bir ifade bazı durumlarda birden fazla metot tarafından kullanılabilir. Bu durumlarda ifadenin sonucunu döndüren bir metot oluşturulup diğer metotlar tarafından kullanılabilir.
  
  #### Faydaları
 
