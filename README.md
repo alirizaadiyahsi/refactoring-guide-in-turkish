@@ -43,6 +43,7 @@ Bazı kelimeler Türkçeye çevrilmedi. Bunun sebebi, birçok kelime artık o ka
   - [Extract Variable](#extract-variable)
   - [Inline Temp](#inline-temp)
   - [Replace Temp with Query](#replace-temp-with-query)
+  - [Split Temporary Variable](#split-temporary-variable)
 - [Kaynaklar](#kaynaklar)
 
 ## REFACTORING NEDİR?
@@ -1067,6 +1068,8 @@ double getTotalPrice()
  #### Faydaları
 
 Kodun okunabilirliği artar. Örneğin productPrice * 0.9 ifadesini sonuç olarak döndüren getTax() metodunun vergi miktarını hesapladığını kolaylıkla anlayabilirsiniz.
+
+### Split Temporary Variable
 
 ---
 
