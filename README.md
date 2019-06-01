@@ -43,6 +43,7 @@ Bazı kelimeler Türkçeye çevrilmedi. Bunun sebebi, birçok kelime artık o ka
   - [Extract Variable](#extract-variable)
   - [Inline Temp](#inline-temp)
   - [Replace Temp with Query](#replace-temp-with-query)
+  - [Split Temporary Variable](#split-temporary-variable)
 - [Kaynaklar](#kaynaklar)
 
 ## REFACTORING NEDİR?
@@ -434,7 +435,7 @@ Kod bloklarını açıklamak için yazılmış yorumların olması. Bir söz var
 
 #### Çözüm
 
-Yorum satırlarından kurtulmak için, kodu parçalayarak, yorum gereken kod bloklarını ayrı yerlere taşıyıp, güzel bir isimlendirme yapmak gereker. Açıklayıcı parçalara ayrılan ve açıklayıcı isimlendirmeler yapılan kod blokları hala yorum satırlarına ihtiyaç duyuyorsa, yorum yerine, "assertion" ifadeleri yazılabilir.
+Yorum satırlarından kurtulmak için, kodu parçalayarak, yorum gereken kod bloklarını ayrı yerlere taşıyıp, güzel bir isimlendirme yapmak gerekir. Açıklayıcı parçalara ayrılan ve açıklayıcı isimlendirmeler yapılan kod blokları hala yorum satırlarına ihtiyaç duyuyorsa, yorum yerine, "assertion" ifadeleri yazılabilir.
 
 Kullanılabilecek refactoring teknikleri: [Extract Variable](#extract-variable), [Extract Method](#extract-method), [Rename Method](#rename-method), [Introduce Assertion](#introduce-assertion).
 
@@ -1067,6 +1068,8 @@ double getTotalPrice()
  #### Faydaları
 
 Kodun okunabilirliği artar. Örneğin productPrice * 0.9 ifadesini sonuç olarak döndüren getTax() metodunun vergi miktarını hesapladığını kolaylıkla anlayabilirsiniz.
+
+### Split Temporary Variable
 
 ---
 
