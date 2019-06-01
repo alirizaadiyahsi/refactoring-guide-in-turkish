@@ -44,6 +44,8 @@ Bazı kelimeler Türkçeye çevrilmedi. Bunun sebebi, birçok kelime artık o ka
   - [Inline Temp](#inline-temp)
   - [Replace Temp with Query](#replace-temp-with-query)
   - [Split Temporary Variable](#split-temporary-variable)
+  - [Remove Assignments to Parameters](#remove-assignments-to-parameters)
+  - [Replace Method with Method Object](#replace-method-with-method-object)
 - [Kaynaklar](#kaynaklar)
 
 ## REFACTORING NEDİR?
@@ -1071,6 +1073,137 @@ Kodun okunabilirliği artar. Örneğin productPrice * 0.9 ifadesini sonuç olara
 
 ### Split Temporary Variable
 
+#### Problem
+
+Bir değişkeni farklı yerlerde farklı ifadelerin sonuçlarını tutacak şekilde kullanmak.
+
+<details>
+  <summary>C#</summary>
+
+```csharp
+double r = 3;
+double h = 10;
+
+void calculateCylinderInformations()
+{
+    double cylinderInformation = 2 * Math.PI * r * (h + r);
+    Console.WriteLine("Cylinder Area: " + cylinderInformation);
+
+    cylinderInformation = Math.PI * Math.Pow(r, 2) * h;
+    Console.WriteLine("Cylinder Volume: " + cylinderInformation);
+}
+```
+</details>
+
+#### Çözüm
+
+Farklı ifadelerin sonuçlarını tutmak için farklı değişkenler kullanın. Böylece bir değişkenin birden fazla görevi olmaz.
+
+<details>
+  <summary>C#</summary>
+
+```csharp
+double r = 3;
+double h = 10;
+
+void calculateCylinderInformations()
+{
+  double cylinderArea = 2 * Math.PI * r * (h + r);
+  Console.WriteLine("Cylinder Area: " + cylinderArea);
+
+  double cylinderVolume = Math.PI * Math.Pow(r, 2) * h;
+  Console.WriteLine("Cylinder Volume: " + cylinderVolume);
+}
+```
+</details>
+
+#### Neden?
+
+Bir değişkene farklı görevler yapmak üzere farklı değerler atayabilirsiniz. Ancak ilerleyen zamanlarda kodlar üzerinde değişiklik yapmanız gerektiğinde zorlanabilirsiniz. Değişkenleri, belirli bir değeri tutacak şekilde oluşturabilirsiniz.
+
+#### Faydaları
+
+Her bir değişkenin sadece bir görevi olur. Bir değişkene farklı yerlerde farklı değerler atanması sonucu oluşabilecek sorunların önüne geçilir. Kodların bakımı kolaylaşır ve okunabilirlik artar. 
+
+### Remove Assignments to Parameters 
+
+#### Problem
+
+Metot gövdesinde parametreye değer atamak.
+
+<details>
+  <summary>C#</summary>
+
+```csharp
+public Dictionary<string, double> CreateDummyDiscount(double originalPrice)
+{
+  Dictionary<string, double> priceValues = new Dictionary<string, double>();
+
+  if(originalPrice >= 1000)
+  {
+    originalPrice += originalPrice * 20 / 100;
+    priceValues.Add("displayedPrice", originalPrice);
+
+    originalPrice -= originalPrice * 5 / 100;
+    priceValues.Add("discountedPrice", originalPrice);
+  }
+  else
+  {
+    originalPrice += originalPrice * 30 / 100;
+    priceValues.Add("displayedPrice", originalPrice);
+
+    originalPrice -= originalPrice * 5 / 100;
+    priceValues.Add("discountedPrice", originalPrice);
+  }
+
+  return priceValues;
+}
+```
+</details>
+
+#### Çözüm
+
+Parametrelerin değerlerini değiştirmek yerine lokal değişkenler kullanın.
+
+<details>
+  <summary>C#</summary>
+
+```csharp
+public Dictionary<string, double> CreateDummyDiscount(double originalPrice)
+{
+  double displayedPrice = 0;
+  double discountedPrice = 0;
+
+  Dictionary<string, double> priceValues = new Dictionary<string, double>();
+
+  if (originalPrice >= 1000)
+  {
+    displayedPrice = originalPrice + originalPrice * 20 / 100;
+    discountedPrice = displayedPrice - displayedPrice * 5 / 100;
+  }
+  else
+  {
+    displayedPrice = originalPrice + originalPrice * 30 / 100;
+    discountedPrice = displayedPrice - displayedPrice * 5 / 100;
+  }
+
+  priceValues.Add("displayedPrice", displayedPrice);
+  priceValues.Add("discountedPrice", discountedPrice);
+
+  return priceValues;
+}
+```
+</details>
+
+#### Neden?
+
+Bu refactoring tekniğinin uygulanmasının sebepleri, Split Temporary Variable tekniği ile aynıdır. Burada lokal bir değişken yerine bir parametre ile uğraşılır. Parametrenin değerinin değiştirilerek işlem yapılması beklenmedik sonuçlar alınmasına sebep olabilir. Metodu anlatan dökümanın içeriği olması gerektiği gibi anlaşılır olmayabilir.
+
+#### Faydaları
+
+Her bir değişkenin bir görevi olur. Kodların okunabilirliği ve bakımı kolaylaşır. 
+
+### Replace Method with Method Object
 ---
 
 ## KAYNAKLAR
