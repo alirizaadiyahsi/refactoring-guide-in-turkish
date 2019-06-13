@@ -1278,8 +1278,8 @@ Aynı zamanda metodun sınıf içerisinde alt metotlara bölünmesine olanak sa�
 #### Dezavantajları
 
 Programın karmaşıklığını artıran bir class daha eklenmiş olur.
----
 
+---
 ## KAYNAKLAR
 
 **NOT**: Yararlanılan kaynaklar sürekli eklenecek. Bu döküman anlatım tarzı olarak https://refactoring.guru/ sitesindekine benzer bir yapı kullanıyor. Ana kaynak olarak bu siteden yararlanılıyor. Bu sitenin sahibi Alexander Shvets, içeriğin üzerine bina ettiği başka bir içeriği paralı olarak sattığı için, bedava olan kısmın birebir çevirisinin MIT lisans altında GitHub da olmasını istemiyor. Dolayısıyla bu dökümanın içeriği olabildiğince özgün, araştırılmış, tecrübe ile desteklenmiş, farklı kaynaklardan düzenlenmiş içeriklerden oluşmaktadır.
