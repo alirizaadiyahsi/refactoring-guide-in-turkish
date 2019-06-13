@@ -1204,6 +1204,80 @@ Bu refactoring tekniğinin uygulanmasının sebepleri, Split Temporary Variable 
 Her bir değişkenin bir görevi olur. Kodların okunabilirliği ve bakımı kolaylaşır. 
 
 ### Replace Method with Method Object
+
+#### Problem
+
+Değişkenlerin iç içe geçmiş olduğu uzun bir metot varsa ve metodu refactoring için [Extract Method](#extract-method) kullanılamaması.
+
+<details>
+  <summary>C#</summary>
+
+```csharp
+public class GameState
+{
+  public double GetScore()
+  {
+    double cofficentForSmallEnemies;
+    double cofficentForBigEnemies;
+
+    //Uzun hesaplamalar sonrasında bir değer hesaplandığını düşünelim.
+    return 1;
+  }
+}
+```
+</details>
+
+#### Çözüm
+
+Metodu yeni bir sınıf oluşturup sınıfın içerisinde yazın. Böylece değişkenler sınıfın bir parçası haline gelirler.
+Daha sonra metodu aynı sınıfın içerisinde birkaç parçaya bölebilirsiniz.
+
+<details>
+  <summary>C#</summary>
+
+```csharp
+public class GameState
+{
+  public double GetScore()
+  {
+    return new ScoreCalculator(this).Calculate();
+  }
+
+}
+
+public class ScoreCalculator
+{
+  private double cofficentForSmallEnemies;
+  private double cofficentForBigEnemies;
+
+  public ScoreCalculator(GameState gameState)
+  {
+    //Gerekli bilgiler gameState objesinden alınıyor.
+  }
+
+  public double Calculate()
+  {
+    //Hesaplamalar bu metotta yapılıyor.
+    return 1;
+  }
+}
+```
+</details>
+
+#### Neden?
+
+Çok uzun metotlarda birbirinden ayrı tutulması zor olan değişkenleri birbirlerinden ayıramazsınız.
+Yapılması gereken ilk şey, metodu bir sınıfa taşıyıp yerel değişkenleri sınıfın bir parçası olarak ayarlamaktır.
+Problemi sınıf düzeyine getirmeyi sağlar. Uzun ve karmaşık bir metodu küçük parçalara bölmeyi sağlar.  
+
+#### Faydaları
+
+Uzun bir metodun kendi sınıfında barındırılması boyutun artmasını engeller.
+Aynı zamanda metodun sınıf içerisinde alt metotlara bölünmesine olanak sağlar.
+
+#### Dezavantajları
+
+Programın karmaşıklığını artıran bir class daha eklenmiş olur.
 ---
 
 ## KAYNAKLAR
