@@ -46,6 +46,7 @@ Bazı kelimeler Türkçeye çevrilmedi. Bunun sebebi, birçok kelime artık o ka
   - [Split Temporary Variable](#split-temporary-variable)
   - [Remove Assignments to Parameters](#remove-assignments-to-parameters)
   - [Replace Method with Method Object](#replace-method-with-method-object)
+  - [Substitute Algorithm](#substitute-algorithm)
 - [Kaynaklar](#kaynaklar)
 
 ## REFACTORING NEDİR?
@@ -1325,25 +1326,20 @@ Kodlarınızı yapılmakta olan işlemi değiştirmeyecek şekilde daha iyi bir 
 
 ```csharp
 List<string> enemyList = new List<string>() { "soldier", "soldier", "soldier", "bionic human", "tank" };
+Dictionary<string, string> gunsForEnemies = new Dictionary<string, string>() {
+  { "soldier", "pistol" },
+  { "bionic human", "shotgun" },
+  { "tank", "rpg" }
+};
 
-List<string> UseGunsByEnemyType(List<string> enemyList)
+
+public List<string> UseGunsByEnemyType(List<string> enemyList, Dictionary<string, string> gunsForEnemies)
 {
   List<string> gunList = new List<string>();
 
   foreach (var enemy in enemyList)
   {
-    if (enemy.Equals("soldier"))
-    {
-      gunList.Add("pistol");
-    }
-    else if (enemy.Equals("bionic human"))
-    {
-      gunList.Add("shotgun");
-    }
-    else if (enemy.Equals("tank"))
-    {
-      gunList.Add("rpg");
-    }
+      gunList.Add(gunsForEnemies.SingleOrDefault(x => x.Key == enemy).Value);
   }
 
   return gunList;
