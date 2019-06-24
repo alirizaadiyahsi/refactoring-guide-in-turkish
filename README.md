@@ -46,6 +46,7 @@ Bazı kelimeler Türkçeye çevrilmedi. Bunun sebebi, birçok kelime artık o ka
   - [Split Temporary Variable](#split-temporary-variable)
   - [Remove Assignments to Parameters](#remove-assignments-to-parameters)
   - [Replace Method with Method Object](#replace-method-with-method-object)
+  - [Substitute Algorithm](#substitute-algorithm)
 - [Kaynaklar](#kaynaklar)
 
 ## REFACTORING NEDİR?
@@ -1278,6 +1279,85 @@ Aynı zamanda metodun sınıf içerisinde alt metotlara bölünmesine olanak sa�
 #### Dezavantajları
 
 Programın karmaşıklığını artıran bir class daha eklenmiş olur.
+
+### Substitute Algorithm
+
+#### Problem
+
+Mevcut algoritmayı yenisiyle değiştirmek. Bazı durumlarda bunu yapma gereksinimi duyabilirsiniz. Örneğin kullanmakta olduğunuz framework yapmakta olduğunuz bir işlemi size daha kolay ve belleği daha az kullanacak şekilde yapabilme imkanı sağlıyorsa değişiklik yapabilirsiniz.
+
+<details>
+  <summary>C#</summary>
+
+```csharp
+List<string> enemyList = new List<string>() { "soldier", "soldier", "soldier", "bionic human", "tank" };
+
+List<string> UseGunsByEnemyType(List<string> enemyList)
+{
+  List<string> gunList = new List<string>();
+
+  foreach (var enemy in enemyList)
+  {
+      if (enemy.Equals("soldier"))
+      {
+        gunList.Add("pistol");
+      }
+      else if (enemy.Equals("bionic human"))
+      {
+        gunList.Add("shotgun");
+      }
+      else if (enemy.Equals("tank"))
+      {
+        gunList.Add("rpg");
+      }
+  }
+
+  return gunList;
+}
+```
+</details>
+
+#### Çözüm
+
+Kodlarınızı yapılmakta olan işlemi değiştirmeyecek şekilde daha iyi bir hale getirebilirsiniz.
+
+<details>
+  <summary>C#</summary>
+
+```csharp
+List<string> enemyList = new List<string>() { "soldier", "soldier", "soldier", "bionic human", "tank" };
+Dictionary<string, string> gunsForEnemies = new Dictionary<string, string>() {
+  { "soldier", "pistol" },
+  { "bionic human", "shotgun" },
+  { "tank", "rpg" }
+};
+
+
+public List<string> UseGunsByEnemyType(List<string> enemyList, Dictionary<string, string> gunsForEnemies)
+{
+  List<string> gunList = new List<string>();
+
+  foreach (var enemy in enemyList)
+  {
+      gunList.Add(gunsForEnemies.SingleOrDefault(x => x.Key == enemy).Value);
+  }
+
+  return gunList;
+}
+```
+</details>
+
+#### Neden?
+
+- Yapmakta olduğunuz işlemi daha kolay ve verimli bir şekilde yapan bir algoritma bulmuşsanız eski algoritmanızı yeni algoritma ile değiştirebilirsiniz.
+- Kullanmakta olduğunuz algoritma ilerleyen zamanlarda, iyi bilinen bir kütüphaneye veya bir framework' e dahil edilebilir. Bu durumda bakımı kolaylaştırmak için değişikliğe gidebilirsiniz.
+
+#### Nasıl?
+
+- Algoritmayı basitleştirdiğinizden emin olun. Extract metodunu kullanarak gereksiz kodları diğer metotlara taşıyın.
+- Yeni bir metot oluşturarak yeni algoritmanızı yazın. Yeni algoritmanızı eskisi ile değiştirin ve test edin.
+- Sonuçlar eşleşmezse eski kodunuzu geri getirip karşılaştırma yapın. 
+- Kodlarınızı yeniden düzenledikten sonra bütün testleriniz başarılı ise eski algoritmanızı silebilirsiniz.
 
 ---
 ## KAYNAKLAR
