@@ -1027,7 +1027,7 @@ Bazen geçici değişkenler, sonraki kod satırlarında da kullanılıyor olabil
 
 #### Problem
 
-Bir ifadenin sonucunu daha sonra kullanmak üzere yerel bir değişkende tutulması.
+Bir ifadenin sonucunu daha sonra kullanmak üzere lokal bir değişkende tutulması.
 
 <details>
   <summary>C#</summary>
@@ -1164,7 +1164,7 @@ public Dictionary<string, double> CreateDummyDiscount(double originalPrice)
 
 #### Çözüm
 
-Parametrelerin değerlerini değiştirmek yerine yerel değişkenler kullanın.
+Parametrelerin değerlerini değiştirmek yerine lokal değişkenler kullanın.
 
 <details>
   <summary>C#</summary>
@@ -1198,7 +1198,7 @@ public Dictionary<string, double> CreateDummyDiscount(double originalPrice)
 
 #### Neden?
 
-Bu refactoring tekniğinin uygulanmasının sebepleri, Split Temporary Variable tekniği ile aynıdır. Burada yerel bir değişken yerine bir parametre ile uğraşılır. Parametrenin değerinin değiştirilerek işlem yapılması beklenmedik sonuçlar alınmasına sebep olabilir. Metodu anlatan dokümanın içeriği olması gerektiği gibi anlaşılır olmayabilir.
+Bu refactoring tekniğinin uygulanmasının sebepleri, Split Temporary Variable tekniği ile aynıdır. Burada lokal bir değişken yerine bir parametre ile uğraşılır. Parametrenin değerinin değiştirilerek işlem yapılması beklenmedik sonuçlar alınmasına sebep olabilir. Metodu anlatan dokümanın içeriği olması gerektiği gibi anlaşılır olmayabilir.
 
 #### Faydaları
 
@@ -1268,7 +1268,7 @@ public class ScoreCalculator
 #### Neden?
 
 Çok uzun metotlarda birbirinden ayrı tutulması zor olan değişkenleri birbirlerinden ayıramazsınız.
-Yapılması gereken ilk şey, metodu bir sınıfa taşıyıp yerel değişkenleri sınıfın bir parçası olarak ayarlamaktır.
+Yapılması gereken ilk şey, metodu bir sınıfa taşıyıp lokal değişkenleri sınıfın bir parçası olarak ayarlamaktır.
 Problemi sınıf düzeyine getirmeyi sağlar. Uzun ve karmaşık bir metodu küçük parçalara bölmeyi sağlar.  
 
 #### Faydaları
