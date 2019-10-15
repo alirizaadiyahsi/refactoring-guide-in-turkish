@@ -1,6 +1,6 @@
 # TÜRKÇE REFACTORING KILAVUZU
 
-## ÖNSÖZ
+## ÖN SÖZ
 
 Bu dokümanın bir makale olarak değil de GitHub'da olmasının sebebi, herkesin katkılarına açık bir şekilde sürekli güncel bir kılavuz hazırlamak.
 
@@ -1198,7 +1198,7 @@ public Dictionary<string, double> CreateDummyDiscount(double originalPrice)
 
 #### Neden?
 
-Bu refactoring tekniğinin uygulanmasının sebepleri, Split Temporary Variable tekniği ile aynıdır. Burada lokal bir değişken yerine bir parametre ile uğraşılır. Parametrenin değerinin değiştirilerek işlem yapılması beklenmedik sonuçlar alınmasına sebep olabilir. Metodu anlatan dökümanın içeriği olması gerektiği gibi anlaşılır olmayabilir.
+Bu refactoring tekniğinin uygulanmasının sebepleri, Split Temporary Variable tekniği ile aynıdır. Burada lokal bir değişken yerine bir parametre ile uğraşılır. Parametrenin değerinin değiştirilerek işlem yapılması beklenmedik sonuçlar alınmasına sebep olabilir. Metodu anlatan dokümanın içeriği olması gerektiği gibi anlaşılır olmayabilir.
 
 #### Faydaları
 
@@ -1268,7 +1268,7 @@ public class ScoreCalculator
 #### Neden?
 
 Çok uzun metotlarda birbirinden ayrı tutulması zor olan değişkenleri birbirlerinden ayıramazsınız.
-Yapılması gereken ilk şey, metodu bir sınıfa taşıyıp yerel değişkenleri sınıfın bir parçası olarak ayarlamaktır.
+Yapılması gereken ilk şey, metodu bir sınıfa taşıyıp lokal değişkenleri sınıfın bir parçası olarak ayarlamaktır.
 Problemi sınıf düzeyine getirmeyi sağlar. Uzun ve karmaşık bir metodu küçük parçalara bölmeyi sağlar.  
 
 #### Faydaları
@@ -1349,7 +1349,7 @@ public List<string> UseGunsByEnemyType(List<string> enemyList, Dictionary<string
 
 #### Neden?
 
-- Yapmakta olduğunuz işlemi daha kolay ve verimli bir şekilde yapan bir algoritma bulmuşsanız eski algoritmanızı yeni algoritma ile değiştirebilirsiniz.
+- Yapmakta olduğunuz işlemi daha kolay ve verimli bir şekilde yapan bir algoritma bulduysanız eski algoritmanızı yeni algoritma ile değiştirebilirsiniz.
 - Kullanmakta olduğunuz algoritma ilerleyen zamanlarda, iyi bilinen bir kütüphaneye veya bir framework' e dahil edilebilir. Bu durumda bakımı kolaylaştırmak için değişikliğe gidebilirsiniz.
 
 #### Nasıl?
@@ -1362,7 +1362,7 @@ public List<string> UseGunsByEnemyType(List<string> enemyList, Dictionary<string
 ---
 ## KAYNAKLAR
 
-**NOT**: Yararlanılan kaynaklar sürekli eklenecek. Bu döküman anlatım tarzı olarak https://refactoring.guru/ sitesindekine benzer bir yapı kullanıyor. Ana kaynak olarak bu siteden yararlanılıyor. Bu sitenin sahibi Alexander Shvets, içeriğin üzerine bina ettiği başka bir içeriği paralı olarak sattığı için, bedava olan kısmın birebir çevirisinin MIT lisans altında GitHub da olmasını istemiyor. Dolayısıyla bu dökümanın içeriği olabildiğince özgün, araştırılmış, tecrübe ile desteklenmiş, farklı kaynaklardan düzenlenmiş içeriklerden oluşmaktadır.
+**NOT**: Yararlanılan kaynaklar sürekli eklenecek. Bu doküman anlatım tarzı olarak https://refactoring.guru/ sitesindekine benzer bir yapı kullanıyor. Ana kaynak olarak bu siteden yararlanılıyor. Bu sitenin sahibi Alexander Shvets, içeriğin üzerine bina ettiği başka bir içeriği paralı olarak sattığı için, bedava olan kısmın birebir çevirisinin MIT lisans altında GitHub'da olmasını istemiyor. Dolayısıyla bu dokümanın içeriği olabildiğince özgün, araştırılmış, tecrübe ile desteklenmiş, farklı kaynaklardan düzenlenmiş içeriklerden oluşmaktadır.
 
 - https://refactoring.guru/
 - http://www.yilmazcihan.com/yazilim-gelistirmede-teknik-borc/
