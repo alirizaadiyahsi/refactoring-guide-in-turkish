@@ -718,7 +718,7 @@ func DoSomeThing() {
 
 #### Çözüm
 
-Bu kodu ayrı bir yeni metoda taşıyın ve eski kodun yerine bu metodu çağırın.
+Bu kodu ayrı bir yeni metoda taşıyın ve eski kodun yerine bu metodu çağırın. Bu yeni metoda, ne yaptığını(nasıl yaptığını değil) anlatan güzel bir isim verilir.
 
 <details>
   <summary>C#</summary>
@@ -770,6 +770,7 @@ func writeUserInformationToConsole() {
 - Bir metodda ne kadar çok satır bulunursa, metodun ne yaptığını bulmak o kadar zor olur.
 - Gruplanan kodlar, ihtiyaç halinde başka yerden de çağrılabilir.
 - Sonraki başka bir refactoring tekniği için de bir adım olabilir.
+- Mümkün olduğunca uzun ve comment(yorum) satırına ihtiyaç duyan kod parçalarından kaçınmak gerekir. Bunun yerine kısa ve güzel isimlendirilmiş metodlar kullanılmalı. Çünkü genelde küçük metodları(kodu) okumak commenti okumaktan daha kolaydır.
 
 #### Faydaları
 
@@ -864,7 +865,7 @@ func GetMultiplier(number int) int {
 
 #### Neden?
 
-Bir metot basitçe başka bir metodu çağırır ve bunda aslında bir problem yoktur. Problem, bu şekilde gereksiz metotların artmasıdır. Böyle çok fazla metot olunca, kafa karıştırıcı kodlar ortaya çıkar.
+Bir metot basitçe başka bir metodu çağırır ve bunda aslında bir problem yoktur. Problem, bu şekilde gereksiz metotların artmasıdır. Böyle çok fazla metot olunca, kafa karıştırıcı kodlar ortaya çıkar. Bu yüzden değişken kullanılabilecekse ve bu işi karmaşıklaştırmayacaksa, gereksiz yere metot kullanmak tavsiye edilmez.
 
 #### Faydaları
 
