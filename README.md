@@ -73,7 +73,7 @@ Temiz kod bakımı kolaylaştırır, hız kazandırır ve bakım maliyetini dü�
 
 ### Teknik Borç Nedir?
 
-Hiç kimse, projeye zarar vermek için bilerek kötü kod yazmaz. Herkes elinden gelenin en iyisini yapmak ister. Kötü kod yazmaya iten sebepler vardır. Kötü yazılan kod da, ilerde başımıza dert açabilir.
+Hiç kimse, projeye zarar vermek için bilerek kötü kod yazmaz. Herkes elinden gelenin en iyisini yapmak ister. Kötü kod yazmaya iten sebepler vardır. Kötü yazılan kod da, ileride başımıza dert açabilir.
 
 Teknik borcu anlatmak için, bankadan çekilen kredi örnek verilir. Acil ödemeniz gereken bir borç için, günü kurtarmak adına çekilen kredi, daha sonra daha fazla borç olarak tekrar karşımıza çıkar. Çekilen tutar tekrar faiziyle geri ödenir.
 
@@ -123,7 +123,7 @@ Yine hata bulmak için öncelikle kodun iyi anlaşılması lazımdır. Daha iyi 
 
 #### Kod inceleme (code review)
 
-Kod inceleme, hem kodu yazan hem de inceleyen için en faydalı iştir. Kod inceleme yaparken, hata bulmak daha kolay ve hızlı olur. İlerde yapılabilecek daha büyük hatalar için de, önceden bilgi sahibi olmayı sağlar.
+Kod inceleme, hem kodu yazan hem de inceleyen için en faydalı iştir. Kod inceleme yaparken, hata bulmak daha kolay ve hızlı olur. İleride yapılabilecek daha büyük hatalar için de, önceden bilgi sahibi olmayı sağlar.
 
 ### Refactoring Nasıl Yapılır?
 
