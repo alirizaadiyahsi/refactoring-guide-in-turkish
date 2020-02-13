@@ -158,7 +158,7 @@ Metodun gövdesinin gereksiz, aşırı, okunamayacak ve bakımı yapılamayacak 
 
 #### Sebep
 
-Yazılımcı her zaman kodu kendisi yazmak ister. Kendi yazmadığı kodlara güvenmez/güvenmek istemez. Bundan dolayıda kod yazmak, kod okumaktan kolay gelir yazılımcıya. Her yeni gelen yazılımcı, bir yandan okumadan kod ekleyip, bir yandan da kullanılmayan kodları silinmeyince, metot gittikçe şişer, okunamaz ve bakımı yapılamaz hale gelir. Okunamayan kod, sürekli yeni kodların eklenmesini tetikleyerek kısır döngü oluşturur.
+Yazılımcı her zaman kodu kendisi yazmak ister. Kendi yazmadığı kodlara güvenmez/güvenmek istemez. Bundan dolayı da kod yazmak, kod okumaktan kolay gelir yazılımcıya. Her yeni gelen yazılımcı, bir yandan okumadan kod ekleyip, bir yandan da kullanılmayan kodları silinmeyince, metot gittikçe şişer, okunamaz ve bakımı yapılamaz hale gelir. Okunamayan kod, sürekli yeni kodların eklenmesini tetikleyerek kısır döngü oluşturur.
 
 İki satır kod için yeni bir metoda ihtiyaç yok diye düşünüp, tüm kodu var olan metotlara eklemek, her zaman yazılımcıya daha kolay gelir. Bu da kodu işin içinden çıkılmaz bir hale sokar.
 
@@ -184,7 +184,7 @@ Bir sınıfta gereğinden fazla alan, metot, özellik ve dolayısıyla fazla kod
 
 #### Sebep
 
-Uzun metotlardaki gibi, uzun sınıfların oluşmasındaki en büyük sebep, kolay olmasından dolayı, kodu okumak yerine, direk koda ekleme yapmasıdır.
+Uzun metotlardaki gibi, uzun sınıfların oluşmasındaki en büyük sebep, kolay olmasından dolayı, kodu okumak yerine, direkt koda ekleme yapmasıdır.
 
 #### Çözüm
 
@@ -206,7 +206,7 @@ Kod içerisinde primitif tiplere, işlerinin dışında sorumluluklar vermek. Ö
 
 Biraz tembellikten, belki biraz da tecrübesizlikten, başta bir tane veri için, bir nesne oluşturmak yerine, kolay olan yolu yani değişken tanımlama yoluna gideriz. Benzer bir alan daha lazım olduğunda, kodu refactor edip nesneye çevirmek yerine, bu yeni alanı da, başka bir değişkene atarız. Her defasında bu hatayı yaptıkça, sınıflar/metotlar şişer.
 
-Bir diğer hata da kullanımı kolay ve anlaşılır olan değişkenlerde veritabanına ait olabilecek veriler tutmak. En kötüsü ise, bir sınıfın her alanının, bir dizide veri olarak tutulması. Neyse oluşturmak o kadar zor gelirki, bir dizide bu nesnenin her alanı için bir veri tutulur.
+Bir diğer hata da kullanımı kolay ve anlaşılır olan değişkenlerde veritabanına ait olabilecek veriler tutmak. En kötüsü ise, bir sınıfın her alanının, bir dizide veri olarak tutulması. Nesne oluşturmak o kadar zor gelir ki, bir dizide bu nesnenin her alanı için bir veri tutulur.
 
 #### Çözüm
 
@@ -236,7 +236,7 @@ Kullanılabilecek refactoring teknikleri: [Replace Parameter with Method Call](#
 
 #### Sonuç
 
-Daha okunabilir, kısa, bakımı kolay kodlar. Daha okunabilir kod içerisinde, gereksiz kodl tekrarları da daha rahat farkedilir, dolayısıyla, kod tekrarlarından da kurtulunabilir.
+Daha okunabilir, kısa, bakımı kolay kodlar. Daha okunabilir kod içerisinde, gereksiz kod tekrarları da daha rahat farkedilir, dolayısıyla, kod tekrarlarından da kurtulunabilir.
 
 #### Ne zaman göz ardı edilebilir?
 
@@ -260,7 +260,7 @@ Kullanılabilecek refactoring teknikler: [Extract Class](#extract-class), [Intro
 
 #### Sonuç
 
-Kodun anlaşılabilirliğini ve organizyonunun kalitesini artırır. Parametreler dağınık olarak, etrafta duracağına, bir sınıf içinde toplanmış olur. Kod tekrarı engellenir, dolayısıyla kod kısalır, okunabilirliği artar ve bakımı kolaylaşır.
+Kodun anlaşılabilirliğini ve organizasyonunun kalitesini artırır. Parametreler dağınık olarak, etrafta duracağına, bir sınıf içinde toplanmış olur. Kod tekrarı engellenir, dolayısıyla kod kısalır, okunabilirliği artar ve bakımı kolaylaşır.
 
 #### Ne zaman göz ardı edilebilir?
 
