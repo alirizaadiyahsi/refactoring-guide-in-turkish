@@ -274,7 +274,7 @@ Okunması/anlaşılması ve bakımı zor `switch-case` veya gereksiz uzunluktaki
 
 #### Sebep
 
-`switch-case` ifadeleri çok fazla koşul gerektiği durumda birer ihtiyaç olarak kullanılırlar. Gereğinden fazla uzun `if-else` ifalerinin oluşması da yine, her yeni gelen koşul için, kodda hiç bir değişiklik yapmadan, uç uca eklenen koşullardan dolayı oluşur.  
+`switch-case` ifadeleri çok fazla koşul gerektiği durumda birer ihtiyaç olarak kullanılırlar. Gereğinden fazla uzun `if-else` ifadelerinin oluşması da yine, her yeni gelen koşul için, kodda hiç bir değişiklik yapmadan, uç uca eklenen koşullardan dolayı oluşur.  
 
 #### Çözüm
 
