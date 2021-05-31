@@ -290,7 +290,7 @@ Uygulamanın tasarımı daha iyi bir hal alır ve bakımı kolaylaşır.
 
 #### Ne zaman göz ardı edilebilir?
 
-Aslında `switch-case` ifadeleri çok kullanışlıdır ve yerinde kullanıldığında, hız kazandırır. Eğer uygulanın içerisinde, yönetilemeyecek kadar çok dağılırsa ve kodun okunabilirliğini ve bakımını zorlaştıracaksa, `switch-case` ifadelerinden kaçınılmalıdır. Ama basit kullanımlarda hiçbir sakıncası yoktur.
+Aslında `switch-case` ifadeleri çok kullanışlıdır ve yerinde kullanıldığında, hız kazandırır. Eğer uygulamanın içerisinde, yönetilemeyecek kadar çok dağılırsa ve kodun okunabilirliğini ve bakımını zorlaştıracaksa, `switch-case` ifadelerinden kaçınılmalıdır. Ama basit kullanımlarda hiçbir sakıncası yoktur.
 
 Ayrıca, `Factory design pattern` içinde de `switch-case` ifadeleri kullanmakta bir sakınca yoktur.
 
