@@ -274,7 +274,7 @@ Okunması/anlaşılması ve bakımı zor `switch-case` veya gereksiz uzunluktaki
 
 #### Sebep
 
-`switch-case` ifadeleri çok fazla koşul gerektiği durumda birer ihtiyaç olarak kullanılırlar. Gereğinden fazla uzun `if-else` ifalerinin oluşması da yine, her yeni gelen koşul için, kodda hiç bir değişiklik yapmadan, uç uca eklenen koşullardan dolayı oluşur.  
+`switch-case` ifadeleri çok fazla koşul gerektiği durumda birer ihtiyaç olarak kullanılırlar. Gereğinden fazla uzun `if-else` ifadelerinin oluşması da yine, her yeni gelen koşul için, kodda hiç bir değişiklik yapmadan, uç uca eklenen koşullardan dolayı oluşur.  
 
 #### Çözüm
 
@@ -290,7 +290,7 @@ Uygulamanın tasarımı daha iyi bir hal alır ve bakımı kolaylaşır.
 
 #### Ne zaman göz ardı edilebilir?
 
-Aslında `switch-case` ifadeleri çok kullanışlıdır ve yerinde kullanıldığında, hız kazandırır. Eğer uygulanın içerisinde, yönetilemeyecek kadar çok dağılırsa ve kodun okunabilirliğini ve bakımını zorlaştıracaksa, `switch-case` ifadelerinden kaçınılmalıdır. Ama basit kullanımlarda hiçbir sakıncası yoktur.
+Aslında `switch-case` ifadeleri çok kullanışlıdır ve yerinde kullanıldığında, hız kazandırır. Eğer uygulamanın içerisinde, yönetilemeyecek kadar çok dağılırsa ve kodun okunabilirliğini ve bakımını zorlaştıracaksa, `switch-case` ifadelerinden kaçınılmalıdır. Ama basit kullanımlarda hiçbir sakıncası yoktur.
 
 Ayrıca, `Factory design pattern` içinde de `switch-case` ifadeleri kullanmakta bir sakınca yoktur.
 
@@ -486,7 +486,7 @@ Neredeyse hiçbir şey yapmayan, gerekliliğinin sorgulanmasına sebep olan sın
 
 #### Sebep
 
-Sınıf zaman içerisinde değişikliklere uğrar. İçerisindeki işlevlerin taşınması, rafactor edilmesi gibi nedenlerden dolayı, sınıfın içi boşalabilir veya içerisindeki kodlar artık çok da fazla iş yapmaz duruma gelebilir. Ya da daha sonra yapılacak bir özelliklik için, baştan tasarlanmış olabilir.
+Sınıf zaman içerisinde değişikliklere uğrar. İçerisindeki işlevlerin taşınması, refactor edilmesi gibi nedenlerden dolayı, sınıfın içi boşalabilir veya içerisindeki kodlar artık çok da fazla iş yapmaz duruma gelebilir. Ya da daha sonra yapılacak bir özelliklik için, baştan tasarlanmış olabilir.
 
 #### Çözüm
 
@@ -518,7 +518,7 @@ Yeni geliştirmeler, eklemeler, refactoring işlemlerinden sonra eski kodların,
 
 #### Çözüm
 
-İşe yaramazyan kodları bulmanın en iyi yolu, iyi bir IDE veya IDE ile uyumlu, kod eklentilerin kullanılmasıdır. Bu en etkili ve hızlı yöntemdir. Tabiki işe yaramayan kod parçaları bulununca yapılacak ilk şey silmek veya taşımak.
+İşe yaramayan kodları bulmanın en iyi yolu, iyi bir IDE veya IDE ile uyumlu, kod eklentilerin kullanılmasıdır. Bu en etkili ve hızlı yöntemdir. Tabiki işe yaramayan kod parçaları bulununca yapılacak ilk şey silmek veya taşımak.
 
 Uygulanabilecek refactoring yöntemleri: [Inline Class](#inline-class), [Collapse Hierarchy](#collapse-hierarchy), [Remove Parameter](#remove-parameter).
 
