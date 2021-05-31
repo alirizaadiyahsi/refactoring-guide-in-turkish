@@ -486,7 +486,7 @@ Neredeyse hiçbir şey yapmayan, gerekliliğinin sorgulanmasına sebep olan sın
 
 #### Sebep
 
-Sınıf zaman içerisinde değişikliklere uğrar. İçerisindeki işlevlerin taşınması, rafactor edilmesi gibi nedenlerden dolayı, sınıfın içi boşalabilir veya içerisindeki kodlar artık çok da fazla iş yapmaz duruma gelebilir. Ya da daha sonra yapılacak bir özelliklik için, baştan tasarlanmış olabilir.
+Sınıf zaman içerisinde değişikliklere uğrar. İçerisindeki işlevlerin taşınması, refactor edilmesi gibi nedenlerden dolayı, sınıfın içi boşalabilir veya içerisindeki kodlar artık çok da fazla iş yapmaz duruma gelebilir. Ya da daha sonra yapılacak bir özelliklik için, baştan tasarlanmış olabilir.
 
 #### Çözüm
 
