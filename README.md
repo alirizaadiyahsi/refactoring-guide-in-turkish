@@ -518,7 +518,7 @@ Yeni geliştirmeler, eklemeler, refactoring işlemlerinden sonra eski kodların,
 
 #### Çözüm
 
-İşe yaramazyan kodları bulmanın en iyi yolu, iyi bir IDE veya IDE ile uyumlu, kod eklentilerin kullanılmasıdır. Bu en etkili ve hızlı yöntemdir. Tabiki işe yaramayan kod parçaları bulununca yapılacak ilk şey silmek veya taşımak.
+İşe yaramayan kodları bulmanın en iyi yolu, iyi bir IDE veya IDE ile uyumlu, kod eklentilerin kullanılmasıdır. Bu en etkili ve hızlı yöntemdir. Tabiki işe yaramayan kod parçaları bulununca yapılacak ilk şey silmek veya taşımak.
 
 Uygulanabilecek refactoring yöntemleri: [Inline Class](#inline-class), [Collapse Hierarchy](#collapse-hierarchy), [Remove Parameter](#remove-parameter).
 
